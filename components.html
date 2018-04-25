@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="StyleGuide">
+    <meta name="author" content="Michael La Manna">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300, 400, 500, 700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400, 700" rel="stylesheet">
+    <script src="https://use.fontawesome.com/cf025920f5.js"></script>
+    <script src="JS/jquery.min.js"></script>
+    <script src="JS/popper.min.js"></script>
+    <title>EA Style Guide</title>
+    <!-- Bootstrap core CSS -->
+    <link href="CSS/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="CSS/mdb.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="CSS/StyleGuide.css" rel="stylesheet">
+    <!-- Additional JS -->
+    <script type="text/javascript" src='JS/clipboard.js'></script>
+    <script type="text/javascript" src='JS/clipboardtwo.js'></script>
+    <script>
+        window.onbeforeunload = function() {
+            window.scrollTo(0, 0);
+        }
+    </script>
+</head>
+
+<body id="page-top" data-spy="scroll" data-target="#myScrollspy" data-offset="1">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #092B52">
+        <a class="navbar-brand js-scroll-trigger" href="index.html"><span class="text1">EA</span><span class="text2"> {Style Guide}</span></a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="index.html">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="design.html">Design</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="framework.html">Framework</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="components.html">Components</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="resources.html">Resources</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="notes.html">Notes</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <font color="#ffffff">Last Update: 02/12/2018</font>
+            </ul>
+        </div>
+    </nav>
+
+    <!--SideBar-->
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-sm-3 col-md-2 d-none d-md-block bg-light sidebar" id="myScrollspy">
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#page-top">Buttons</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#badges">Badges</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#forms">Forms/Filters</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#tooltips">Tooltips</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#popovers">Popovers</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!--SmoothScroll-->
+
+    <section id="top-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 ml-sm-auto col-md-10 pt-4">
+                    <h1>Buttons</h1>
+                    Use buttons to signal actions.
+                    <section class="row placeholders icons">
+                        <div class="col-6 col-sm-4 placeholder">
+
+                            <center><button type="button" class="btn btn-primary">Primary</button></center>
+                            <p></p>
+                            <div class="bd-clipboard">
+                                <span class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</span>
+                            </div>
+                            <figure class="highlight">
+                                <pre><code class="language-html" data-lang="html">.btn-primary {
+color #ffffff;
+background-color: #207AB5;
+border-color: #207AB5;
+}
+<p></p>
+.btn-primary:hover {
+color #ffffff;
+background-color: #3D9DDC;
+border-color: #3D9DDC;
+}</code></pre>
+                            </figure>
+
+                        </div>
+                        <div class="col-6 col-sm-4 placeholder">
+                            <center><button type="button" class="btn btn-outline-primary">Outline Primary</button></center>
+                            <p></p>
+                            <div class="bd-clipboard">
+                                <span class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</span>
+                            </div>
+                            <figure class="highlight">
+                                <pre><code class="language-html" data-lang="html">.btn-outline-primary {
+color: #DAE0E5;
+background-color: transparent;
+border-color: #DAE0E5;
+border-width: .1rem;
+}
+<p></p>
+.btn-outline-primary:not([disabled]):
+not(.disabled).
+.active,
+btn-outline-primary:not([disabled])
+:not(.disabled).
+.active,
+.show > .btn-outline-primary.dropdown-toggle {
+color: #212529;
+background-color: #DAE0E5;
+border-color: #DAE0E5;
+box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .5);
+}
+<p></p>
+.btn-outline-primary.focus,
+.btn-outline-primary:focus {
+box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .5);
+}  
+</code></pre>
+                            </figure>
+                        </div>
+                        <div class="col-6 col-sm-4 placeholder">
+                            <center><button type="button" class="btn btn-info">Info</button></center>
+                            <p></p>
+                            <div class="bd-clipboard">
+                                <span class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</span>
+                            </div>
+                            <figure class="highlight">
+                                <pre><code class="language-html" data-lang="html">.btn-info {
+color: #ffffff;
+background-color: #092B52;
+border-color: #092B52;
+}
+<p></p>
+.btn-info.active, .btn-info:active, .btn-info:focus, .btn-info:hover {
+background-color: #0D47A1;!important;
+}</code>
+</pre>
+                            </figure>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="badges" class="bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 ml-sm-auto col-md-10 pt-4">
+                    <h1>Badges</h1>
+                    Badges draw attention to new or important content.
+                    <section class="row placeholders icons">
+                        <div class="col-6 col-sm-4 placeholder">
+
+                            <center>
+                                <h1><span class="badge badge-default">Default</span></h1>
+                            </center>
+                            <p></p>
+                            <div class="bd-clipboard">
+                                <span class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</span>
+                            </div>
+                            <figure class="highlight2">
+                                <pre><code class="language-html" data-lang="html">.badge-default {
+background-color: #BDC6D0;
+} </code></pre> </figure>
+                        </div>
+                        <div class="col-6 col-sm-4 placeholder">
+                            <center>
+                                <h1><span class="badge badge-primary">Primary</span></h1>
+                            </center>
+                            <p></p>
+                            <div class="bd-clipboard">
+                                <span class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</span>
+                            </div>
+                            <figure class="highlight2">
+                                <pre><code class="language-html" data-lang="html">.badge-primary {
+background-color: #207AB5;
+}</code></pre>
+                            </figure>
+                        </div>
+                        <div class="col-6 col-sm-4 placeholder">
+                            <center>
+                                <h1><span class="badge badge-info">Info</span></h1>
+                            </center>
+                            <p></p>
+                            <div class="bd-clipboard">
+                                <span class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</span>
+                            </div>
+                            <figure class="highlight2">
+                                <pre><code class="language-html" data-lang="html">.badge-info {
+background-color: #0D47A1;
+}</code></pre>
+                            </figure>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="forms">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 ml-sm-auto col-md-10 pt-4">
+                    <h1>Forms/Filters</h1>
+                    Forms and filters allow users to interact with a page while either entering information or making selections. Filtering is used to eliminate items from the set, creating a smaller and more relevant subset of data.
+                    <p></p>
+                    Bootstrap provides several form control styles, detailed information can be found at the <a href="https://getbootstrap.com/docs/4.1/components/forms/" target="_blank">Official Bootstrap Site</a>
+                    <p></p>
+
+                    <h2>Radio Buttons</h2>
+                    Radio buttons are for selecting one option from many. On page load one option is selected (always) by default. We use <a href="https://getbootstrap.com/docs/4.1/components/forms/#custom-forms" target="_blank">Custom Forms</a> for more cross browser consistency.
+                    <p></p>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <span class="radiotext">Direction</span>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked>
+                                    <label class="custom-control-label" for="customRadio1">Composite</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio2">Originating</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio3">Destinating</label>
+                                </div>
+                            </div>
+
+
+                            <div class="col-6">
+
+                                <span class="radiotext">Mail Shape</span>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio4" name="customRadio2" class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio4">All</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio5" name="customRadio2" class="custom-control-input" checked>
+                                    <label class="custom-control-label" for="customRadio5">Letter/Card</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio6" name="customRadio2" class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio6">Flat</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p></p>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <span class="radiotext">Mail Class</span>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio7" name="customRadio3" class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio7">First Class Presort</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio8" name="customRadio3" class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio8">Single Piece First Class</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio9" name="customRadio3" class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio9">USPS Marketing Mail</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio10" name="customRadio3" class="custom-control-input" checked>
+                                    <label class="custom-control-label" for="customRadio10">Periodicals</label>
+                                </div>
+                            </div>
+                            <p></p>
+                            <div class="col-6">
+                                <span class="radiotext">Service Standard</span>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio11" name="customRadio4" class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio11">All</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio12" name="customRadio4" class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio12">Overnight</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio13" name="customRadio4" class="custom-control-input" checked>
+                                    <label class="custom-control-label" for="customRadio13">Two-Day</label>
+                                </div>
+
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio14" name="customRadio4" class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio14">Three-to-Five-Day</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                    <p></p>
+                    <div class="bd-clipboard">
+                        <span class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</span>
+                    </div>
+                    <figure class="highlight">
+                        <pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"custom-control custom-radio"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">id=</span><span class="s">"customRadio1"</span> <span class="na">name=</span><span class="s">"customRadio"</span> <span class="na">class=</span><span class="s">"custom-control-input"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"custom-control-label"</span> <span class="na">for=</span><span class="s">"customRadio1"</span><span class="nt">&gt;</span>Option 1<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"custom-control custom-radio"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">id=</span><span class="s">"customRadio2"</span> <span class="na">name=</span><span class="s">"customRadio"</span> <span class="na">class=</span><span class="s">"custom-control-input"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"custom-control-label"</span> <span class="na">for=</span><span class="s">"customRadio2"</span><span class="nt">&gt;</span>Option 2<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre>
+                    </figure>
+                    <h2>Checkboxes</h2>
+                    Checkboxes are for selecting one or several options in a list. We continue to use <a href="https://getbootstrap.com/docs/4.1/components/forms/#custom-forms" target="_blank">Custom Forms</a> for more cross browser consistency when creating checkboxes.
+                    <p></p>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+
+     <div class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" id="customCheck1">
+  <label class="custom-control-label" for="customCheck1">Option 1</label>
+</div>
+                                   <div class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" id="customCheck2">
+  <label class="custom-control-label" for="customCheck2">Option 2</label>
+</div>
+                                   <div class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" id="customCheck3">
+  <label class="custom-control-label" for="customCheck3">Option 3</label>
+</div>
+                            </div>
+                            <div class="col-6">
+     <div class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" id="customCheck4">
+  <label class="custom-control-label" for="customCheck4">Option 4</label>
+</div>
+                                   <div class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" id="customCheck5">
+  <label class="custom-control-label" for="customCheck5">Option 5</label>
+</div>
+                                   <div class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" id="customCheck6">
+  <label class="custom-control-label" for="customCheck6">Option 6</label>
+</div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    <p></p>
+                    <div class="bd-clipboard">
+                        <span class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</span>
+                    </div>
+                    <figure class="highlight">
+                        <pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"custom-control custom-checkbox"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">class=</span><span class="s">"custom-control-input"</span> <span class="na">id=</span><span class="s">"customCheck1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"custom-control-label"</span> <span class="na">for=</span><span class="s">"customCheck1"</span><span class="nt">&gt;</span>Option 1<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre>
+                    </figure>
+                    <h2>Select/Dropdown Menu</h2>
+                    Select menu (or dropdown) is used when a number of options is greater than 4 (with some exceptions*) and fewer than 15**. Detailed information can be found at the <a href="https://getbootstrap.com/docs/4.1/components/forms/#select-menu" target="_blank">Official Bootstrap Site</a>.
+                    <p></p>
+                    <ul class="str">In filters with a parent-child relationship (when a number of options in one filter determined by a selection made in another filter).</ul>
+                    <ul class="str2">If more than 15 options, use a text field with autocomplete suggestions.</ul>
+                    <p></p>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-3">
+                                <h6>Select Day Of Week:</h6>
+                                 <select class="custom-select">
+                      
+  <option selected>Select Day Of Week</option>
+  <option value="1">MONDAY</option>
+  <option value="2">TUESDAY</option>
+  <option value="3">WEDNESDAY</option>
+<option value="4">THURSDAY</option>
+  <option value="5">FRIDAY</option>
+  <option value="6">SATURDAY</option>
+                                    </select>
+                            </div>
+                            <div class="col-3">
+                                <h6>Select Day Of Week:</h6>
+                                <select class="custom-select">
+  <option selected>Select Day Of Week</option>
+  <option value="1">MONDAY</option>
+  <option value="2">TUESDAY</option>
+  <option value="3">WEDNESDAY</option>
+<option value="4">THURSDAY</option>
+  <option value="5">FRIDAY</option>
+  <option value="6">SATURDAY</option>
+</select>
+                            </div>
+                            <div class="col-3">
+                                <h6>Select Day Of Week:</h6>
+                                <select class="custom-select">
+  <option selected>Select Day Of Week</option>
+  <option value="1">MONDAY</option>
+  <option value="2">TUESDAY</option>
+  <option value="3">WEDNESDAY</option>
+<option value="4">THURSDAY</option>
+  <option value="5">FRIDAY</option>
+  <option value="6">SATURDAY</option>
+</select>
+                            </div>
+                            <div class="col-3">
+                                <h6>Select Day Of Week:</h6>
+                                <select class="custom-select">
+  <option selected>Select Day Of Week</option>
+  <option value="1">MONDAY</option>
+  <option value="2">TUESDAY</option>
+  <option value="3">WEDNESDAY</option>
+<option value="4">THURSDAY</option>
+  <option value="5">FRIDAY</option>
+  <option value="6">SATURDAY</option>
+</select>
+                            </div>
+                        </div>
+                    </div>
+                    <p></p>
+                    <div class="bd-clipboard">
+                        <span class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</span>
+                    </div>
+                    <figure class="highlight">
+                        <pre><code class="language-html" data-lang="html"><span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">"custom-select"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;option</span> <span class="na">selected</span><span class="nt">&gt;</span>Select Day Of Week<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"1"</span><span class="nt">&gt;</span>Monday<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"2"</span><span class="nt">&gt;</span>Tuesday<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"3"</span><span class="nt">&gt;</span>Wednesday<span class="nt">&lt;/option&gt;</span>
+<span class="nt">&lt;/select&gt;</span></code></pre>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tooltips" class="bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 ml-sm-auto col-md-10 pt-4">
+                    <h1>Tooltips</h1>
+                    Use tooltips to show a small amount of information, these are used especially when :hover states do not function optimally on mobile devices.
+                    <p></p>
+                    More detailed information on tooltips not covered below can be found at the <a href="https://getbootstrap.com/docs/4.1/components/tooltips/" target="_blank">Official Bootstrap Site</a>
+                    <p></p>
+                    <center>
+                        <span class="textinfo">Hover over or if on mobile device touch the below icons.</span>
+                    </center>
+                    <section class="row text-center placeholders icons3">
+                        <div class="col-3 placeholder">
+                            <i class="fa fa-info-circle fa-3x" id="info" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                            </i></div>
+                        <div class="col-3 placeholder">
+                            <i class="fa fa-info-circle fa-3x" id="info" data-delay="400" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
+                             </i></div>
+                        <div class="col-3 placeholder">
+                            <i class="fa fa-info-circle fa-3x" id="info" data-delay="400" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
+                             </i></div>
+                        <div class="col-3 placeholder">
+                            <i class="fa fa-info-circle fa-3x" id="info" data-delay="400" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
+                             </i></div>
+                    </section>
+                    <p></p>
+                    <div class="bd-clipboard">
+                        <span class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</span>
+                    </div>
+                    <figure class="highlight2">
+                        <pre><code class="language-html" data-lang="html"><span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-info-circle fa-3x"</span><span class="na"> id=</span><span class="s">"info"</span><span class="na"> data-delay=</span><span class="s">"400"</span><span class="na"> data-toggle=</span><span class="s">"tooltip" </span><span class="na">data-placement=</span><span class="s">"top"</span><span class="na"> title=</span><span class="s">"Tooltip on top"</span><span class="nt">&gt;&lt;/i&gt;</span>
+<span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-info-circle fa-3x"</span><span class="na"> id=</span><span class="s">"info"</span><span class="na"> data-delay=</span><span class="s">"400"</span><span class="na"> data-toggle=</span><span class="s">"tooltip" </span><span class="na">data-placement=</span><span class="s">"right"</span><span class="na"> title=</span><span class="s">"Tooltip on right"</span><span class="nt">&gt;&lt;/i&gt;</span>
+<span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-info-circle fa-3x"</span><span class="na"> id=</span><span class="s">"info"</span><span class="na"> data-delay=</span><span class="s">"400"</span><span class="na"> data-toggle=</span><span class="s">"tooltip" </span><span class="na">data-placement=</span><span class="s">"bottom"</span><span class="na"> title=</span><span class="s">"Tooltip on bottom"</span><span class="nt">&gt;&lt;/i&gt;</span>
+<span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-info-circle fa-3x"</span><span class="na"> id=</span><span class="s">"info"</span><span class="na"> data-delay=</span><span class="s">"400"</span><span class="na"> data-toggle=</span><span class="s">"tooltip" </span><span class="na">data-placement=</span><span class="s">"left"</span><span class="na"> title=</span><span class="s">"Tooltip on left"</span><span class="nt">&gt;&lt;/i&gt;</span>
+
+&lt;!-- CSS --&gt;
+
+#info:hover {
+color: #0D47A1;
+cursor: default;
+}</code></pre>
+                    </figure>
+                    To initialize all tooltips on a page the below java script must be included.
+                    <p></p>
+                    <div class="bd-clipboard">
+                        <span class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</span>
+                    </div>
+                    <figure class="highlight2">
+                        <pre><code class="language-html" data-lang="html"><span class="nt">$(function() {
+  $('[data-toggle="tooltip"]').tooltip({ 
+    delay: { 
+      "show": 500, 
+      "hide": 100 
+    }
+  });
+});</span></code></pre>
+                    </figure>
+                    <h2>Examples</h2>
+                    Below are just a few examples of how tooltips can be used.
+                    <p></p>
+                    <span class="infonoicon" data-delay="400" data-toggle="tooltip" data-placement="right" title="Last Mile">LMI</span>
+                    <p></p>
+                    <div class="bd-clipboard">
+                        <span class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</span>
+                    </div>
+                    <figure class="highlight2">
+                        <pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span><span class="na"> class=</span><span class="na"><span class="s">"infonoicon"</span></span><span class="na"> data-delay=</span><span class="s">"400"</span> <span class="na">data-toggle=</span><span class="s">"tooltip"</span> <span class="na">data-placement=</span><span class="s">"right"</span> <span class="na">title=</span><span class="s">"Last Mile"</span><span class="nt">&gt;</span>LMI<span class="nt">&lt;/span&gt;</span>
+                    
+&lt;!-- CSS --&gt;
+                        
+.infonoicon {
+background-color: #DAE0E5;
+border-radius: .2rem;
+font-size: 1.5rem;
+color: #212529;
+}
+.infonoicon:hover {
+background-color: #0D47A1;
+color: #ffffff;
+cursor: default;
+}</code></pre>
+                    </figure>
+
+                    <p></p>
+                    <span class="texttt">VAP</span> <i class="fa fa-info-circle" id="info" data-delay="400" data-toggle="tooltip" data-placement="right" title="Volume Arrival Profile"></i>
+                    <p></p>
+                    <div class="bd-clipboard">
+                        <span class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</span>
+                    </div>
+                    <figure class="highlight2">
+                        <pre><code class="language-html" data-lang="html"><span class="nt">&lt;span </span><span class="na">class=</span><span class="s">"text"</span><span class="nt">&gt;</span>VAP<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;i</span><span class="na"> class=</span><span class="s">"fa fa-info-circle"</span><span class="na"> id=</span><span class="s">"info"</span> <span  class="na">data-delay=</span><span class="s">"400"</span><span class="na"> data-toggle=</span><span class="s">"tooltip"</span> <span class="na">data-placement=</span><span class="s">"right"</span> <span class="na">title=</span><span class="s">"Volume Arrival Profile"</span><span class="nt">&gt;&lt;/i&gt;</span>
+
+&lt;!-- CSS --&gt;
+
+#info:hover {
+color: #0D47A1;
+}
+</code></pre>
+                    </figure>
+
+                </div>
+            </div>
+        </div>
+        <script>
+            $(function() {
+                $('[data-toggle="tooltip"]').tooltip({
+                    delay: {
+                        "show": 500,
+                        "hide": 100
+                    }
+                });
+            });
+        </script>
+    </section>
+
+    <section id="popovers">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 ml-sm-auto col-md-10 pt-4">
+                    <h1>Popovers</h1>
+                    Used to provide more information to the user then a tooltip and must be clicked/touched to open and close, no hover is used.
+                    <p></p>
+                    More detailed information on popovers not covered below can be found at the <a href="https://getbootstrap.com/docs/4.1/components/popovers/" target="_blank">Official Bootstrap Site</a>
+                    <p></p>
+                    <section class="row text-center placeholders icons3">
+                        <div class="col-3 placeholder">
+                            <a class="btn btn-outline-primary" id="popover" data-container="body" data-toggle="popover" data-placement="top" data-content="Popover top">  <i class="fa fa-lightbulb-o fa-3x"></i></a>
+                        </div>
+                        <div class="col-3 placeholder">
+                            <a class="btn btn-outline-primary" id="popover" data-container="body" data-toggle="popover" data-placement="right" data-content="Popover right">  <i class="fa fa-lightbulb-o fa-3x"></i></a></div>
+                        <div class="col-3 placeholder">
+                            <a class="btn btn-outline-primary" id="popover" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Popover bottom">  <i class="fa fa-lightbulb-o fa-3x"></i></a></div>
+                        <div class="col-3 placeholder">
+                            <a class="btn btn-outline-primary" id="popover" data-container="body" data-toggle="popover" data-placement="left" data-content="Popover left">  <i class="fa fa-lightbulb-o fa-3x"></i></a></div>
+                    </section>
+                    <div class="bd-clipboard">
+                        <span class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</span>
+                    </div>
+                    <figure class="highlight">
+                        <pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn btn-outline-primary"</span> <span class="na">id=</span><span class="s">"popover"</span><span class="na"> data-container=</span><span class="s">"body"</span><span class="na"> data-toggle=</span><span class="s">"popover"</span><span class="na"> data-placement=</span><span class="s">"top" </span><span class="na">data-content=</span><span class="s">"Popover top"</span><span class="nt">&gt;&lt;i</span><span class="na"> class=</span><span class="s">"fa fa-lightbulb-o fa-3x"</span><span class="nt">i&gt;&lt;/i&gt;&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn btn-outline-primary"</span> <span class="na">id=</span><span class="s">"popover"</span><span class="na"> data-container=</span><span class="s">"body"</span><span class="na"> data-toggle=</span><span class="s">"popover"</span><span class="na"> data-placement=</span><span class="s">"right" </span><span class="na">data-content=</span><span class="s">"Popover right"</span><span class="nt">&gt;&lt;i</span><span class="na"> class=</span><span class="s">"fa fa-lightbulb-o fa-3x"</span><span class="nt">i&gt;&lt;/i&gt;&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn btn-outline-primary"</span> <span class="na">id=</span><span class="s">"popover"</span><span class="na"> data-container=</span><span class="s">"body"</span><span class="na"> data-toggle=</span><span class="s">"popover"</span><span class="na"> data-placement=</span><span class="s">"bottom" </span><span class="na">data-content=</span><span class="s">"Popover bottom"</span><span class="nt">&gt;&lt;i</span><span class="na"> class=</span><span class="s">"fa fa-lightbulb-o fa-3x"</span><span class="nt">i&gt;&lt;/i&gt;&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn btn-outline-primary"</span> <span class="na">id=</span><span class="s">"popover"</span><span class="na"> data-container=</span><span class="s">"body"</span><span class="na"> data-toggle=</span><span class="s">"popover"</span><span class="na"> data-placement=</span><span class="s">"left" </span><span class="na">data-content=</span><span class="s">"Popover left"</span><span class="nt">&gt;&lt;i</span><span class="na"> class=</span><span class="s">"fa fa-lightbulb-o fa-3x"</span><span class="nt">i&gt;&lt;/i&gt;&lt;/a&gt;</span></code></pre>
+                    </figure>
+
+
+                    To initialize all tooltips on a page the below java script must be included.
+                    <p></p>
+                    <div class="bd-clipboard">
+                        <span class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</span>
+                    </div>
+                    <figure class="highlight">
+                        <pre><code class="language-html" data-lang="html"><span class="nt">$(function () {
+  $('[data-toggle="popover"]').popover()
+});</span></code></pre>
+                    </figure>
+                    <h2>Examples</h2>
+                    Below are just a few examples of how popovers can be used.
+                    <p></p>
+                    <div class="col-12">
+                        <div class="row">
+                            <h4>Processing 79.50%</h4><a class="btn btn-outline-primary" id="popover" title="Presort Flats" data-html="true" data-container="body" data-toggle="popover" data-placement="right" data-content="WTD Through 12/21 <p></p>Processing 79.50% <p></p>Total Pieces 3,975,886<p></p>Failed Pieces 815,024">  <i class="fa fa-lightbulb-o fa-lg"></i></a></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(function() {
+                $('[data-toggle="popover"]').popover()
+            });
+        </script>
+    </section>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="JS/bootstrap.bundle.min.js"></script>
+    <script src="JS/bootstrap.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="JS/jquery.easing.min.js"></script>
+    <!-- Custom JavaScript for this theme -->
+    <script src="JS/scrolling-nav.js"></script>
+    <script src="JS/mdb.min.js"></script>
+
+</body>
+
+</html>
