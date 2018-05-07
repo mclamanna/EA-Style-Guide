@@ -1,0 +1,74 @@
+body,
+html {
+    font-family: Roboto, sans-serif;
+    font-size: .94rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+h6 {
+    font-family: Roboto, sans-serif;
+    font-size: 1rem;
+    font-weight: 700; 
+}
+
+.bg-dark {
+    background-color: #092B52!important;
+}
+
+.iv-logo {
+    width: 60px;
+}
+
+#projectBranding {
+    margin-left: 10px;
+    line-height: .9rem;
+    /* height: 40px; */
+    /* font-weight: 500; */
+}
+
+.projectTitle,
+.projectTitle {
+    font-size: 1.25rem;
+    font-style: italic;
+    color: #fff;
+}
+
+.projectTitle {
+    font-weight: 600;
+}
+
+.projectSlogan {
+    font-size: .85rem;
+    margin-top: .6em;
+    color: #e5ebf1;
+}
+
+.slant {
+    background-color: #ffffff;
+    height: 2rem;
+    width: .2rem;
+    margin-left: 20px;
+    transform: rotate(10deg);
+}
+
+.EATitle,
+.EATitle {
+    font-size: 1.25rem;
+    font-style: italic;
+    color: #fff;
+    margin-left: 20px;
+}
+
+/* nav bar */
+.navbar-dark .navbar-nav .nav-link {
+    color: #ffffff;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.barTest {
+    margin-top: 5rem;
+}
