@@ -6,12 +6,6 @@ html {
     line-height: 1.5;
 }
 
-h5 {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-    font-size: 1.125rem;
-}
-
 h6 {
     font-family: Roboto, sans-serif;
     font-size: 1rem;
@@ -23,19 +17,21 @@ h6 {
 }
 
 .iv-logo {
-    width: 50px;
+    width: 60px;
 }
 
 #projectBranding {
     margin-left: 10px;
-    line-height: 1.32rem;
+    line-height: .9rem;
+    /* height: 40px; */
+    /* font-weight: 500; */
 }
 
 .projectTitle,
 .projectTitle {
-    font-size: 1.14rem;
+    font-size: 1.25rem;
     font-style: italic;
-    color: #ffffff;
+    color: #fff;
 }
 
 .projectTitle {
@@ -43,24 +39,25 @@ h6 {
 }
 
 .projectSlogan {
-    font-size: .8rem;
+    font-size: .85rem;
+    margin-top: .6em;
     color: #e5ebf1;
 }
 
 .slant {
-    background-color: #f9f9f966;
+    background-color: #ffffff;
     height: 2rem;
-    width: 1px;
-    margin-left: 15px;
+    width: .2rem;
+    margin-left: 20px;
     transform: rotate(10deg);
 }
 
 .EATitle,
 .EATitle {
-    font-size: 1.14 rem;
+    font-size: 1.25rem;
     font-style: italic;
-    color: #ffffff;
-    margin-left: 15px;
+    color: #fff;
+    margin-left: 20px;
 }
 
 /* nav bar */
@@ -71,3 +68,18 @@ h6 {
     color: #ffffff;
     text-decoration: underline;
 }
+
+.barTest {
+    margin-top: 5rem;
+}
+
+#mike {
+    position: absolute;
+    color: red;
+    left: 10px;
+    top: 15px;
+}
+
+
+
+<text x="10" y="15" dy="0.35em" class="row _1" transform=""
