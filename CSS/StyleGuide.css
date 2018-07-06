@@ -134,7 +134,9 @@ h8 {
     color: #212529;
 }
 
-
+.navbar .navbar-toggler {
+    outline: none;
+}
 
 .headerTemplate {
     display: flex;
@@ -230,7 +232,6 @@ h8 {
 .btn-info:focus,
 .btn-info:hover {
     background-color: #0D47A1;
-    !important;
 }
 
 /*badges*/
