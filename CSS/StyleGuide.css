@@ -1252,7 +1252,10 @@ h8 {
     padding-bottom: 1.5rem;
 }
 
-
+.placeholder2 img {
+    padding-top: 3.2rem;
+    padding-bottom: 1.5rem;
+}
 
 
 /*
@@ -1635,4 +1638,8 @@ clipboard
 
 .b4b:hover {
     text-decoration: none;
+}
+
+.barcharttop {
+    margin-top: 3rem;
 }
