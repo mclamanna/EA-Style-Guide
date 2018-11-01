@@ -24,6 +24,7 @@ html {
 
 .navbar-dark .navbar-toggler {
     color: #ffffff;
+    outline-color: #092B52;
     border: #092B52;
 }
 
