@@ -10,6 +10,22 @@ ul.str2:before {
   content: "**";
 }
 
+[aria-expanded="false"] .menu__icon--open {
+    display: block;
+}
+  
+  [aria-expanded="false"] .menu__icon--close {
+    display: none;
+}
+  
+  [aria-expanded="true"] .menu__icon--open {
+    display: none;
+}
+  
+  [aria-expanded="true"] .menu__icon--close {
+    display: block;
+}
+
 .textinfo {
     font-size: 1.5rem;
     color: #ffffff;

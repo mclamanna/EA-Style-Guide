@@ -6,6 +6,27 @@ html {
     line-height: 1.5;
 }
 
+[aria-expanded="false"] .menu__icon--open {
+    display: block;
+}
+  
+  [aria-expanded="false"] .menu__icon--close {
+    display: none;
+}
+  
+  [aria-expanded="true"] .menu__icon--open {
+    display: none;
+}
+  
+  [aria-expanded="true"] .menu__icon--close {
+    display: block;
+}
+
+.navbar-dark .navbar-toggler {
+    color: #ffffff;
+    border: #092B52;
+}
+
 h5 {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
