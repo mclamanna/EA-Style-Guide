@@ -9,18 +9,18 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300, 400, 500, 700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400, 700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-    <script src="JS/jquery.min.js"></script>
-    <script src="JS/popper.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
     <title>EA Style Guide</title>
     <!-- Bootstrap core CSS -->
-    <link href="CSS/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
-    <link href="CSS/mdb.min.css" rel="stylesheet">
+    <link href="css/mdb.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="CSS/StyleGuide.css" rel="stylesheet">
+    <link href="css/StyleGuide.css" rel="stylesheet">
     <!-- Additional JS -->
-    <script type="text/javascript" src='JS/clipboard.js'></script>
-    <script type="text/javascript" src='JS/clipboardtwo.js'></script>
+    <script type="text/javascript" src='js/clipboard.js'></script>
+    <script type="text/javascript" src='js/clipboardtwo.js'></script>
     <script>
         window.onbeforeunload = function () {
             window.scrollTo(0, 0);
@@ -67,7 +67,7 @@
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
-                <font color="#ffffff">Last Update: 11/01/2018</font>
+                <font color="#ffffff">Last Update: 01/07/2019</font>
             </ul>
         </div>
     </nav>
@@ -121,13 +121,13 @@
                             </div>
                             <figure class="highlight">
                                 <pre><code class="language-html" data-lang="html">.btn-primary {
-color #ffffff;
+color: #ffffff;
 background-color: #207AB5;
 border-color: #207AB5;
 }
 <p></p>
 .btn-primary:hover {
-color #ffffff;
+colors: #ffffff;
 background-color: #3D9DDC;
 border-color: #3D9DDC;
 }</code></pre>
@@ -267,14 +267,14 @@ background-color: #0D47A1;
                     used to eliminate items from the set, creating a smaller and more relevant subset of data.
                     <p></p>
                     Bootstrap provides several form control styles, detailed information can be found at the
-                    <a href="https://getbootstrap.com/docs/4.1/components/forms/"
+                    <a href="https://getbootstrap.com/docs/4.2/components/forms/"
                         target="_blank">Official Bootstrap Site</a>
                     <p></p>
 
                     <h2>Radio Buttons</h2>
                     Radio buttons are for selecting one option from many. On page load one option is selected (always) by default. We use
                     <a
-                        href="https://getbootstrap.com/docs/4.1/components/forms/#custom-forms" target="_blank">Custom Forms</a> for more cross browser consistency.
+                        href="https://getbootstrap.com/docs/4.2/components/forms/#custom-forms" target="_blank">Custom Forms</a> for more cross browser consistency.
                         <p></p>
                         <div class="container">
                             <div class="row">
@@ -381,7 +381,7 @@ background-color: #0D47A1;
                         </figure>
                         <h2>Checkboxes</h2>
                         Checkboxes are for selecting one or several options in a list. We continue to use
-                        <a href="https://getbootstrap.com/docs/4.1/components/forms/#custom-forms"
+                        <a href="https://getbootstrap.com/docs/4.2/components/forms/#custom-forms"
                             target="_blank">Custom Forms</a> for more cross browser consistency when creating checkboxes.
                         <p></p>
                         <div class="container">
@@ -433,7 +433,7 @@ background-color: #0D47A1;
                         <h2>Select/Dropdown Menu</h2>
                         Select menu (or dropdown) is used when a number of options is greater than 4 (with some exceptions*) and fewer than 15**.
                         Detailed information can be found at the
-                        <a href="https://getbootstrap.com/docs/4.1/components/forms/#select-menu"
+                        <a href="https://getbootstrap.com/docs/4.2/components/forms/#select-menu"
                             target="_blank">Official Bootstrap Site</a>.
                         <p></p>
                         <ul class="str">In filters with a parent-child relationship (when a number of options in one filter determined by
@@ -519,7 +519,7 @@ background-color: #0D47A1;
                     on mobile devices.
                     <p></p>
                     More detailed information on tooltips not covered below can be found at the
-                    <a href="https://getbootstrap.com/docs/4.1/components/tooltips/"
+                    <a href="https://getbootstrap.com/docs/4.2/components/tooltips/"
                         target="_blank">Official Bootstrap Site</a>
                     <p></p>
                     <center>
@@ -644,7 +644,7 @@ color: #0D47A1;
                     Used to provide more information to the user then a tooltip and must be clicked/touched to open and close, no hover is used.
                     <p></p>
                     More detailed information on popovers not covered below can be found at the
-                    <a href="https://getbootstrap.com/docs/4.1/components/popovers/"
+                    <a href="https://getbootstrap.com/docs/4.2/components/popovers/"
                         target="_blank">Official Bootstrap Site</a>
                     <p></p>
                     <section class="row text-center placeholders icons3">
@@ -719,6 +719,10 @@ color: #0D47A1;
                 <div class="col-sm-12 ml-sm-auto col-md-10 pt-4">
                     <h1>Bar Charts</h1>
                     IV bar chart recommendations.
+                    <p></p>
+                    <i class="fas fa-link"></i> <a href="samples/SimpleChartDemo/" target="_blank"> Bar chart live demo 1</a>
+                    <p></p>
+                    <i class="fas fa-link"></i> <a href="samples/PMEFailedPiecesDemo/" target="_blank"> Bar chart live demo 2</a>
                     <section class="row placeholders icons">
                         <div class="col-12 col-sm-12 placeholder">
 
@@ -730,11 +734,11 @@ color: #0D47A1;
                         </div>
                         <div class="col-6 col-sm-6 placeholder barcharttop">
                           
-                            <a href="Images/intdesktop.svg" target="_blank"><img class="img-fluid" src="Images/intdesktop.svg" width="450px"></a>
+                            <a href="images/intdesktop.svg" target="_blank"><img class="img-fluid" src="images/intdesktop.svg" width="450px"></a>
                            </div>
                         <div class="col-6 col-sm-6 placeholder2 bar2chart">
                               
-                            <a href="Images/intdesktop2.svg" target="_blank"><img class="img-fluid" src="Images/intdesktop2.svg" width="450px"></a>
+                            <a href="images/intdesktop2.svg" target="_blank"><img class="img-fluid" src="images/intdesktop2.svg" width="450px"></a>
                         </div>
                         <hr>
                         <div class="col-12 col-sm-12 placeholder">
@@ -758,14 +762,14 @@ color: #0D47A1;
                             </div>
                             <div class="col-6 col-sm-6 placeholder barcharttop">
                           
-                                    <a href="Images/intmobile.svg" target="_blank"><img class="img-fluid" src="Images/intmobile.svg" width="450px" alt="font image"></a>
+                                    <a href="images/intmobile.svg" target="_blank"><img class="img-fluid" src="images/intmobile.svg" width="450px" alt="font image"></a>
                                    </div>
                                 <div class="col-6 col-sm-6 placeholder2">
                                       
-                                    <a href="Images/intmobile2.svg" target="_blank"><img class="img-fluid" src="Images/intmobile2.svg" width="450px" alt="font image"></a>
+                                    <a href="images/intmobile2.svg" target="_blank"><img class="img-fluid" src="images/intmobile2.svg" width="450px" alt="font image"></a>
                                 </div>
                                 <div class="col-12 col-sm-12 placeholder barcharttop">
-                                        <a href="Images/intmobile3.svg" target="_blank"><img class="img-fluid" src="Images/intmobile3.svg" width="650px" alt="font image"></a>
+                                        <a href="images/intmobile3.svg" target="_blank"><img class="img-fluid" src="images/intmobile3.svg" width="650px" alt="font image"></a>
                                        </div>
                                        <div class="col-6 col-sm-6 placeholder barcharttop">
                                            <ul>
@@ -777,7 +781,7 @@ color: #0D47A1;
                                            <i class="fas fa-search fa-lg"></i> Search (fa-search) – visible on landing<p></p>
                                            <i class="fas fa-sort fa-lg"></i> Sort (fa-sort) – visible on landing (if needed)</div>
                                            <div class="col-6 col-sm-6 placeholder barcharttop">
-                                           <a href="Images/intmobile4.svg" target="_blank"><img class="img-fluid" src="Images/intmobile4.svg" width="150px" alt="font image"></a>
+                                           <a href="images/intmobile4.svg" target="_blank"><img class="img-fluid" src="images/intmobile4.svg" width="150px" alt="font image"></a>
                                            </div>
                                            <div class="col-12 col-sm-12 placeholder">
 
@@ -786,10 +790,10 @@ color: #0D47A1;
                                                             Bar charts displaying multiple data sets
                                                     </h2></center></div>
                                                     <div class="col-12 col-sm-12 placeholder barcharttop" align="center">
-                                                            <img class="img-fluid" src="Images/intmobile5.svg" width="450px" alt="font image"></a>
+                                                            <img class="img-fluid" src="images/intmobile5.svg" width="450px" alt="font image"></a>
                                                             </div>
                                                             <div class="col-12 col-sm-12 placeholder barcharttop" align="center">
-                                                                    <a href="Images/intmobile6.svg" target="_blank"><img class="img-fluid" src="Images/intmobile6.svg" width="850px" alt="font image"></a>    
+                                                                    <a href="images/intmobile6.svg" target="_blank"><img class="img-fluid" src="images/intmobile6.svg" width="850px" alt="font image"></a>    
                                                                     </div>
  
                                            
@@ -800,13 +804,13 @@ color: #0D47A1;
     </section>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="JS/bootstrap.bundle.min.js"></script>
-    <script src="JS/bootstrap.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.js"></script>
     <!-- Plugin JavaScript -->
-    <script src="JS/jquery.easing.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
     <!-- Custom JavaScript for this theme -->
-    <script src="JS/scrolling-nav.js"></script>
-    <script src="JS/mdb.min.js"></script>
+    <script src="js/scrolling-nav.js"></script>
+    <script src="js/mdb.min.js"></script>
 
 </body>
 

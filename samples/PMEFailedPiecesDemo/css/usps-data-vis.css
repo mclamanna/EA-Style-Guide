@@ -1,0 +1,52 @@
+html {
+	font-size: 1em;
+}
+.bar-chart .bar-label {
+	font-size: 0.9rem;
+}
+h5 {
+	margin-top: 0.8rem;
+}
+
+.inner-addon {
+  position: relative;
+}
+
+.inner-addon i {
+  position: absolute;
+  padding: 0.5rem;
+  pointer-events: none;
+}
+
+.inner-addon i.fa-times {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.left-addon i {
+  top: 0px;
+  left: 0px;
+}
+
+.right-addon i {
+  top: 0px;
+  right: 0px;
+}
+
+.left-addon input {
+  padding-left: 2rem;
+}
+
+.right-addon input {
+  padding-right: 2rem;
+}
+
+.sort-desc i.sort-desc,
+.sort-asc i.sort-asc {
+  display: inline;
+}
+
+.sort-desc i.sort-asc,
+.sort-asc i.sort-desc {
+  display: none;
+}

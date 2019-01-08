@@ -48,6 +48,12 @@ h6 {
     width: 50px;
 }
 
+.navbarText {
+    float: right;
+    margin-left: .2rem;
+    text-decoration: inherit;
+}
+
 #projectBranding {
     margin-left: 10px;
     line-height: 1.32rem;
@@ -102,6 +108,7 @@ h6 {
     vertical-align: top;
     overflow: hidden;
 }
+
 .svg-content {
     display: inline-block;
     position: absolute;
