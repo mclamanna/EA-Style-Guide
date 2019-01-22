@@ -26,6 +26,10 @@ ul.str2:before {
     display: block;
 }
 
+.popover {
+    z-index: auto;
+}
+
 .textinfo {
     font-size: 1.5rem;
     color: #ffffff;
