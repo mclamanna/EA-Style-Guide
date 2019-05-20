@@ -169,6 +169,17 @@ h8 {
     width: 34rem;
 }
 
+.headerTemplateEA {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.EA-logo {
+    height: 2.1rem;
+    margin-left: 1.875rem;
+}
+
 .headerTemplate .iv-logo {
     height: 2.1rem;
     margin-left: 1.875rem;
