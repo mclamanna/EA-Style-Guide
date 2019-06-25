@@ -96,6 +96,9 @@
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="#barcharts">Bar Charts</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#datatables">DataTables</a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -795,13 +798,83 @@ color: #0D47A1;
                                                             <div class="col-12 col-sm-12 placeholder barcharttop" align="center">
                                                                     <a href="images/intmobile6.svg" target="_blank"><img class="img-fluid" src="images/intmobile6.svg" width="850px" alt="font image"></a>    
                                                                     </div>
+                                                                    </section>
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                            </section>
+
+                                     <section id="datatables">
+                                            <div class="container">
+                                                    <div class="row">
+                                                    <div class="col-sm-12 ml-sm-auto col-md-10 pt-4">
+                                                            <h1>DataTables</h1>
+                                                    Example of DataTables used within a visual can be found <a href="http://ea.usps.gov/EAStyleGuide/Samples/PMEFailedPiecesDemo/">here</a>.
+                                                    <p></p>
+                                                    <div class="container">
+                                                            <div class="row">
+                                                    <div class="col-6">
+                                                            <img class="img-fluid" src="images/datatable.svg" width="850px" alt="font image"></a>    
+                                                            </div>
+
+                                                            <div class="col-6">
+                                                                    <div class="bd-clipboard">
+                                                                            <span class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</span>
+                                                                        </div>
+                                                                        <figure class="highlight">
+                                                                            <pre><code class="language-html" data-lang="html"><span class="nt">&lt;link </span><span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"css/datatables.min.css"</span><span class="nt">&gt;</span></code></pre>
+                                                                        </figure>
+
+                                                                        <div class="bd-clipboard">
+                                                                                <span class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</span>
+                                                                            </div>
+                                                                            <figure class="highlight">
+                                                                                <pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"js/datatable.mim.js"</span><span class="nt">&gt;</span><span class="nt">&lt;/script</span><span class="nt">&gt;</span></code></pre>
+                                                      
+                                                                            </figure>
+                                                                            <div class="bd-clipboard">
+                                                                                    <span class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</span>
+                                                                                </div>
+                                                                                <figure class="highlight">
+                                                                                    <pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"js/modal-data-table.js"</span><span class="nt">&gt;</span><span class="nt">&lt;/script</span><span class="nt">&gt;</span></code></pre>
+                                                          
+                                                                                </figure>
+                                                                                <div class="bd-clipboard">
+                                                                                        <span class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</span>
+                                                                                    </div>
+                                                                                <figure class="highlight2">
+<pre><code class="language-html" data-lang="html"><span class="nt">// initialize chart data table/modal dialog
+var chartDataTable = modalDataTable();
+charDataTable.init('chart-table-modal',
+[
+'Item',
+'Failed Piece Count',
+'$ At Risk',
+'Estimated & At Risk'
+],function(chart,d){
+return[
+chart.descriptionAccessor()(d),
+d3.format(',d')(d.value.Total),
+d3.format('$,d')(d.value.PostageAmt),
+];
+},function(d){
+return d.value.Total !==0;
+},
+true);
+</span></code></pre>
+                                                                                    </figure>
+                                                                    </div>
+                                                     </div>
+                                                     </div>
+                                                     <p></p>
+                                                Currently we are using the DataTable plug-in located in the <a href="resources.html">Resources</a> section.
+                                        </div>
+                                    </div>
+                                </div>
+                         </section>
  
                                            
-                    </section>
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
     <!-- Bootstrap core JavaScript -->
     <script src="js/bootstrap.bundle.min.js"></script>
