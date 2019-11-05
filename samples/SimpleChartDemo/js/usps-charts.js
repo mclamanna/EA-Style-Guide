@@ -1,8 +1,8 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('d3')) :
-  typeof define === 'function' && define.amd ? define(['exports', 'd3'], factory) :
-  (factory((global.uspsCharts = {}),global.d3));
-}(this, (function (exports,d3$1) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('d3'), require('d3-tip')) :
+  typeof define === 'function' && define.amd ? define(['exports', 'd3', 'd3-tip'], factory) :
+  (factory((global.uspsCharts = {}),global.d3,null));
+}(this, (function (exports,d3$1,d3Tip) { 'use strict';
 
   var _extends = Object.assign || function (target) {
     for (var i = 1; i < arguments.length; i++) {
@@ -82,9 +82,20 @@
 
   		if (_svg) {
   			var bBox = _parent && _parent.node() && _parent.node().getBoundingClientRect();
+  			var style = _parent && _parent.node() && window.getComputedStyle(_parent.node());
+
+  			var hPadding = parseInt(style.getPropertyValue('padding-left')) || 0;
+  			hPadding += parseInt(style.getPropertyValue('padding-right')) || 0;
+
+  			var vPadding = parseInt(style.getPropertyValue('padding-top')) || 0;
+  			vPadding += parseInt(style.getPropertyValue('padding-bottom')) || 0;
 
   			_width = width || bBox && bBox.width || 400;
   			_height = height || bBox && bBox.height || 300;
+
+  			_width -= hPadding;
+  			_height -= vPadding;
+
   			_svg.transition().attr('width', _width).attr('height', _height);
   		}
 
@@ -119,8 +130,13 @@
   		this.naturalWidth = function () {
   			if (_svg) {
   				var bBox = _parent && _parent.node() && _parent.node().getBoundingClientRect();
+  				var style = _parent && _parent.node() && window.getComputedStyle(_parent.node());
+
+  				var padding = parseInt(style.getPropertyValue('padding-left')) || 0;
+  				padding += parseInt(style.getPropertyValue('padding-right')) || 0;
 
   				_width = bBox && bBox.width || 400;
+  				_width -= padding;
   				_svg.transition().attr('width', _width);
   			}
   			return this;
@@ -185,141 +201,6 @@
   	});
 
   	return hasMarginsStamp;
-  }
-
-  function hasDataAccessorsFactory() {
-
-  	var init = function init(_ref) {
-  		var data = _ref.data,
-  		    keyAccessor = _ref.keyAccessor,
-  		    descriptorAccessor = _ref.descriptorAccessor,
-  		    metricAccessor = _ref.metricAccessor,
-  		    metric2Accessor = _ref.metric2Accessor,
-  		    labelAccessor = _ref.labelAccessor;
-
-  		var _data = [{ x: 'A', y: 0 }, { x: 'B', y: 1 }],
-  		    // dummy values
-  		_keyAccessor = function _keyAccessor(d) {
-  			return d.x;
-  		},
-  		    _descriptorAccessor = function _descriptorAccessor(d) {
-  			return _keyAccessor(d);
-  		},
-  		    _metricAccessor = function _metricAccessor(d) {
-  			return d.y;
-  		},
-  		    _metric2Accessor = function _metric2Accessor(d) {
-  			return d.y || 1;
-  		},
-  		    _labelAccessor = function _labelAccessor(d) {
-  			return _descriptorAccessor(d);
-  		};
-
-  		// public members, privileged methods
-
-  		/** Assume passing in an array of data objects **/
-  		this.data = function (_) {
-  			if (!arguments.length) {
-  				return _data;
-  			}
-  			if (_ instanceof Array) {
-  				_data = _;
-  			} else if (_ instanceof Object && !(_ instanceof Function)) {
-  				_data = [_];
-  			} else {
-  				console.log('ERROR has-data-accessors: Invalid object passed to data(). Must be an array.');
-  			}
-  			return this;
-  		};
-
-  		/** Following assume passing in a function **/
-
-  		this.keyAccessor = function (_) {
-  			if (!arguments.length) {
-  				return _keyAccessor;
-  			}
-  			if (_ instanceof Function) {
-  				_keyAccessor = _.bind(this);
-  			} else {
-  				console.log('ERROR has-data-accessors: Invalid object passed to keyAccessor(). Must be a function.');
-  			}
-  			return this;
-  		};
-
-  		this.descriptorAccessor = function (_) {
-  			if (!arguments.length) {
-  				return _descriptorAccessor;
-  			}
-  			if (_ instanceof Function) {
-  				_descriptorAccessor = _.bind(this);
-  			} else {
-  				console.log('ERROR has-data-accessors: Invalid object passed to descriptorAccessor(). Must be a function.');
-  			}
-  			return this;
-  		};
-
-  		this.metricAccessor = function (_) {
-  			if (!arguments.length) {
-  				return _metricAccessor;
-  			}
-  			if (_ instanceof Function) {
-  				_metricAccessor = _.bind(this);
-  			} else {
-  				console.log('ERROR has-data-accessors: Invalid object passed to metricAccessor(). Must be a function.');
-  			}
-  			return this;
-  		};
-
-  		this.metric2Accessor = function (_) {
-  			if (!arguments.length) {
-  				return _metric2Accessor;
-  			}
-  			if (_ instanceof Function) {
-  				_metric2Accessor = _.bind(this);
-  			} else {
-  				console.log('ERROR has-data-accessors: Invalid object passed to metric2Accessor(). Must be a function.');
-  			}
-  			return this;
-  		};
-
-  		this.labelAccessor = function (_) {
-  			if (!arguments.length) {
-  				return _labelAccessor;
-  			}
-  			if (_ instanceof Function) {
-  				_labelAccessor = _.bind(this);
-  			} else {
-  				console.log('ERROR has-data-accessors: Invalid object passed to labelAccessor(). Must be a function.');
-  			}
-  			return this;
-  		};
-
-  		/** Initialize values **/
-  		if (data) {
-  			this.data(data);
-  		}
-  		if (keyAccessor) {
-  			this.keyAccessor(keyAccessor);
-  		}
-  		if (descriptorAccessor) {
-  			this.descriptorAccessor(descriptorAccessor);
-  		}
-  		if (metricAccessor) {
-  			this.metricAccessor(metricAccessor);
-  		}
-  		if (metric2Accessor) {
-  			this.metric2Accessor(metric2Accessor);
-  		}
-  		if (labelAccessor) {
-  			this.labelAccessor(labelAccessor);
-  		}
-  	}; // end init
-
-  	var hasDataAccessorsStamp = compose({
-  		initializers: [init]
-  	});
-
-  	return hasDataAccessorsStamp;
   }
 
   /* odd utility functions */
@@ -447,9 +328,197 @@
   	}
   }
 
-  function hasDataWindowFactory() {
+  function getTip() {
+  	if (typeof d3tip !== "undefined") {
+  		return d3tip;
+  	} else if (typeof d3.tip !== "undefined") {
+  		return d3.tip;
+  	} else {
+  		return null;
+  	}
+  }
 
-  	var dummyData = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
+  function hasDataAccessorsFactory() {
+
+  	var init = function init(_ref) {
+  		var data = _ref.data,
+  		    keyAccessor = _ref.keyAccessor,
+  		    descriptorAccessor = _ref.descriptorAccessor,
+  		    metricAccessor = _ref.metricAccessor,
+  		    metric2Accessor = _ref.metric2Accessor,
+  		    labelAccessor = _ref.labelAccessor;
+
+  		var _data = [{ x: 'A', y: 0 }, { x: 'B', y: 1 }],
+  		    // dummy values
+  		_keyAccessor = function _keyAccessor(d) {
+  			return d.x;
+  		},
+  		    _descriptorAccessor = function _descriptorAccessor(d) {
+  			return _keyAccessor(d);
+  		},
+  		    _metricAccessor = function _metricAccessor(d) {
+  			return d.y;
+  		},
+  		    _metric2Accessor = function _metric2Accessor(d) {
+  			return d.y || 1;
+  		},
+  		    _labelAccessor = function _labelAccessor(d) {
+  			return _descriptorAccessor(d);
+  		},
+  		    _continuousDomain;
+
+  		// public members, privileged methods
+
+  		/** Assume passing in an array of data objects **/
+  		this.data = function (_) {
+  			if (!arguments.length) {
+  				return _data;
+  			}
+  			if (_ instanceof Array) {
+  				_data = _;
+  			} else if (_ instanceof Object && !(_ instanceof Function)) {
+  				_data = [_];
+  			} else {
+  				console.log('ERROR has-data-accessors: Invalid object passed to data(). Must be an array.');
+  			}
+  			return this;
+  		};
+
+  		/** Following assume passing in a function **/
+
+  		this.keyAccessor = function (_) {
+  			if (!arguments.length) {
+  				return _keyAccessor;
+  			}
+  			if (_ instanceof Function) {
+  				_keyAccessor = _.bind(this);
+  			} else {
+  				console.log('ERROR has-data-accessors: Invalid object passed to keyAccessor(). Must be a function.');
+  			}
+  			return this;
+  		};
+
+  		this.descriptorAccessor = function (_) {
+  			if (!arguments.length) {
+  				return _descriptorAccessor;
+  			}
+  			if (_ instanceof Function) {
+  				_descriptorAccessor = _.bind(this);
+  			} else {
+  				console.log('ERROR has-data-accessors: Invalid object passed to descriptorAccessor(). Must be a function.');
+  			}
+  			return this;
+  		};
+
+  		this.metricAccessor = function (_) {
+  			if (!arguments.length) {
+  				return _metricAccessor;
+  			}
+  			if (_ instanceof Function) {
+  				_metricAccessor = _.bind(this);
+  			} else {
+  				console.log('ERROR has-data-accessors: Invalid object passed to metricAccessor(). Must be a function.');
+  			}
+  			return this;
+  		};
+
+  		this.metric2Accessor = function (_) {
+  			if (!arguments.length) {
+  				return _metric2Accessor;
+  			}
+  			if (_ instanceof Function) {
+  				_metric2Accessor = _.bind(this);
+  			} else {
+  				console.log('ERROR has-data-accessors: Invalid object passed to metric2Accessor(). Must be a function.');
+  			}
+  			return this;
+  		};
+
+  		this.labelAccessor = function (_) {
+  			if (!arguments.length) {
+  				return _labelAccessor;
+  			}
+  			if (_ instanceof Function) {
+  				_labelAccessor = _.bind(this);
+  			} else {
+  				console.log('ERROR has-data-accessors: Invalid object passed to labelAccessor(). Must be a function.');
+  			}
+  			return this;
+  		};
+
+  		this.continuousDomain = function (_) {
+  			if (!arguments.length) {
+  				return _continuousDomain;
+  			}
+  			_continuousDomain = _;
+  			return this;
+  		};
+
+  		this.domain = function () {
+  			var data = this.data();
+  			if (data) {
+  				if (this.continuousDomain()) {
+  					var extent = this.domainExtent();
+  					var dom = [];
+  					if (extent[0] instanceof Date) {
+  						// date
+  						for (var d = new Date(extent[0]); d <= extent[1]; d.setDate(d.getDate() + 1)) {
+  							dom.push(new Date(d));
+  						}
+  					} else {
+  						// assume integer
+  						for (var i = extent[0]; i <= extent[1]; i++) {
+  							dom.push(i);
+  						}
+  					}
+  					return dom;
+  				} else {
+  					// ordinal
+  					return data.map(this.keyAccessor());
+  				}
+  			} else {
+  				return null;
+  			}
+  		};
+
+  		this.domainExtent = function () {
+  			var data = this.data();
+  			if (data) {
+  				return d3$1.extent(data.map(this.keyAccessor()));
+  			} else {
+  				return null;
+  			}
+  		};
+
+  		/** Initialize values **/
+  		if (data) {
+  			this.data(data);
+  		}
+  		if (keyAccessor) {
+  			this.keyAccessor(keyAccessor);
+  		}
+  		if (descriptorAccessor) {
+  			this.descriptorAccessor(descriptorAccessor);
+  		}
+  		if (metricAccessor) {
+  			this.metricAccessor(metricAccessor);
+  		}
+  		if (metric2Accessor) {
+  			this.metric2Accessor(metric2Accessor);
+  		}
+  		if (labelAccessor) {
+  			this.labelAccessor(labelAccessor);
+  		}
+  	}; // end init
+
+  	var hasDataAccessorsStamp = compose({
+  		initializers: [init]
+  	});
+
+  	return hasDataAccessorsStamp;
+  }
+
+  function hasDataWindowFactory() {
 
   	var init = function init(_ref) {
   		var window = _ref.window,
@@ -459,10 +528,10 @@
 
   		var that = this;
 
-  		// if data() function exists and returns a value, return the length of that
-  		// otherwise default to 1
-  		var _dataLength = function _dataLength() {
-  			return that.data && that.data() && that.data().length || dummyData.length;
+  		// size of data domain
+  		var _domainSize = function _domainSize() {
+  			var dom = that.domain();
+  			return dom && dom.length || 0;
   		};
 
   		var normalizeWindow = function normalizeWindow(window) {
@@ -511,23 +580,23 @@
   						}
 
   			// assign normalized input values to _window, default to existing value or reasonable default value
-  			_window.size = isInt(window.size) ? window.size : isInt(_window.size) ? _window.size : _dataLength();
+  			_window.size = isInt(window.size) ? window.size : isInt(_window.size) ? _window.size : _domainSize();
   			_window.lower = isInt(window.lower) ? window.lower : isInt(_window.lower) ? _window.lower : 0;
   			_window.upper = isInt(window.upper) ? window.upper : isInt(_window.upper) ? _window.upper : _window.lower + _window.size;
 
   			/** Correct and adjust values if necessary **/
 
   			// lower bound must be between zero and max length - 1
-  			_window.lower = Math.max(0, Math.min(_window.lower, _dataLength() - 1));
+  			_window.lower = Math.max(0, Math.min(_window.lower, _domainSize() - 1));
 
   			// set upper bound relative to lower based on window size,
   			// but not greater than _data.length
-  			_window.upper = Math.min(_window.lower + _window.size, _dataLength());
+  			_window.upper = Math.min(_window.lower + _window.size, _domainSize());
 
   			// if upper is at max and there's more data than window size
   			// make sure we are showing a full windows worth of data
   			// by adjusting the lower bound
-  			if (_window.upper == _dataLength() && _dataLength() > _window.size && _window.upper - _window.lower < _window.size) {
+  			if (_window.upper == _domainSize() && _domainSize() > _window.size && _window.upper - _window.lower < _window.size) {
   				_window.lower = _window.upper - _window.size;
   			}
   		};
@@ -582,17 +651,35 @@
   		};
 
   		this.windowGoBottom = function () {
-  			this.windowUpperBound(_dataLength());
+  			this.windowUpperBound(_domainSize());
   			return this;
   		};
 
   		this.windowGetData = function () {
-  			var theData = this.data && this.data() || dummyData;
-  			if (theData.length <= this.windowSize()) {
+  			var theData = this.data && this.data() || [];
+  			if (_domainSize() <= this.windowSize()) {
+  				// return all data
   				return theData;
+  			} else if (this.continuousDomain()) {
+  				// sparse data: slice by data value, not index
+  				var keyAcc = this.keyAccessor();
+  				var domainLowerBound = this.domain()[this.windowLowerBound()];
+  				var domainUpperBound = this.domain()[this.windowUpperBound() - 1]; // need inclusive values, so take index 1 less than upper bound
+  				return theData.filter(function (d) {
+  					return keyAcc(d) >= domainLowerBound && keyAcc(d) <= domainUpperBound;
+  				});
+  			} else {
+  				// 1-1 data to domain, so straight slice by index
+  				return theData.slice(this.windowLowerBound(), this.windowUpperBound());
   			}
-  			//normalizeWindow({});
-  			return theData.slice(this.windowLowerBound(), this.windowUpperBound());
+  		};
+
+  		this.windowGetDomain = function () {
+  			if (_domainSize() <= this.windowSize()) {
+  				return this.domain();
+  			} else {
+  				return this.domain().slice(this.windowLowerBound(), this.windowUpperBound());
+  			}
   		};
 
   		// init values
@@ -605,17 +692,18 @@
   		}
   	}; // end init
 
-  	var hasDataWindowStamp = compose({
+  	// factory descriptor
+  	var factoryDesc = {
   		initializers: [init]
-  	});
+  	};
 
-  	return hasDataWindowStamp;
+  	return compose(hasDataAccessorsFactory()).compose(factoryDesc);
   }
 
   /* UX standards & constants */
 
   function isMobileDisplay() {
-  	return d3.min([screen.width, screen.height]) < 1200;
+  	return 'ontouchstart' in window || navigator.MaxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
   }
 
   var UXConstants = {
@@ -654,8 +742,8 @@
   	},
 
   	scrollBar: {
-  		widthForDesktop: 12, //17
-  		widthForMobile: 20, //29
+  		widthForDesktop: 12,
+  		widthForMobile: 26,
 
   		width: function width() {
   			return isMobileDisplay() ? UXConstants.scrollBar.widthForMobile : UXConstants.scrollBar.widthForDesktop;
@@ -677,7 +765,8 @@
   		sliderHoverColor: '#A1A1A1',
   		sliderPressColor: '#808080',
 
-  		sliderMargin: 2
+  		sliderMargin: 3,
+  		sliderPadding: 1
   	}
   };
 
@@ -775,18 +864,39 @@
   			};
   		}
 
-  		function updatePosition(p) {
+  		function redrawSlider() {
+  			//
+  			_lengthScale.domain([0, _total]);
+  			_inverseScale.range([0, _total]);
+
   			// Sanity check...
+  			var p = _pos;
   			if (p < 0) p = 0;
-  			if (p > total - pageSize) p = total - pageSize;
+  			if (p > _total - _pageSize) p = _total - _pageSize;
 
-  			_pos = p;
+  			if (_pos !== p) {
+  				updatePosition(p);
+  			} else {
+  				drawSlider();
+  			}
+  		}
 
+  		function drawSlider() {
+  			//
   			_root.select('.scroll-area-prev').attr('height', _lengthScale(_pos));
 
   			_root.select('.scroll-area-next').attr('y', _lengthScale(_pos + _pageSize)).attr('height', _lengthScale(_total - (_pos + _pageSize)));
 
-  			_root.select('.scroll-slider').attr('y', _lengthScale(_pos));
+  			_root.select('.scroll-slider').attr('y', _lengthScale(_pos)).attr('height', _lengthScale(_pageSize));
+  		}
+
+  		function updatePosition(p) {
+  			// Sanity check...
+  			if (p < 0) p = 0;
+  			if (p > _total - _pageSize) p = _total - _pageSize;
+  			_pos = p;
+
+  			drawSlider(); //
 
   			_dispatcher.call('changePosition', this, Math.round(_pos));
   		}
@@ -823,13 +933,13 @@
   			sliderArea.append('rect').attr('x', 0).attr('y', 0).attr('width', _width).attr('height', _barLength).attr('fill', UXConstants.scrollBar.backgroundColor);
 
   			// area before slider
-  			sliderArea.append('rect').attr('class', 'scroll-area-prev').attr('transform', 'translate(' + UXConstants.scrollBar.sliderMargin + ',0)').attr('x', 0).attr('y', 0).attr('width', _width - 2 * UXConstants.scrollBar.sliderMargin).attr('height', _lengthScale(_pos)).attr('fill', UXConstants.scrollBar.backgroundColor).on('click', clickUpdatePostion(-pageSize));
+  			sliderArea.append('rect').attr('class', 'scroll-area-prev').attr('transform', 'translate(' + UXConstants.scrollBar.sliderPadding + ',0)').attr('x', 0).attr('y', 0).attr('width', _width - 2 * UXConstants.scrollBar.sliderPadding).attr('height', _lengthScale(_pos)).attr('fill', UXConstants.scrollBar.backgroundColor).on('click', clickUpdatePostion(-_pageSize));
 
   			// slider
-  			sliderArea.append('rect').attr('class', 'scroll-slider').attr('transform', 'translate(' + UXConstants.scrollBar.sliderMargin + ',0)').attr('x', 0).attr('y', _lengthScale(_pos)).attr('width', _width - 2 * UXConstants.scrollBar.sliderMargin).attr('height', _lengthScale(_pageSize)).attr('fill', UXConstants.scrollBar.sliderColor).on('mouseover', onEventChangeFill(UXConstants.scrollBar.sliderHoverColor)).on('mouseout', onEventChangeFill(UXConstants.scrollBar.sliderColor)).on('mousedown', onEventChangeFill(UXConstants.scrollBar.sliderPressColor)).on('mouseup', onEventChangeFill(UXConstants.scrollBar.sliderColor)).call(dragf);
+  			sliderArea.append('rect').attr('class', 'scroll-slider').attr('transform', 'translate(' + UXConstants.scrollBar.sliderPadding + ',0)').attr('x', 0).attr('y', _lengthScale(_pos)).attr('width', _width - 2 * UXConstants.scrollBar.sliderPadding).attr('height', _lengthScale(_pageSize)).attr('fill', UXConstants.scrollBar.sliderColor).on('mouseover', onEventChangeFill(UXConstants.scrollBar.sliderHoverColor)).on('mouseout', onEventChangeFill(UXConstants.scrollBar.sliderColor)).on('mousedown', onEventChangeFill(UXConstants.scrollBar.sliderPressColor)).on('mouseup', onEventChangeFill(UXConstants.scrollBar.sliderColor)).call(dragf);
 
   			// area after slider
-  			sliderArea.append('rect').attr('class', 'scroll-area-next').attr('transform', 'translate(' + UXConstants.scrollBar.sliderMargin + ',0)').attr('x', 0).attr('y', _lengthScale(_pos + _pageSize)).attr('width', _width - 2 * UXConstants.scrollBar.sliderMargin).attr('height', _lengthScale(_total - (_pos + _pageSize))).attr('fill', UXConstants.scrollBar.backgroundColor).on('click', clickUpdatePostion(pageSize));
+  			sliderArea.append('rect').attr('class', 'scroll-area-next').attr('transform', 'translate(' + UXConstants.scrollBar.sliderPadding + ',0)').attr('x', 0).attr('y', _lengthScale(_pos + _pageSize)).attr('width', _width - 2 * UXConstants.scrollBar.sliderPadding).attr('height', _lengthScale(_total - (_pos + _pageSize))).attr('fill', UXConstants.scrollBar.backgroundColor).on('click', clickUpdatePostion(_pageSize));
 
   			var prevButton = scrollBar.append('g').attr('class', 'scroll-prev').on('mouseover', buttonMouseOver).on('mouseout', buttonMouseOut).on('mousedown', buttonMouseDown).on('mouseup', buttonMouseUp).on('touchstart', buttonTouchStart).on('touchend', buttonTouchEnd(-1)).on('click', clickUpdatePostion(-1));
 
@@ -840,6 +950,14 @@
   			drawArrowButton(nextButton);
   		}
 
+  		// new
+  		function setPageSize(s) {
+  			_pageSize = s;
+  		}
+  		function setTotal(t) {
+  			_total = t;
+  		}
+
   		// public members
   		// privileged methods
   		this.draw = function () {
@@ -848,11 +966,30 @@
   			drawScrollBar();
   			return this;
   		};
+  		this.redraw = function () {
+  			redrawSlider();
+  			return this;
+  		};
   		this.position = function (_) {
   			if (!arguments.length) {
   				return _pos;
   			}
   			updatePosition(_);
+  			return this;
+  		};
+  		// new
+  		this.pageSize = function (_) {
+  			if (!arguments.length) {
+  				return _pageSize;
+  			}
+  			setPageSize(_);
+  			return this;
+  		};
+  		this.total = function (_) {
+  			if (!arguments.length) {
+  				return _total;
+  			}
+  			setTotal(_);
   			return this;
   		};
   		this.positionChangePx = function (px) {
@@ -941,7 +1078,7 @@
 
   		var buildAxis = function buildAxis() {
   			// only need x axis at bottom of chart
-  			_xAxis = d3$1.axisBottom(_xScale).tickFormat(d3$1.format('.2~s'));
+  			_xAxis = d3$1.axisBottom(_xScale).ticks(4, d3$1.format('.2~s'));
   		};
 
   		var buildSVG = function () {
@@ -978,12 +1115,12 @@
   				toggleSelected(d);
   				_chart.redraw();
   			}).on('mouseover', function (d, i) {
-  				if (d3$1.tip && _tip) {
+  				if (getTip() && _tip) {
   					d3$1.select(this).select('.visible-bar').call(highlightBarStyle(true));
   					_tip.show(d, i, this);
   				}
   			}).on('mouseout', function (d, i) {
-  				if (d3$1.tip && _tip) {
+  				if (getTip() && _tip) {
   					d3$1.select(this).select('.visible-bar').call(highlightBarStyle(false));
   					_tip.hide(d, i, this);
   				}
@@ -996,7 +1133,8 @@
   				}).attr('y', function (d) {
   					return _chart.effectiveHeight() - _yScale(_chart.keyAccessor()(d)) - _yScale.bandwidth();
   				}).attr('fill', '#FFFFFF') // need a fill to make it selectable
-  				.style('opacity', 0); // but don't want to actually see it...
+  				.style('opacity', 0) // but don't want to actually see it...
+  				.style('cursor', 'pointer');
 
   				// draw the rectangle
   				parent.append('rect').classed('visible-bar', true).transition().attr('height', _yScale.bandwidth()).attr('x', function (d) {
@@ -1007,7 +1145,7 @@
   					return Math.abs(_xScale(_chart.metricAccessor()(d)));
   				}).attr('fill', function (d) {
   					return showSelected(d) ? _colors(_chart.metric2Accessor()(d)) : UXConstants.deselectedFillColor;
-  				}).call(highlightBarStyle(false));
+  				}).style('cursor', 'pointer').call(highlightBarStyle(false));
 
   				// draw the text
   				parent.append('text').classed('bar-label', true).transition().attr('dx', '0.5em').attr('x', function (d) {
@@ -1018,7 +1156,7 @@
   					return showSelected(d) ? UXConstants.defaultFontColor : UXConstants.deselectedFontColor;
   				}).style('font-weight', function (d) {
   					return highlightLabelStyle(isMatch(d), true);
-  				}).text(_chart.labelAccessor());
+  				}).style('cursor', 'pointer').text(_chart.labelAccessor());
   			});
 
   			// Update
@@ -1095,10 +1233,27 @@
   				_scrollBar.draw();
 
   				/* turn on find control */
-  				turnOnControl('find');
+  				this.turnOnControl('find');
   			} else {
   				/* don't draw a scroll bar and turn off find control */
-  				turnOffControl('find');
+  				this.turnOffControl('find');
+  			}
+  		}.bind(this);
+
+  		var redrawScrollBar = function () {
+  			//
+  			if (_scrollBar) {
+  				if (this.data() && this.data().length > this.windowSize()) {
+  					this.getSvg().select('g.scroll').style("opacity", 1);
+  					_scrollBar.pageSize(this.windowSize());
+  					_scrollBar.total(this.data().length);
+  					_scrollBar.redraw();
+  					this.turnOnControl('find');
+  				} else {
+  					// hide scrollbar, turn off find
+  					this.getSvg().select('g.scroll').style("opacity", 0);
+  					this.turnOffControl('find');
+  				}
   			}
   		}.bind(this);
 
@@ -1127,9 +1282,9 @@
 
   			/* toggle reset control */
   			if (_selections && _selections.length > 0) {
-  				turnOnControl('reset');
+  				this.turnOnControl('reset');
   			} else {
-  				turnOffControl('reset');
+  				this.turnOffControl('reset');
   			}
 
   			/* notify listeners */
@@ -1143,7 +1298,12 @@
   			_orderDirection = direction;
   		};
   		var sort = function () {
-  			var orderFunc = _orderBy == UXConstants.orderByKey ? this.keyAccessor() : this.metricAccessor();
+  			var orderFunc = this.metricAccessor();
+  			if (_orderBy == UXConstants.orderByKey) {
+  				orderFunc = this.labelAccessor();
+  			} else if (_orderBy instanceof Function) {
+  				orderFunc = _orderBy;
+  			}
   			var dir = _orderDirection == UXConstants.ascending ? UXConstants.ascending : UXConstants.descending;
   			var theData = this.data();
   			theData.sort(function (a, b) {
@@ -1166,10 +1326,9 @@
 
   		/** Setup tool tip if d3-tip is available **/
   		var enableToolTip = function () {
-  			if (d3$1.tip) {
-  				_tip = d3$1.tip().attr('class', 'd3-tip');
-
+  			if (getTip()) {
   				var _chart = this; // for callbacks
+  				_tip = getTip()().attr('class', 'd3-tip');
 
   				if (!this.formatTip()) {
   					// default tool tip format function if not yet defined
@@ -1203,13 +1362,13 @@
     	find - on/off when need scrollbar
     	sortX - tbd
     **/
-  		var turnOnControl = function (ctrl) {
+  		this.turnOnControl = function (ctrl) {
   			this.getParent().selectAll('.' + ctrl).style('display', null);
-  		}.bind(this);
+  		};
 
-  		var turnOffControl = function (ctrl) {
+  		this.turnOffControl = function (ctrl) {
   			this.getParent().selectAll('.' + ctrl).style('display', 'none');
-  		}.bind(this);
+  		};
 
   		// public members
   		// privileged methods
@@ -1223,7 +1382,7 @@
 
   		this.formatTip = function (_) {
   			if (!arguments.length) {
-  				if (!d3$1.tip) {
+  				if (!getTip()) {
   					console.log('ERROR row-chart: Return value for formatTip() is undefined because d3-tip support is not available.');
   					return null;
   				} else {
@@ -1231,13 +1390,13 @@
   				}
   			}
   			if (_ instanceof Function) {
-  				if (!d3$1.tip) {
+  				if (!getTip()) {
   					console.log('ERROR row-chart: Cannot assign formatting function in formatTip() because d3-tip support is not available.');
   				} else {
   					_formatTip = _.bind(this);
   				}
   			} else {
-  				console.log('ERROR row-chart: Invalid object passed to infoAction(). Must be a function.');
+  				console.log('ERROR row-chart: Invalid object passed to formatTip(). Must be a function.');
   			}
   			return this;
   		};
@@ -1267,9 +1426,9 @@
   				this.redraw();
   				/* toggle reset control */
   				if (_selections && _selections.length > 0) {
-  					turnOnControl('reset');
+  					this.turnOnControl('reset');
   				} else {
-  					turnOffControl('reset');
+  					this.turnOffControl('reset');
   				}
 
   				/* notify listeners */
@@ -1355,7 +1514,7 @@
   			var w = this.width() - this.margins().left - this.margins().right;
   			// if more data than window size, account for scrollbar
   			if (this.data() && this.data().length > this.windowSize()) {
-  				w -= UXConstants.scrollBar.width() + 2 * UXConstants.scrollBar.sliderMargin;
+  				w -= UXConstants.scrollBar.width() + UXConstants.scrollBar.sliderMargin;
   			}
   			return w;
   		};
@@ -1383,6 +1542,7 @@
   		this.redraw = function () {
   			sort();
   			refreshScales();
+  			redrawScrollBar();
   			drawBars();
   			drawAxis();
   			return this;
@@ -1392,6 +1552,21 @@
   			var value = _dispatcher.on.apply(_dispatcher, arguments);
   			return value === _dispatcher ? this : value;
   		};
+
+  		this.xAxis = function (_) {
+  			if (!arguments.length) {
+  				return _xAxis;
+  			}
+  			_xAxis = _;
+  			return this;
+  		};
+  		this.yAxis = function (_) {
+  			if (!arguments.length) {
+  				return _yAxis;
+  			}
+  			_yAxis = _;
+  			return this;
+  		};
   	}; // end init
 
   	// factory descriptor
@@ -1400,7 +1575,7 @@
   	};
 
   	// compose features ... order may be important, especially for initializers
-  	return compose(hasSvgRootFactory()).compose(hasMarginsFactory()).compose(hasDataAccessorsFactory()).compose(hasDataWindowFactory()).compose(factoryDesc);
+  	return compose(hasSvgRootFactory()).compose(hasMarginsFactory()).compose(hasDataWindowFactory()).compose(factoryDesc);
   }
 
   var rowChart = rowChartFactory();
@@ -1423,15 +1598,13 @@
   		    _tip = null,
   		    _formatTip = null,
   		    _matchString,
-  		    _continuousDomain,
-  		    // implies no labels on bars
-  		_orderBy = UXConstants.orderByValue,
+  		    _orderBy = UXConstants.orderByValue,
   		    _orderDirection = UXConstants.descending;
 
   		// private functions
 
   		var setDefaultDimensions = function () {
-  			if (!_continuousDomain) {
+  			if (!this.continuousDomain()) {
   				// Then we will be displaying labels on bars...
   				// bar dimension and padding are all relative to the font size
   				_fontSize = parseFloat(getComputedStyle(this.getParent().node()).fontSize);
@@ -1455,26 +1628,21 @@
   		var buildScales = function () {
   			setDefaultDimensions();
 
-  			var theData = this.windowGetData();
+  			var dom = this.windowGetDomain();
 
-  			if (!_continuousDomain) {
+  			if (!this.continuousDomain()) {
   				// Assume domain is ordinal - use scale band
   				// get domain for x from data or default to dummy values
-  				var xDomain = theData.map(this.keyAccessor());
-  				_xScale = d3$1.scaleBand().domain(xDomain).rangeRound([0, this.effectiveWidth()]).padding(_paddingPercent);
+  				_xScale = d3$1.scaleBand().domain(dom).rangeRound([0, this.effectiveWidth()]).padding(_paddingPercent);
   			} else {
   				// continuous domain, e.g.: dates, numbers
-  				var xDomain = d3$1.extent(theData.map(this.keyAccessor()));
-  				var xAltDomain = [];
+  				var xDomain = d3$1.extent(dom);
+  				var xAltDomain = dom;
   				var xExtDomain = [];
 
   				if (xDomain[0] instanceof Date) {
   					// date
   					_xScale = d3$1.scaleUtc();
-
-  					for (var d = new Date(xDomain[0]); d <= xDomain[1]; d.setDate(d.getDate() + 1)) {
-  						xAltDomain.push(new Date(d));
-  					}
 
   					var a = new Date(xDomain[0]);
   					var b = new Date(xDomain[1]);
@@ -1485,10 +1653,6 @@
   					// number
   					_xScale = d3$1.scaleLinear();
 
-  					for (var i = xDomain[0]; i <= xDomain[1]; i++) {
-  						xAltDomain.push(i);
-  					}
-
   					xExtDomain = [xDomain[0] - 0.5, xDomain[1] + 0.5];
   				}
 
@@ -1497,7 +1661,7 @@
   				_xAltScale = d3$1.scaleBand().domain(xAltDomain).rangeRound([0, this.effectiveWidth()]).padding(_paddingPercent);
   			}
 
-  			_yScale = d3$1.scaleLinear().domain(adjustedValueDomain(theData, this.metricAccessor())).range([this.effectiveHeight(), 0]);
+  			_yScale = d3$1.scaleLinear().domain(adjustedValueDomain(this.windowGetData(), this.metricAccessor())).range([this.effectiveHeight(), 0]);
   		}.bind(this);
 
   		var adjustedValueDomain = function adjustedValueDomain(theData, valueAccessor) {
@@ -1514,22 +1678,17 @@
   		};
 
   		var refreshScales = function () {
-  			var theData = this.windowGetData();
-  			if (!_continuousDomain) {
-  				var xDomain = theData.map(this.keyAccessor());
-  				_xScale.domain(xDomain);
+  			var dom = this.windowGetDomain();
+  			if (!this.continuousDomain()) {
+  				_xScale.domain(dom);
   			} else {
   				// continuous domain e.g. dates and numbers
-  				var xDomain = d3$1.extent(theData.map(this.keyAccessor()));
-  				var xAltDomain = [];
+  				var xDomain = d3$1.extent(dom);
+  				var xAltDomain = dom;
   				var xExtDomain = [];
 
   				if (xDomain[0] instanceof Date) {
   					// date
-  					for (var d = new Date(xDomain[0]); d <= xDomain[1]; d.setDate(d.getDate() + 1)) {
-  						xAltDomain.push(new Date(d));
-  					}
-
   					var a = new Date(xDomain[0]);
   					var b = new Date(xDomain[1]);
   					a.setHours(a.getHours() - 12);
@@ -1537,10 +1696,6 @@
   					xExtDomain = [a, b];
   				} else {
   					//number
-  					for (var i = xDomain[0]; i <= xDomain[1]; i++) {
-  						xAltDomain.push(i);
-  					}
-
   					xExtDomain = [xDomain[0] - 0.5, xDomain[1] + 0.5];
   				}
 
@@ -1548,14 +1703,15 @@
   				_xAltScale.domain(xAltDomain);
   			}
 
-  			_yScale.domain(adjustedValueDomain(theData, this.metricAccessor()));
+  			// set range too as existence or absence of scrollbar will affect the axis
+  			_yScale = d3$1.scaleLinear().domain(adjustedValueDomain(this.windowGetData(), this.metricAccessor())).range([this.effectiveHeight(), 0]);
   		}.bind(this);
 
-  		var buildAxis = function buildAxis() {
+  		var buildAxis = function () {
   			// only need y axis at left of chart
   			_yAxis = d3$1.axisLeft(_yScale).tickFormat(d3$1.format('.2~s'));
 
-  			if (_continuousDomain) {
+  			if (this.continuousDomain()) {
   				// only need x axis if continuous domain
   				_xAxis = d3$1.axisBottom(_xScale);
 
@@ -1567,7 +1723,7 @@
   					_xAxis.tickFormat(d3$1.format('.2~s'));
   				}
   			}
-  		};
+  		}.bind(this);
 
   		var buildSVG = function () {
   			var svg = this.getSvg().classed('bar-chart', true);
@@ -1581,7 +1737,7 @@
   			var container = svg.append('g').classed('container-group', true).attr('transform', 'translate(' + this.margins().left + ',' + this.margins().top + ')');
   			container.append('g').classed('chart-group', true);
   			container.append('g').classed('y-axis-group axis', true);
-  			if (_continuousDomain) {
+  			if (this.continuousDomain()) {
   				container.append('g').attr('transform', 'translate(0,' + this.effectiveHeight() + ')').classed('x-axis-group axis', true);
   			}
 
@@ -1596,7 +1752,7 @@
   		}.bind(this);
 
   		var bandWidth = function (d, i, data) {
-  			if (!_continuousDomain) {
+  			if (!this.continuousDomain()) {
   				return _xScale.bandwidth();
   			} else {
   				return _xAltScale.bandwidth();
@@ -1604,7 +1760,7 @@
   		}.bind(this);
 
   		var bandX = function (d, i, data) {
-  			if (!_continuousDomain) {
+  			if (!this.continuousDomain()) {
   				return _xScale(this.keyAccessor()(d));
   			} else {
   				return _xScale(this.keyAccessor()(d)) - bandWidth(d, i, data) / 2;
@@ -1623,12 +1779,12 @@
   				toggleSelected(d);
   				_chart.redraw();
   			}).on('mouseover', function (d, i) {
-  				if (d3$1.tip && _tip) {
+  				if (getTip() && _tip) {
   					d3$1.select(this).select('.visible-bar').call(highlightBarStyle(true));
   					_tip.show(d, i, this);
   				}
   			}).on('mouseout', function (d, i) {
-  				if (d3$1.tip && _tip) {
+  				if (getTip() && _tip) {
   					d3$1.select(this).select('.visible-bar').call(highlightBarStyle(false));
   					_tip.hide(d, i, this);
   				}
@@ -1641,7 +1797,8 @@
   				}).attr('height', function (d) {
   					return boundingBoxCoords(d).height;
   				}).attr('fill', '#FFFFFF') // need a fill to make it selectable
-  				.style('opacity', 0); // but don't want to actually see it...
+  				.style('opacity', 0) // but don't want to actually see it...
+  				.style('cursor', 'pointer');
 
   				// draw the rectangle
   				parent.append('rect').classed('visible-bar', true).transition().attr('width', bandWidth).attr('y', function (d) {
@@ -1650,9 +1807,9 @@
   					return _chart.effectiveHeight() - _yScale(_chart.metricAccessor()(d));
   				}).attr('fill', function (d) {
   					return showSelected(d) ? _colors(_chart.metric2Accessor()(d)) : UXConstants.deselectedFillColor;
-  				}).call(highlightBarStyle(false));
+  				}).style('cursor', 'pointer').call(highlightBarStyle(false));
 
-  				if (!_continuousDomain) {
+  				if (!_chart.continuousDomain()) {
   					// draw the text
   					parent.append('text').classed('bar-label', true).transition().attr('x', function (d) {
   						return -_chart.effectiveHeight();
@@ -1662,7 +1819,7 @@
   						return showSelected(d) ? UXConstants.defaultFontColor : UXConstants.deselectedFontColor;
   					}).attr('transform', 'rotate(270)').attr('dx', '0.5em').style('font-weight', function (d) {
   						return highlightLabelStyle(isMatch(d), true);
-  					}).text(_chart.labelAccessor());
+  					}).style('cursor', 'pointer').text(_chart.labelAccessor());
   				}
   			}); //Enter
 
@@ -1678,7 +1835,7 @@
   					return showSelected(d) ? _colors(_chart.metric2Accessor()(d)) : UXConstants.deselectedFillColor;
   				}).call(highlightBarStyle(false));
 
-  				if (!_continuousDomain) {
+  				if (!_chart.continuousDomain()) {
   					// update the text
   					parent.select('text').transition().attr('x', function (d) {
   						return -_chart.effectiveHeight();
@@ -1710,7 +1867,7 @@
   			var visBarY = Math.abs(_yScale(this.metricAccessor()(d)));
 
   			var textY = 100000; // crazy default so this value not used if continuous domain (no labels on bars)
-  			if (!_continuousDomain) {
+  			if (!this.continuousDomain()) {
   				// estimate based on font size and character count instead
   				// empirical estimates suggest average char width is 45% of font size
   				textY = this.effectiveHeight() - (this.labelAccessor()(d).length + 1) * _fontSize * 0.45;
@@ -1732,18 +1889,20 @@
   			var svg = this.getSvg();
   			svg.select('.y-axis-group.axis').transition().call(_yAxis);
 
-  			if (_continuousDomain) {
-  				svg.select('.x-axis-group.axis').transition().call(_xAxis);
+  			if (this.continuousDomain()) {
+  				// need to adjust transform based on
+  				// existence or absence of scrollbar
+  				svg.select('.x-axis-group.axis').transition().attr('transform', 'translate(0,' + this.effectiveHeight() + ')').call(_xAxis);
   			}
   		}.bind(this);
 
   		var drawScrollBar = function () {
-  			if (this.data() && this.data().length > this.windowSize()) {
+  			if (this.domain() && this.domain().length > this.windowSize()) {
   				_scrollBar = scrollBar({
   					svg: this.getSvg(),
   					pageSize: this.windowSize(),
   					orientation: UXConstants.orientation.horizontal,
-  					top: this.height() - (!_continuousDomain ? this.margins().bottom : 0) - UXConstants.scrollBar.width(),
+  					top: this.height() - (!this.continuousDomain() ? this.margins().bottom : 0) - UXConstants.scrollBar.width(),
   					left: this.margins().left,
   					length: this.effectiveWidth(),
   					total: this.data().length || 100
@@ -1756,10 +1915,27 @@
   				_scrollBar.draw();
 
   				/* turn on find control */
-  				turnOnControl('find');
+  				this.turnOnControl('find');
   			} else {
   				/* don't draw a scroll bar and turn off find control */
-  				turnOffControl('find');
+  				this.turnOffControl('find');
+  			}
+  		}.bind(this);
+
+  		var redrawScrollBar = function () {
+  			//
+  			if (_scrollBar) {
+  				if (this.domain() && this.domain().length > this.windowSize()) {
+  					this.getSvg().select('g.scroll').style("opacity", 1);
+  					_scrollBar.pageSize(this.windowSize());
+  					_scrollBar.total(this.domain().length);
+  					_scrollBar.redraw();
+  					this.turnOnControl('find');
+  				} else {
+  					// hide scrollbar, turn off find
+  					this.getSvg().select('g.scroll').style("opacity", 0);
+  					this.turnOffControl('find');
+  				}
   			}
   		}.bind(this);
 
@@ -1788,9 +1964,9 @@
 
   			/* toggle reset control */
   			if (_selections && _selections.length > 0) {
-  				turnOnControl('reset');
+  				this.turnOnControl('reset');
   			} else {
-  				turnOffControl('reset');
+  				this.turnOffControl('reset');
   			}
 
   			/* notify listeners */
@@ -1804,7 +1980,12 @@
   			_orderDirection = direction;
   		};
   		var sort = function () {
-  			var orderFunc = _orderBy == UXConstants.orderByKey ? this.keyAccessor() : this.metricAccessor();
+  			var orderFunc = this.metricAccessor();
+  			if (_orderBy == UXConstants.orderByKey) {
+  				orderFunc = this.labelAccessor();
+  			} else if (_orderBy instanceof Function) {
+  				orderFunc = _orderBy;
+  			}
   			var dir = _orderDirection == UXConstants.ascending ? UXConstants.ascending : UXConstants.descending;
   			var theData = this.data();
   			theData.sort(function (a, b) {
@@ -1827,10 +2008,9 @@
 
   		/** Setup tool tip if d3-tip is available **/
   		var enableToolTip = function () {
-  			if (d3$1.tip) {
-  				_tip = d3$1.tip().attr('class', 'd3-tip');
-
+  			if (getTip()) {
   				var _chart = this; // for callbacks
+  				_tip = getTip()().attr('class', 'd3-tip');
 
   				if (!this.formatTip()) {
   					// default tool tip format function if not yet defined
@@ -1864,13 +2044,13 @@
     	find - on/off when need scrollbar
     	sortX - tbd
     **/
-  		var turnOnControl = function (ctrl) {
+  		this.turnOnControl = function (ctrl) {
   			this.getParent().selectAll('.' + ctrl).style('display', null);
-  		}.bind(this);
+  		};
 
-  		var turnOffControl = function (ctrl) {
+  		this.turnOffControl = function (ctrl) {
   			this.getParent().selectAll('.' + ctrl).style('display', 'none');
-  		}.bind(this);
+  		};
 
   		// public members
   		// privileged methods
@@ -1882,21 +2062,9 @@
   			return this;
   		};
 
-  		this.continuousDomain = function (_) {
-  			if (!arguments.length) {
-  				return _continuousDomain;
-  			}
-  			_continuousDomain = _;
-  			if (_continuousDomain) {
-  				// Only ascending key order makes sense
-  				order(UXConstants.orderByKey, UXConstants.ascending);
-  			}
-  			return this;
-  		};
-
   		this.formatTip = function (_) {
   			if (!arguments.length) {
-  				if (!d3$1.tip) {
+  				if (!getTip()) {
   					console.log('ERROR row-chart: Return value for formatTip() is undefined because d3-tip support is not available.');
   					return null;
   				} else {
@@ -1904,13 +2072,13 @@
   				}
   			}
   			if (_ instanceof Function) {
-  				if (!d3$1.tip) {
+  				if (!getTip()) {
   					console.log('ERROR row-chart: Cannot assign formatting function in formatTip() because d3-tip support is not available.');
   				} else {
   					_formatTip = _.bind(this);
   				}
   			} else {
-  				console.log('ERROR row-chart: Invalid object passed to infoAction(). Must be a function.');
+  				console.log('ERROR row-chart: Invalid object passed to formatTip(). Must be a function.');
   			}
   			return this;
   		};
@@ -1940,9 +2108,9 @@
   				this.redraw();
   				/* toggle reset control */
   				if (_selections && _selections.length > 0) {
-  					turnOnControl('reset');
+  					this.turnOnControl('reset');
   				} else {
-  					turnOffControl('reset');
+  					this.turnOffControl('reset');
   				}
 
   				/* notify listeners */
@@ -2031,8 +2199,8 @@
   		this.effectiveHeight = function () {
   			var h = this.height() - this.margins().top - this.margins().bottom;
   			// if more data than window size, account for scrollbar
-  			if (this.data() && this.data().length > this.windowSize()) {
-  				h -= UXConstants.scrollBar.width() + 2 * UXConstants.scrollBar.sliderMargin;
+  			if (this.domain() && this.domain().length > this.windowSize()) {
+  				h -= UXConstants.scrollBar.width() + UXConstants.scrollBar.sliderMargin;
   			}
   			return h;
   		};
@@ -2057,6 +2225,7 @@
   			sort();
   			refreshScales();
   			buildAxis();
+  			redrawScrollBar();
   			drawBars();
   			drawAxis();
   			return this;
@@ -2066,6 +2235,21 @@
   			var value = _dispatcher.on.apply(_dispatcher, arguments);
   			return value === _dispatcher ? this : value;
   		};
+
+  		this.xAxis = function (_) {
+  			if (!arguments.length) {
+  				return _xAxis;
+  			}
+  			_xAxis = _;
+  			return this;
+  		};
+  		this.yAxis = function (_) {
+  			if (!arguments.length) {
+  				return _yAxis;
+  			}
+  			_yAxis = _;
+  			return this;
+  		};
   	}; // end init
 
   	// factory descriptor
@@ -2074,7 +2258,7 @@
   	};
 
   	// compose features ... order may be important, especially for initializers
-  	return compose(hasSvgRootFactory()).compose(hasMarginsFactory()).compose(hasDataAccessorsFactory()).compose(hasDataWindowFactory()).compose(factoryDesc);
+  	return compose(hasSvgRootFactory()).compose(hasMarginsFactory()).compose(hasDataWindowFactory()).compose(factoryDesc);
   }
 
   var barChart = barChartFactory();

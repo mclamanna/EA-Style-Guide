@@ -48,4 +48,20 @@ h6 {
 	font-size: 1rem;
 }
 
+/* Smaller screens: xs & sm */
+@media screen and (max-width: 767px) {
 
+	h1 {
+		font-size: 1.75rem
+	}
+
+}
+
+/* Override Bootstrap .nav.pills */
+.nav-pills .nav-link {
+	border: 1px solid #007bff;
+}
+
+.nav-pills .nav-link.active {
+	border-style: none;
+}

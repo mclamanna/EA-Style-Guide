@@ -1,0 +1,92 @@
+.iv-btn,.iv-btn:focus {
+    border-radius: 3px;
+    color: #fff;
+    background-color: #062F5E;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    transition: all .3s ease
+}
+
+.iv-btn.focus,.iv-btn:focus,.iv-btn:focus.focus,.iv-btn:focus:focus {
+    color: #fff;
+    background-color: #062F5E;
+    border-color: rgba(64,64,64,0)
+}
+
+.iv-btn:focus:hover,.iv-btn:hover {
+    color: #fff;
+    background-color: #09468A;
+    border-color: transparent
+}
+
+.iv-btn.active,.iv-btn:active,.iv-btn:focus.active,.iv-btn:focus:active,.open>.dropdown-toggle.iv-btn,.open>.dropdown-toggle.iv-btn:focus {
+    color: #fff;
+    background-color: #09468A;
+    border-color: rgba(31,31,31,0);
+    background-image: none
+}
+
+.iv-btn.active.focus,.iv-btn.active:focus,.iv-btn.active:hover,.iv-btn:active.focus,.iv-btn:active:focus,.iv-btn:active:hover,.iv-btn:focus.active.focus,.iv-btn:focus.active:focus,.iv-btn:focus.active:hover,.iv-btn:focus:active.focus,.iv-btn:focus:active:focus,.iv-btn:focus:active:hover,.open>.dropdown-toggle.iv-btn.focus,.open>.dropdown-toggle.iv-btn:focus,.open>.dropdown-toggle.iv-btn:focus.focus,.open>.dropdown-toggle.iv-btn:focus:focus,.open>.dropdown-toggle.iv-btn:focus:hover,.open>.dropdown-toggle.iv-btn:hover {
+    color: #fff;
+    background-color: #09468A;
+    border-color: rgba(64,64,64,0)
+}
+
+.iv-btn.disabled,.iv-btn.disabled.active,.iv-btn.disabled.focus,.iv-btn.disabled:active,.iv-btn.disabled:focus,.iv-btn.disabled:hover,.iv-btn:focus.disabled,.iv-btn:focus.disabled.active,.iv-btn:focus.disabled.focus,.iv-btn:focus.disabled:active,.iv-btn:focus.disabled:focus,.iv-btn:focus.disabled:hover,.iv-btn:focus[disabled],.iv-btn:focus[disabled].active,.iv-btn:focus[disabled].focus,.iv-btn:focus[disabled]:active,.iv-btn:focus[disabled]:focus,.iv-btn:focus[disabled]:hover,.iv-btn[disabled],.iv-btn[disabled].active,.iv-btn[disabled].focus,.iv-btn[disabled]:active,.iv-btn[disabled]:focus,.iv-btn[disabled]:hover,fieldset[disabled] .iv-btn,fieldset[disabled] .iv-btn.active,fieldset[disabled] .iv-btn.focus,fieldset[disabled] .iv-btn:active,fieldset[disabled] .iv-btn:focus,fieldset[disabled] .iv-btn:focus.active,fieldset[disabled] .iv-btn:focus.focus,fieldset[disabled] .iv-btn:focus:active,fieldset[disabled] .iv-btn:focus:focus,fieldset[disabled] .iv-btn:focus:hover,fieldset[disabled] .iv-btn:hover {
+    background-color: #062F5E;
+    border-color: transparent
+}
+
+.iv-btn .badge,.iv-btn:focus .badge {
+    color: #062F5E;
+    background-color: #fff
+}
+
+.iv-btn:hover {
+    opacity: .8
+}
+
+.iv-btn:active {
+    opacity: 1
+}
+
+.iv-btn.active {
+    font-weight: 700
+}
+
+.popover {
+    background-color: #000;
+    color: #FFF;
+    opacity: .9
+}
+
+.popover.top>.arrow:after {
+    border-top-color: #000
+}
+
+.popover.bottom>.arrow:after {
+    border-bottom-color: #000
+}
+
+.popover.left>.arrow:after {
+    border-left-color: #000
+}
+
+.popover.right>.arrow:after {
+    border-right-color: #000
+}
+

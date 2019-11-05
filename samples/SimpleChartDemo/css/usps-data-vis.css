@@ -5,7 +5,15 @@ html {
 	font-size: 0.9rem;
 }
 h5 {
-	margin-top: 0.8rem;
+	margin-top: 0.2rem;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	display: inline-block;
+}
+
+#hidden-mail-link {
+	display: none;
 }
 
 .inner-addon {
@@ -18,11 +26,18 @@ h5 {
   pointer-events: none;
 }
 
+.inner-addon i.fa-times {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
 .left-addon i {
+  top: 1px;
   left: 0px;
 }
 
 .right-addon i {
+  top: 1px;
   right: 0px;
 }
 
@@ -31,7 +46,7 @@ h5 {
 }
 
 .right-addon input {
-  padding-right: 2rem;
+  padding-right: 1.75rem;
 }
 
 .sort-desc i.sort-desc,
@@ -42,4 +57,36 @@ h5 {
 .sort-desc i.sort-asc,
 .sort-asc i.sort-desc {
   display: none;
+}
+
+.page-controls  {
+  text-align: right;
+}
+
+.push {
+    margin-left: auto;
+}
+
+.form-inline .form-control {
+	width: 100%;
+}
+
+.form-inline {
+	margin-bottom: 0px;
+}
+
+/* Only for bootstrap size xl */
+@media screen and (min-width: 1200px) {
+	.page-stats {
+		float: right;
+	}
+}
+
+/* DataTable */
+@media screen and (max-width: 767px) {
+	div.dt-buttons {
+		width: auto;
+		text-align: left;
+		margin-bottom: 0;
+	}
 }

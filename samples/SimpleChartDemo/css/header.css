@@ -6,6 +6,28 @@ html {
     line-height: 1.5;
 }
 
+[aria-expanded="false"] .menu__icon--open {
+    display: block;
+}
+  
+  [aria-expanded="false"] .menu__icon--close {
+    display: none;
+}
+  
+  [aria-expanded="true"] .menu__icon--open {
+    display: none;
+}
+  
+  [aria-expanded="true"] .menu__icon--close {
+    display: block;
+}
+
+.navbar-dark .navbar-toggler {
+    color: #ffffff;
+    outline-color: #092B52;
+    border: #092B52;
+}
+
 h5 {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
@@ -32,7 +54,6 @@ h6 {
     text-decoration: inherit;
 }
 
-
 #projectBranding {
     margin-left: 10px;
     line-height: 1.32rem;
@@ -55,7 +76,7 @@ h6 {
 }
 
 .slant {
-    background-color: rgba(249,249,249,.3);
+    background-color: #f9f9f966;
     height: 2rem;
     width: 1px;
     margin-left: 15px;
@@ -77,4 +98,20 @@ h6 {
 .navbar-dark .navbar-nav .nav-link:hover {
     color: #ffffff;
     text-decoration: underline;
+}
+
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.svg-content {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
 }

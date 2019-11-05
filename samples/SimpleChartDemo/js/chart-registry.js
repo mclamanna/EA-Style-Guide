@@ -1,10 +1,10 @@
 		var chartRegistry = (function() {
 			var _objects = [];
 			
-			function add(chart, ctrl, id, attr) {
+			function add(chart, ctrl, id, opts) {
 				_objects.push({
 					id: id,
-					attr: attr,
+					opts: opts,
 					chart: chart,
 					ctrl: ctrl
 				});
@@ -12,21 +12,21 @@
 			function getChartById(id) {
 				return _objects
 					.filter(function(d) {return d.id === id})
-					.map(function(d) {return d.chart});
+					.map(function(d) {return d.chart})[0];
 			}
 			function getCtrlById(id) {
 				return _objects
 					.filter(function(d) {return d.id === id})
-					.map(function(d) {return d.ctrl});
+					.map(function(d) {return d.ctrl})[0];
 			}
 			function getChartByAttr(attr) {
 				return _objects
-					.filter(function(d) {return d.attr === attr})
+					.filter(function(d) {return d.opts.attribute === attr})
 					.map(function(d) {return d.chart});
 			}
 			function getCtrlByAttr(attr) {
 				return _objects
-					.filter(function(d) {return d.attr === attr})
+					.filter(function(d) {return d.opts.attribute === attr})
 					.map(function(d) {return d.ctrl});
 			}
 			function getCharts() {

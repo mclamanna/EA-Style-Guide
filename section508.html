@@ -1,0 +1,361 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="StyleGuide">
+    <meta name="author" content="Michael La Manna">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300, 400, 500, 700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400, 700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="JS/jquery.min.js"></script>
+    <script src="JS/popper.min.js"></script>
+    <link id="Link1" href="Images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <title>EA Style Guide</title>
+    <!-- Bootstrap core CSS -->
+    <link href="CSS/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="CSS/mdb.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="CSS/StyleGuide.css" rel="stylesheet">
+    <!-- <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js" type="text/javascript"></script>
+    <script>
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        }
+    </script>
+</head>
+
+<body id="page-top" data-spy="scroll" data-target="#myScrollspy" data-offset="1">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #092B52">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">
+            <span class="text1">EA</span>
+            <span class="text2"> {Style Guide}</span>
+        </a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="menu__icon menu__icon--open"><i class="fas fa-bars"></i></span>
+            <span class="menu__icon menu__icon--close">
+              <i class="fas fa-times"></i></span>
+          </button>
+
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="index.html">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="design.html">Design</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="framework.html">Framework</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="components.html">Components</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="section508.html">Section 508</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="resources.html">Resources</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="notes.html">Notes</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <font color="#ffffff">Last Update: 10/23/2019</font>
+            </ul>
+            <!--
+                <font color="#ffffff">Last Update: 10/30/2017</font>
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+-->
+        </div>
+    </nav>
+
+    <!--SideBar-->
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-sm-3 col-md-2 d-none d-md-block bg-light sidebar" id="myScrollspy">
+                <ul class="nav nav-pills flex-column">
+                        <li class="nav-item">
+                                <a class="nav-link js-scroll-trigger" href="#page-top">Home</a>
+                            </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#tipsdesign">Tips for Designing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#tipsdev">Tips for Developing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#testing">Testing for Accessibility</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!--SmoothScroll-->
+
+    <section id="top-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 ml-sm-auto col-md-10 pt-4">
+                    <h1>Section 508 and Web Accessibility</h1>
+                    <p>Section 508 is a federal law that requires all electronic and information technology developed, procured,
+                    maintained, or used by the federal government be accessible to people with disabilities. The U.S. Department
+                    of Justice Office of Civil Rights is charged with enforcing Section 508.</p>
+                    We are responsible for ensuring the information and services we provide can be used as effectively by people
+                    with disabilities as by those without.<p></p>
+                    To review the Section 508 standards, refer to: <a href="https://www.section508.gov">www.section508.gov</a><p></p>
+                    <h4>Web Accessibility Tutorials:</h4> <a href="https://www.w3.org/WAI/tutorials/">https://www.w3.org/WAI/tutorials/</a><p></p>
+                    This collection of tutorials shows you how to develop web content that is accessible to people with disabilities,
+                    and that provides a better user experience for everyone.<p></p>
+                    <h4>USPS Section 508 Technical Reference Guide:</h4> Handbook, 2004 <a href="https://www.w3.org/WAI/tutorials/">(https://about.usps.com/handbooks/as508a.pdf)</a>
+                    <p></p>
+                    <h4>Additional Resources:</h4>
+                    <ul>
+                    <li class="section">The A11Y Project <a href="https://a11yproject.com">(https://a11yproject.com/)</a></li>
+                    <li class="section">The A11Y accessible components library <a href="https://a11y-style-guide.com/style-guide/">(https://a11y-style-guide.com/style-guide/)</a></li>
+                    <li class="section">The WebAIM project <a href="https://webaim.org">(https://webaim.org/)</a></li>
+                    <li class="section">GSA’s 18F Accessibility Guide <a href="https://accessibility.18f.gov">(https://accessibility.18f.gov/)</a></li>
+                    <li class="section">WCAG 2 Checklist at WebAIM <a href="https://webaim.org/standards/wcag/checklist">(https://webaim.org/standards/wcag/checklist)</a></li>
+                    <li class="section">GSA’s Accessibility Program Section508.gov <a href="https://section508.gov/test">(https://section508.gov/test)</a></li>
+                    <li class="section">Bootstrap: Accessibility
+                        (latest version: <a href="https://getbootstrap.com/docs/4.3/getting-started/accessibility/">https://getbootstrap.com/docs/4.3/getting-started/accessibility/)</a></li>
+                    <li class="section">(earlier version: <a href="https://v4-alpha.getbootstrap.com/getting-started/accessibility/">https://v4-alpha.getbootstrap.com/getting-started/accessibility/)</a></li>
+                    <li class="section">PDF Accessibility Checker (PAC 3) developed by the “Access for all” foundation <a href="https://www.access-for-all.ch/en/pdf-lab/pdf-accessibility-checker-pac/downloading-pac.html">(https://www.access-for-
+                        all.ch/en/pdf-lab/pdf-accessibility-checker-pac/downloading-pac.html)</a></li></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tipsdesign" class="bg-light">
+            <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 ml-sm-auto col-md-10 pt-4">
+                            <h1>Designing for Web Accessibility</h1>
+                            <p>Basic steps to make your user interface design and visual design accessible to people with disabilities.</p>
+                            <ul>
+                           <li><h4>Provide sufficient contrast between foreground and background</h4></li>
+                               Foreground text needs to have sufficient contrast with background colors. This includes text on images,
+                                background gradients, buttons, and other elements.<p></p>
+                       
+                                <div class="card-group">
+                                        <div class="card">
+                                                <div class="card-header"><h5 class="card-title"><i class="fas fa-times-circle" style="color:#FF604E;"></i> Insufficient</h5></div>
+                                          <div class="card-body">
+                                            <p class="card-text"><p style="color: #999;">Some people cannot read text if there is not sufficient contrast between the text and background. For others, bright colors (high luminance) are not readable; they need low luminance.</p>
+                                          </div>
+                                        </div>
+                                        <div class="card">
+                                                <div class="card-header"> <h5 class="card-title"><i class="fas fa-check-circle" style="color:#30d074;"></i> Sufficient</h5></div>
+                                          <div class="card-body">
+                                            <p class="card-text"><p style="color: #000000;"></p>Some people cannot read text if there is not sufficient contrast between the text and background. For others, bright colors (high luminance) are not readable; they need low luminance.</p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <p></p>
+                                      <ol>
+                                    Requirements:<p></p>
+                                    <li>Contrast ratio is at least <h4>4.5:1</h4> for normal size text (less than 18 point if not bold and less than
+                                            14 point if bold)</li>
+                                    <li>Contrast ratio is at least <h4>3:1</h4> for large size text (at least 18 point if not bold and at least 14 point
+                                            if bold)</li>
+<p></p>
+<h4>Font size conversion chart</h4> (points to pixels, ems and %)
+It's an approximation, which will depend on font, browser and OS.<p></p>
+                                            <table class="table table-light">
+                                                    <thead>
+                                                      <tr class="table-active">
+                                                        <th scope="col"><h4>Points</h4></th>
+                                                        <th scope="col"><h4>Pixels</h4></th>
+                                                        <th scope="col"><h4>Ems</h4></th>
+                                                        <th scope="col"><h4>Percent</h4></th>
+                                                      </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                      <tr>
+                                                        <th scope="row"><p style="font-size:10px">7.5pt</p></th>
+                                                        <th scope="row"><p style="font-size:10px">10px</p></th>
+                                                        <th scope="row"><p style="font-size:10px">0.5em</p></th>
+                                                        <th scope="row"><p style="font-size:10px">50%</p></th>
+                                                      </tr>
+                                                      <tr>
+                                                            <th scope="row"><p style="font-size:12px">9pt</p></th>
+                                                            <th scope="row"><p style="font-size:12px">12px</p></th>
+                                                            <th scope="row"><p style="font-size:12px">0.75em</p></th>
+                                                            <th scope="row"><p style="font-size:12px">75%</p></th>
+                                                          </tr>
+                                                          <tr>
+                                                                <th scope="row"><p style="font-size:14px">10.5pt</p></th>
+                                                                <th scope="row"><p style="font-size:14px">14px</p></th>
+                                                                <th scope="row"><p style="font-size:14px">0.875em</p></th>
+                                                                <th scope="row"><p style="font-size:14px">87.5%</p></th>
+                                                              </tr>
+                                                              <tr>
+                                                                <th scope="row"><p style="font-size:16px">12pt</p></th>
+                                                                <th scope="row"><p style="font-size:16px">16px</p></th>
+                                                                    <th scope="row"><p style="font-size:16px">1em</p></th>
+                                                                    <th scope="row"><p style="font-size:16px">100%</p></th>
+                                                                  </tr>
+                                                                  <tr>
+                                                                        <th scope="row"><p style="font-size:18px">13.5pt</p></th>
+                                                                        <th scope="row"><p style="font-size:18px">18px</p></th>
+                                                                        <th scope="row"><p style="font-size:18px">1.125em</p></th>
+                                                                        <th scope="row"><p style="font-size:18px">112.5%</p></th>
+                                                                      </tr>
+                                                                      <tr>
+                                                                            <th scope="row"><p style="font-size:20px">14pt</p></th>
+                                                                            <th scope="row"><p style="font-size:20px">20px</p></th>
+                                                                            <th scope="row"><p style="font-size:20px">1.25em</p></th>
+                                                                            <th scope="row"><p style="font-size:20px">125%</p></th>
+                                                                          </tr>
+                                                                          <tr>
+                                                                                <th scope="row"><p style="font-size:22px">16pt</p></th>
+                                                                                <th scope="row"><p style="font-size:22px">22px</p></th>
+                                                                                <th scope="row"><p style="font-size:22px">1.4em</p></th>
+                                                                                <th scope="row"><p style="font-size:22px">140%</p></th>
+                                                                              </tr>
+                                                                              <tr>
+                                                                                    <th scope="row"><p style="font-size:24px">18pt</p></th>
+                                                                                    <th scope="row"><p style="font-size:24px">24px</p></th>
+                                                                                    <th scope="row"><p style="font-size:24px">1.5em</p></th>
+                                                                                    <th scope="row"><p style="font-size:24px">150%</p></th>
+                                                                                  </tr>
+                                                                                  <tr>
+                                                                                        <th scope="row"><p style="font-size:32px">24pt</p></th>
+                                                                                        <th scope="row"><p style="font-size:32px">32px</p></th>
+                                                                                        <th scope="row"><p style="font-size:32px">2em</p></th>
+                                                                                        <th scope="row"><p style="font-size:32px">200%</p></th>
+                                                                                      </tr>
+                                                                                      </tbody>
+                                                                                      </table>
+                                                                                      <p></p>
+                                                                                   <div class="mb-5">Browser default considered as: root {font-size: 16px}</div></ol></ul><p></p>
+                <ul>
+            <li><h4>Don’t use color alone to convey information</h4></li>
+            When using color to differentiate elements, also provide additional identification that does not rely on
+color perception.<p></p>
+<div class="card-group">
+    <div class="card">
+            <div class="card-header"><h5 class="card-title"><i class="fas fa-times-circle" style="color:#FF604E;"></i> Color only</h5></div>
+      <div class="card-body">
+        <ul class="list-unstyled">
+            <li class="media">
+            <svg version="1.1" width="153" height="154" aria-labelledby="inaccessible-triangles-title" role="img">
+              <g>
+                <title id="inaccessible-triangles-title">Four triangles with different angles</title>
+                <path d="m2.06902,49.92402l91.82715,-48.2264l-42.35869,75.85164l-49.46846,-27.62524z" fill="#09610D"></path>
+                <path d="m147.18413,95.39555l-41.64554,-80.62148l43.24728,27.76369l-1.60175,52.85779z" fill="#0000CC"></path>
+                <path d="m110.9136,148.01692l-27.57392,-82.3039l69.97661,50.70448l-42.40269,31.59943z" fill="#AA0402"></path>
+                <path d="m21.07534,112.17733l48.69831,-22.53485l-4.90304,52.17411l-43.79528,-29.63926z" fill="#DDDD00"></path>
+              </g>
+            </svg>
+            <div class="media-body ml-5">
+             
+                <legend style="width: 100%;">Which is the right-angled triangle?</legend>
+                <input id="answer-green1" name="answer1" value="green" type="radio"> <label for="answer-green1">Green</label><br>
+                <input id="answer-blue1" name="answer1" value="blue" type="radio"> <label for="answer-blue1">Blue</label><br>
+                <input id="answer-red1" name="answer1" value="red" type="radio"> <label for="answer-red1">Red</label><br>
+                <input id="answer-yellow1" name="answer1" value="yellow" type="radio"> <label for="answer-yellow1">Yellow</label><br>
+                <input id="answer-pass1" name="answer1" value="pass" type="radio"> <label for="answer-pass1">Don't know</label>
+              </div>
+              </li>
+              </ul>
+            </div>
+          </div>
+      
+    <div class="card">
+            <div class="card-header"> <h5 class="card-title"><i class="fas fa-check-circle" style="color:#30d074;"></i> Color and number</h5></div>
+      <div class="card-body">
+        <ul class="list-unstyled">
+            <li class="media">
+                <svg version="1.1" width="153" height="154">
+                    <g>
+                      <path d="m2.06902,49.92402l91.82715,-48.2264l-42.35869,75.85164l-49.46846,-27.62524z" fill="#09610D"></path>
+                      <text fill="#f4f4f4" y="51" x="44"><tspan>1</tspan><tspan dx="100" style="opacity:0">Green triangle: Angles are 30°, 60°, 90°</tspan></text>
+                      <path d="m147.18413,95.39555l-41.64554,-80.62148l43.24728,27.76369l-1.60175,52.85779z" fill="#0000CC"></path>
+                      <text fill="#f4f4f4" y="54" x="132"><tspan>2</tspan><tspan dx="100" style="opacity:0"> Blue triangle: Angles are 30°, 30°, 120°</tspan></text>
+                      <path d="m110.9136,148.01692l-27.57392,-82.3039l69.97661,50.70448l-42.40269,31.59943z" fill="#AA0402"></path>
+                      <text fill="#f4f4f4" y="114" x="110"><tspan>3</tspan><tspan dx="100" style="opacity:0"> Red triangle: Angles are 30°, 60°, 90°</tspan></text>
+                      <path d="m21.07534,112.17733l48.69831,-22.53485l-4.90304,52.17411l-43.79528,-29.63926z" fill="#DDDD00"></path>
+                      <text fill="#333" y="118" x="48"><tspan>4</tspan><tspan dx="100" style="opacity:0"> Yellow triangle: Angles are 40°, 70°, 70°</tspan></text>
+                    </g>
+                  </svg>
+            <div class="media-body ml-5">
+                <legend style="width: 100%;">Which is the right-angled triangle?</legend>
+          <input id="answer-green2" name="answer2" value="green" type="radio"> <label for="answer-green2">Green (1)</label><br>
+          <input id="answer-blue2" name="answer2" value="blue" type="radio"> <label for="answer-blue2">Blue (2)</label><br>
+          <input id="answer-red2" name="answer2" value="red" type="radio"> <label for="answer-red2">Red (3)</label><br>
+          <input id="answer-yellow2" name="answer2" value="yellow" type="radio"> <label for="answer-yellow2">Yellow (4)</label><br>
+          <input id="answer-pass2" name="answer2" value="pass" type="radio"> <label for="answer-pass2">Don't know</label>
+              </div>
+              </li>
+              </ul>
+      </div>
+    </div>
+  </div>
+  <p></p>
+                        </div>
+                    </div>
+                </div>
+    </section>
+
+    <script type="text/javascript">
+        $("#btnSubmit").click(function () {
+            
+            $("#sendmail").validate();
+
+            if ($("#sendmail").valid()) {
+                $.ajax({
+                    type: "POST",
+                    url: "services/easg.asmx/SendEmail",
+                    cache: false,
+                    contentType: "application/json; charset=utf-8",
+                    data: "{ 'Msg': '" + $("#inputMsg").val() + "', " + "'To': 'Michael.C.LaManna@usps.gov;Irina.Y.Kuzes@usps.gov'," + "'From': '" + $("#inputEmail").val() + "'," + "'Name': '" + $("#inputName").val() + "'," + "'Subject': 'EA Style Guide Feedback'," + "'Phone': '" + $("#inputPhone").val() + "'" + "}",
+                    dataType: "json",
+                    complete: function (transport) {
+                        debugger
+                        if (transport.status == 200) {
+                            $("#inputMsg").val('');
+                            $("#inputEmail").val('');
+                            $("#inputName").val('');
+                            $("#inputPhone").val('');
+                            alert('Your message was sent. Thank you for your feedback.');
+                        }
+                        else {
+                            alert("Failed to send feedback; please try again later.\nStatus Code: " + transport.status + "\nError: " + transport.responseText);
+                        }
+                    }
+                });
+            }
+            //so that the page doesn't post back
+            return false;
+        });
+    </script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="JS/bootstrap.bundle.min.js"></script>
+    <script src="JS/bootstrap.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="JS/jquery.easing.min.js"></script>
+    <!-- Custom JavaScript for this theme -->
+    <script src="JS/scrolling-nav.js"></script>
+    <script src="JS/mdb.min.js"></script>
+
+</body>
+
+</html>

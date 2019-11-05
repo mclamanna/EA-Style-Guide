@@ -10,11 +10,16 @@
    *
    * Tooltips for d3.js SVG visualizations
    */
+  /**
+   * 2019 USPS
+   * Extended to ensure tool tip displays in visible window
+   *
+   */
   // Public - constructs a new tooltip
   //
   // Returns a tip
   function index() {
-    var direction   = d3TipDirection,
+    var direction   = keepItOnThePage, //d3TipDirection,
         offset      = d3TipOffset,
         html        = d3TipHTML,
         rootElement = document.body,
@@ -245,6 +250,29 @@
       }
     }
 
+	function keepItOnThePage() {
+		// preferred direction is n
+		var coords = directionNorth(),
+			offTop = coords.top < 0,
+			offLeft = coords.left < 0,
+			offRight = coords.left + node.offsetWidth > window.innerWidth;
+		if (!offTop && !offLeft && !offRight) {
+			return 'n';
+		} else if (offTop && offLeft) {
+			return 'se';
+		} else if (offTop && offRight) {
+			return 'sw';
+		} else if (offTop) {
+			return 's';
+		} else if (offLeft) {
+			return 'e';
+		} else if (offRight) {
+			return 'w';
+		} else {
+			return 'n';
+		}
+	}
+	
     function initNode() {
       var div = d3Selection.select(document.createElement('div'));
       div
