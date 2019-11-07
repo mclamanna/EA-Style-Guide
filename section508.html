@@ -176,7 +176,7 @@
                                             if bold)</li>
 <p></p>
 <h4>Font size conversion chart</h4> (points to pixels, ems and %)
-It's an approximation, which will depend on font, browser and OS.<p></p>
+It's an approximation, which will depend on font, browser and OS.<p></p></ol>
                                             <table class="table table-light">
                                                     <thead>
                                                       <tr class="table-active">
@@ -248,7 +248,7 @@ It's an approximation, which will depend on font, browser and OS.<p></p>
                 <ul>
             <li><h4>Don’t use color alone to convey information</h4></li>
             When using color to differentiate elements, also provide additional identification that does not rely on
-color perception.<p></p>
+color perception.<p></p></ul><ol>
 <div class="card-group">
     <div class="card">
             <div class="card-header"><h5 class="card-title"><i class="fas fa-times-circle" style="color:#FF604E;"></i> Color only</h5></div>
@@ -307,45 +307,250 @@ color perception.<p></p>
               </ul>
       </div>
     </div>
-  </div>
+  </div></ol>
   <p></p>
-                        </div>
+  <ul>
+    <li><h4>Ensure that interactive elements are easy to identify</h4></li>
+    Provide distinct styles for interactive elements, such as links and buttons, to make them easy to identify.
+For example, change the appearance of links on mouse hover, keyboard focus, and touch-screen
+activation. Ensure that styles and naming for interactive elements are used consistently.<p></p></ul>
+<p></p>
+<ul>
+    <li><h4>Provide clear and consistent navigation options</h4></li>
+    Ensure that navigation across pages within a website has consistent naming, styling, and positioning.
+Provide more than one method of website navigation, such as a site search or a site map. Help users
+understand where they are in a website or page by providing orientation cues, such as breadcrumbs and
+clear headings.<p></p></ul>
+<ul>
+    <li><h4>Ensure that form elements include clearly associated labels</h4></li>
+    All form fields have to have a descriptive label adjacent to the field. Avoid having too much space
+between labels and fields.<p></p></ul><ol>
+<div class="card-group">
+    <div class="card">
+            <div class="card-header"> <h5 class="card-title">Example: Labels and input fields associated by proximity</h5></div>
+      <div class="card-body">
+        <form>
+            <div class="form-group row">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">Your E-mail</label>
+              <div class="col-sm-6">
+                <input type="email" class="form-control" id="inputEmail3">
+              </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-10">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                    <label class="form-check-label" for="gridCheck1">
+                      I am happy for you to contact me
+                    </label>
+                  </div>
+                </div>
+              </div>
+            <div class="form-group row">
+              <label for="inputPassword3" class="col-sm-2 col-form-label">Your Website</label>
+              <div class="col-sm-6">
+                <input type="password" class="form-control" id="inputPassword3">
+              </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputComment" class="col-sm-2 col-form-label">Comment</label>
+                <div class="col-sm-6">
+                <textarea id="form_message" name="message" class="form-control" rows="4" required="required" data-error="Please, leave us a message."></textarea>
+                <div class="help-block with-errors"></div>
+                </div>
+            </div>
+          </form>
+      </div>
+    </div>
+  </div>
+  <p></p></ol>
+  <ul>
+        <li><h4>Provide easily identifiable feedback</h4></li>
+        Provide feedback for interactions, such as confirming form submission, alerting the user when something
+goes wrong.<p></p></ul><ol>
+<div class="card-group">
+        <div class="card">
+                <div class="card-header"> <h5 class="card-title">Example: Using error list, icon, and background color to make errors stand out</h5></div>
+          <div class="card-body">
+              Please correct the following errors:<p></p>
+              1: <i class="fas fa-exclamation-triangle" style="color:#FF604E;"></i> Email address is invalid<p></p>
+              2: <i class="fas fa-exclamation-triangle" style="color:#FF604E;"></i> A Comment is required<p></p>
+              <h4>Add A comment</h4><p></p>
+              <span style="color:#FF604E;">Required fields</span> are in red and marked with an <span style="color:#FF604E;">*</span><p></p>
+            <form>
+                <div class="form-group row">
+                  <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
+                  <div class="col-sm-6">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="John Doe">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="inputPassword3" class="col-sm-2 col-form-label"><span style="color:#FF604E;"><i class="fas fa-exclamation-triangle"></i> Email *</span></label>
+                  <div class="col-sm-6">
+                    <input type="password" class="form-control" id="inputPassword3" placeholder="John@aol">
+                  </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputComment" class="col-sm-2 col-form-label"><span style="color:#FF604E;"><i class="fas fa-exclamation-triangle"></i> Comment*</span></label>
+                    <div class="col-sm-6">
+                    <textarea id="form_message" name="message" class="form-control" rows="4" required="required" data-error="Please, leave us a message."></textarea>
+                    <div class="help-block with-errors"></div>
                     </div>
                 </div>
+              </form>
+          </div>
+        </div>
+      </div></ol>
+      <p></p><ul>
+      <li><h4>Use headings and spacing to group related content</h4></li>Use whitespace and proximity to make relationships between content more apparent. Style headings to
+      group content, reduce clutter, and make it easier to scan and understand.<p></p></ul>
+<ol>
+      <div class="card-group">
+        <div class="card">
+                <div class="card-header"><h5 class="card-title"><i class="fas fa-times-circle" style="color:#FF604E;"></i> Little spacing and unclear relationship</h5></div>
+          <div class="card-body">
+            <ul class="list-unstyled">
+                <li class="media">
+                    <figure class="fail">
+                        <div>
+                          <svg version="1.1" height="173" aria-labelledby="inaccessible-headings-title" aria-describedby="inaccessible-headings-desc" role="img">
+                            <g>
+                              <desc id="inaccessible-headings-desc">Single heading with large blocks of text, poor separation of sub-headings, and unclear image relationship</desc>
+                              <text class="heading" x="0" y="14">Main heading</text>
+                              <rect x="0" y="18" width="247" height="3"></rect>
+                              <rect x="0" y="24" width="244" height="3"></rect>
+                              <rect x="0" y="30" width="249" height="3"></rect>
+                              <rect class="image" x="180" y="36" width="70" height="55"></rect>
+                              <line x1="181" y1="37" x2="249" y2="90" stroke-width="1"></line>
+                              <line x1="181" y1="90" x2="249" y2="37" stroke-width="1"></line>
+                              <rect x="0" y="36" width="168" height="3"></rect>
+                              <rect x="0" y="42" width="171" height="3"></rect>
+                              <rect x="0" y="48" width="166" height="3"></rect>
+                              <rect x="0" y="54" width="172" height="3"></rect>
+                              <rect x="0" y="60" width="120" height="3"></rect>
+                              <text class="sub-heading" x="0" y="74">Sub heading</text>
+                              <rect x="0" y="76" width="144" height="3"></rect>
+                              <rect x="0" y="82" width="136" height="3"></rect>
+                              <rect x="0" y="88" width="142" height="3"></rect>
+                              <rect x="0" y="94" width="236" height="3"></rect>
+                              <rect x="0" y="100" width="249" height="3"></rect>
+                              <rect x="0" y="106" width="239" height="3"></rect>
+                              <rect x="0" y="112" width="205" height="3"></rect>
+                              <text class="sub-heading" x="0" y="126">Sub heading</text>
+                              <rect x="0" y="128" width="236" height="3"></rect>
+                              <rect x="0" y="134" width="242" height="3"></rect>
+                              <rect x="0" y="140" width="243" height="3"></rect>
+                              <rect x="0" y="146" width="250" height="3"></rect>
+                              <rect x="0" y="152" width="245" height="3"></rect>
+                              <rect x="0" y="158" width="187" height="3"></rect>
+                            </g>
+                          </svg>
+                        </div>
+                      </figure>
+                  </li>
+                  </ul>
+                </div>
+              </div>
+          
+        <div class="card">
+                <div class="card-header"> <h5 class="card-title"><i class="fas fa-check-circle" style="color:#30d074;"></i> More spacing and clearer relationship</h5></div>
+          <div class="card-body">
+            <ul class="list-unstyled">
+                <li class="media">
+                    <figure class="pass">
+                        <div>
+                          <svg version="1.1" height="173" aria-labelledby="accessible-headings-title" aria-describedby="accessible-headings-desc" role="img">
+                            <g>
+                              <desc id="accessible-headings-desc">Main heading, multiple sub headings, lists, and no large text blocks</desc>
+                              <text class="heading" x="0" y="14">Main heading</text>
+                              <rect x="0" y="21" width="175" height="3"></rect>
+                              <rect x="0" y="27" width="170" height="3"></rect>
+                              <rect x="0" y="33" width="159" height="3"></rect>
+                              <rect x="0" y="39" width="95" height="3"></rect>
+                              <rect x="0" y="51" width="175" height="3"></rect>
+                              <rect x="0" y="57" width="170" height="3"></rect>
+                              <rect x="0" y="63" width="159" height="3"></rect>
+                              <rect x="0" y="69" width="172" height="3"></rect>
+                              <rect x="0" y="75" width="143" height="3"></rect>
+                              <rect class="image" x="180" y="21" width="70" height="55"></rect>
+                              <line x1="181" y1="22" x2="249" y2="75"></line>
+                              <line x1="181" y1="75" x2="249" y2="22"></line>
+                              <text class="sub-heading" x="0" y="98">Sub heading</text>
+                              <rect x="0" y="103" width="106" height="3"></rect>
+                              <rect x="0" y="109" width="99" height="3"></rect>
+                              <rect x="0" y="115" width="114" height="3"></rect>
+                              <rect x="0" y="121" width="110" height="3"></rect>
+                              <rect x="0" y="127" width="110" height="3"></rect>
+                              <rect x="0" y="139" width="99" height="3"></rect>
+                              <rect x="0" y="145" width="114" height="3"></rect>
+                              <rect x="0" y="151" width="110" height="3"></rect>
+                              <rect x="0" y="157" width="84" height="3"></rect>
+                              <text class="sub-heading" x="135" y="98">Sub heading</text>
+                              <rect x="135" y="103" width="106" height="3"></rect>
+                              <rect x="135" y="109" width="99" height="3"></rect>
+                              <rect x="135" y="115" width="114" height="3"></rect>
+                              <rect x="135" y="127" width="114" height="3"></rect>
+                              <rect x="135" y="133" width="110" height="3"></rect>
+                              <rect x="135" y="139" width="99" height="3"></rect>
+                              <rect x="135" y="145" width="108" height="3"></rect>
+                              <rect x="135" y="151" width="110" height="3"></rect>
+                              <rect x="135" y="157" width="62" height="3"></rect>
+                            </g>
+                          </svg>
+                        </div>
+                      </figure>
+                  </li>
+                  </ul></ol>
+          </div>
+        </div>
+      </div>
+</div>
+</div>
+</div>
     </section>
 
-    <script type="text/javascript">
-        $("#btnSubmit").click(function () {
-            
-            $("#sendmail").validate();
+    <section id="tipsdev">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 ml-sm-auto col-md-10 pt-4">
+                        <h1>Associate a label with every form control</h1>
+                        <p>Basic considerations to get started developing web content that is more accessible to people with disabilities.<p></p>
+                        <ul>
+                                <li><h4>Provide sufficient contrast between foreground and background</h4></li>
+                                Use a ‘for’ attribute on the &lt;label&gt; element linked to the id attribute of the form element.<p></p>
+                                <div class="card-header"><h5 class="card-title">Example: Using <span style="color:#207AB5;">for</span> and <span style="color:#207AB5;">id</span> attributes</h5></div>
+                                <div class="card-group">
+                                        <div class="card">
+                                                <div class="card-header"><h5 class="card-title"><i class="fas fa-desktop"></i> Rendered</h5></div>
+                                          <div class="card-body">
+                                                <div class="form-group row">
+                                                        <label for="username" class="col-sm-4 col-form-label">Username</label>
+                                                        <div class="col-sm-6">
+                                                          <input type="username" class="form-control" id="username">
+                                                        </div>
+                                                      </div>
+                                          </div>
+                                        </div>
+                                        <div class="card">
+                                                <div class="card-header"><h5 class="card-title"><i class="fas fa-code"></i> Code Snippet</h5></div>
+                                          <div class="card-body">
+                                                <div class="form-group row">
+                                                    
+                                                        <div class="col-sm-8">
+                                                                <span class="nt">&lt;label </span><span class="na">for=</span><span class="na">"Username"</span><span class="nt">&lt;/label</span><span class="nt">&gt;</span>
+                                                                <p></p>
+                                                                <span class="nt">&lt;input </span><span class="na">id=</span><span class="na">"username" type="text" name="username"</span><span class="nt">&gt;</span>
+                                                        </div>
+                                                      </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            if ($("#sendmail").valid()) {
-                $.ajax({
-                    type: "POST",
-                    url: "services/easg.asmx/SendEmail",
-                    cache: false,
-                    contentType: "application/json; charset=utf-8",
-                    data: "{ 'Msg': '" + $("#inputMsg").val() + "', " + "'To': 'Michael.C.LaManna@usps.gov;Irina.Y.Kuzes@usps.gov'," + "'From': '" + $("#inputEmail").val() + "'," + "'Name': '" + $("#inputName").val() + "'," + "'Subject': 'EA Style Guide Feedback'," + "'Phone': '" + $("#inputPhone").val() + "'" + "}",
-                    dataType: "json",
-                    complete: function (transport) {
-                        debugger
-                        if (transport.status == 200) {
-                            $("#inputMsg").val('');
-                            $("#inputEmail").val('');
-                            $("#inputName").val('');
-                            $("#inputPhone").val('');
-                            alert('Your message was sent. Thank you for your feedback.');
-                        }
-                        else {
-                            alert("Failed to send feedback; please try again later.\nStatus Code: " + transport.status + "\nError: " + transport.responseText);
-                        }
-                    }
-                });
-            }
-            //so that the page doesn't post back
-            return false;
-        });
-    </script>
 
     <!-- Bootstrap core JavaScript -->
     <script src="JS/bootstrap.bundle.min.js"></script>
