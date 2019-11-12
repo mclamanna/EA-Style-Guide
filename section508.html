@@ -517,7 +517,7 @@ goes wrong.<p></p></ul><ol>
                         <h1>Associate a label with every form control</h1>
                         <p>Basic considerations to get started developing web content that is more accessible to people with disabilities.<p></p>
                         <ul>
-                                <li><h4>Provide sufficient contrast between foreground and background</h4></li>
+                                <li><h4>Associate a label with every form control</h4></li>
                                 Use a ‘for’ attribute on the &lt;label&gt; element linked to the id attribute of the form element.<p></p>
                                 <div class="card-header"><h5 class="card-title">Example: Using <span style="color:#207AB5;">for</span> and <span style="color:#207AB5;">id</span> attributes</h5></div>
                                 <div class="card-group">
@@ -545,7 +545,68 @@ goes wrong.<p></p></ul><ol>
                                                       </div>
                                           </div>
                                         </div>
-                                      </div>
+                                      </div><p></p>
+                                      <li><h4>Include alternative text for images</h4></li>
+                                      Ensure that alternative text for images is added to all informational and functional images. Use empty
+alternative text, alt=&quot;&quot; for decorative images, or include them in the CSS instead.<p></p>
+
+<li><h4>Use mark-up to convey meaning and structure</h4></li>
+Use appropriate mark-up for headings, lists, tables, etc. HTML5 provides additional elements, such as
+&lt;nav&gt; and &lt;aside&gt;, to better structure your content.<p></p>
+
+<div class="card-group">
+    <div class="card">
+            <div class="card-header"><h5 class="card-title"><i class="fas fa-desktop"></i> Rendered</h5></div>
+      <div class="card-body">
+     
+            <article>
+              <h2>Superbear saves the day</h2>
+              <time datetime="2015-08-07">7 Aug 2015</time>
+              <p>The city's favorite bear yet again proves his mettle by rescuing a young cat from a tree. Witnesses say that Superbear's efforts were not appreciated by the feline, who inflicted some minor scratch wounds on his rescuer.</p>
+              <aside>
+                <h3>Related Articles</h3>
+                <ul>
+                  <li><a href="#">Bear receives key to city</a></li>
+                  <li><a href="#">Superbear stands for mayor</a></li>
+                </ul>
+              </aside>
+            </article>
+         
+      </div>
+    </div>
+    <div class="card">
+            <div class="card-header"><h5 class="card-title"><i class="fas fa-code"></i> Code Snippet</h5></div>
+      <div class="card-body">
+            <div class="form-group row">
+                
+                    <div class="col-sm-8">
+                        <span class="nt">&lt;section>
+                            <p></p>
+                            <span class="nt">&lt;article>
+                                <p></p>
+                                <span class="nt">&lt;h2>Superbear saves the day<span class="nt">&lt;/h2>
+                                    <p></p>
+                                    <span class="nt">&lt;time datetime="2015-08-07">7 Aug 2015<span class="nt">&lt;/time>
+                                        <p></p>
+                                        <span class="nt">&lt;p>The city's favorite bear yet again proves his mettle by rescuing a young cat from a tree. Witnesses say that Superbear's efforts were not appreciated by the feline, who inflicted some minor scratch wounds on his rescuer.<span class="nt">&lt;/p>
+                                            <p></p><span class="nt">&lt;aside><p></p>
+                                                <span class="nt">&lt;h3>Related Articles<<span class="nt">&lt;h3><p></p>
+                                                    <span class="nt">&lt;ul><p></p>
+                                                        <span class="nt">&lt;li><span class="nt">&lt;a href="#">Bear receives key to city<span class="nt">&lt;/a><span class="nt">&lt;/li><p></p>
+                                                            <span class="nt">&lt;li><span class="nt">&lt;a href="#">Superbear stands for mayor<span class="nt">&lt;/a><<span class="nt">&lt;/li><p></p>
+                                                                    <span class="nt">&lt;/ul>
+                                                                        <p></p>
+                                                                            <span class="nt">&lt;/aside>
+                                                                                <p></p>
+                                                                                    <span class="nt">&lt;/article>
+                                                                                        <p></p>
+                                                                                            <span class="nt">&lt;/section>
+                    </div>
+                  </div>
+      </div>
+    </div>
+  </div><p></p>
+
                     </div>
                 </div>
             </div>
