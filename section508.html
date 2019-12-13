@@ -16,7 +16,7 @@
     <!-- Bootstrap core CSS -->
     <link href="CSS/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
-    <link href="CSS/mdb.min.css" rel="stylesheet">
+    <link href="CSS/mdb.min.css" rel="stylesheet">s
     <!-- Custom styles for this template -->
     <link href="CSS/StyleGuide.css" rel="stylesheet">
     <!-- <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script> -->
@@ -527,7 +527,7 @@ goes wrong.<p></p></ul><ol>
                                                 <div class="form-group row">
                                                         <label for="username" class="col-sm-4 col-form-label">Username</label>
                                                         <div class="col-sm-6">
-                                                          <input type="username" class="form-control" id="username">
+                                                          <input id="username" class="form-control" id="username">
                                                         </div>
                                                       </div>
                                           </div>
@@ -538,7 +538,7 @@ goes wrong.<p></p></ul><ol>
                                                 <div class="form-group row">
                                                     
                                                         <div class="col-sm-8">
-                                                                <span class="nt">&lt;label </span><span class="na">for=</span><span class="na">"Username"</span><span class="nt">&lt;/label</span><span class="nt">&gt;</span>
+                                                                <span class="nt">&lt;label </span><span class="na">for=</span><span class="na">"username"</span><span class="nt">&lt;/label</span><span class="nt">&gt;</span>
                                                                 <p></p>
                                                                 <span class="nt">&lt;input </span><span class="na">id=</span><span class="na">"username" type="text" name="username"</span><span class="nt">&gt;</span>
                                                         </div>
@@ -553,7 +553,7 @@ alternative text, alt=&quot;&quot; for decorative images, or include them in the
 <li><h4>Use mark-up to convey meaning and structure</h4></li>
 Use appropriate mark-up for headings, lists, tables, etc. HTML5 provides additional elements, such as
 &lt;nav&gt; and &lt;aside&gt;, to better structure your content.<p></p>
-
+<div class="card-header"><h5 class="card-title">Example: Using HTML to provide structure and meaning</div>
 <div class="card-group">
     <div class="card">
             <div class="card-header"><h5 class="card-title"><i class="fas fa-desktop"></i> Rendered</h5></div>
@@ -584,16 +584,16 @@ Use appropriate mark-up for headings, lists, tables, etc. HTML5 provides additio
                             <p></p>
                             <span class="nt">&lt;article>
                                 <p></p>
-                                <span class="nt">&lt;h2>Superbear saves the day<span class="nt">&lt;/h2>
+                                <span class="nt">&lt;h2><span class="na">Superbear saves the day</span><span class="nt">&lt;/h2>
                                     <p></p>
-                                    <span class="nt">&lt;time datetime="2015-08-07">7 Aug 2015<span class="nt">&lt;/time>
+                                    <span class="nt">&lt;time datetime="2015-08-07"><span class="na">7 Aug 2015</span><span class="nt">&lt;/time>
                                         <p></p>
-                                        <span class="nt">&lt;p>The city's favorite bear yet again proves his mettle by rescuing a young cat from a tree. Witnesses say that Superbear's efforts were not appreciated by the feline, who inflicted some minor scratch wounds on his rescuer.<span class="nt">&lt;/p>
+                                        <span class="nt">&lt;p><span class="na">The city's favorite bear yet again proves his mettle by rescuing a young cat from a tree. Witnesses say that Superbear's efforts were not appreciated by the feline, who inflicted some minor scratch wounds on his rescuer.</span><span class="nt">&lt;/p>
                                             <p></p><span class="nt">&lt;aside><p></p>
-                                                <span class="nt">&lt;h3>Related Articles<<span class="nt">&lt;h3><p></p>
+                                                <span class="nt">&lt;h3><span class="na">Related Articles</span><span class="nt">&lt;h3><p></p>
                                                     <span class="nt">&lt;ul><p></p>
-                                                        <span class="nt">&lt;li><span class="nt">&lt;a href="#">Bear receives key to city<span class="nt">&lt;/a><span class="nt">&lt;/li><p></p>
-                                                            <span class="nt">&lt;li><span class="nt">&lt;a href="#">Superbear stands for mayor<span class="nt">&lt;/a><<span class="nt">&lt;/li><p></p>
+                                                        <span class="nt">&lt;li><span class="nt">&lt;a href="#"><span class="na">Bear receives key to city</span><span class="nt">&lt;/a><span class="nt">&lt;/li><p></p>
+                                                            <span class="nt">&lt;li><span class="nt">&lt;a href="#"><span class="na">Superbear stands for mayor</span><span class="nt">&lt;/a><span class="nt">&lt;/li><p></p>
                                                                     <span class="nt">&lt;/ul>
                                                                         <p></p>
                                                                             <span class="nt">&lt;/aside>
@@ -606,12 +606,330 @@ Use appropriate mark-up for headings, lists, tables, etc. HTML5 provides additio
       </div>
     </div>
   </div><p></p>
+  <div class="card-header"><h5 class="card-title">Example: Search field using WAI-ARIA</div>
+  <div class="card-group">
+          <div class="card">
+                  <div class="card-header"><h5 class="card-title"><i class="fas fa-desktop"></i> Rendered</h5></div>
+            <div class="card-body">
+                
+                    <form class="form-inline">
+                            <div class="form-group">
+                              <label for="search">Search for</label>
+                              <input type="search" id="search" class="form-control mx-sm-3" aria-describedby="search-help">
+                              </div>
+                              </form>
+                              <div id="search-help">Search records by customer id or name</div>
+                              <button type="submit" class="btn btn-primary">Go</button>
+                            </div>
+                          
+            </div>
+          
+          <div class="card">
+                  <div class="card-header"><h5 class="card-title"><i class="fas fa-code"></i> Code Snippet</h5></div>
+            <div class="card-body">
+                  <div class="form-group row">
+                      
+                          <div class="col-sm-8">
+                                  <span class="nt">&lt;form class="form-inline">
+                                      <p></p>
+                                      <span class="nt">&lt;div class="form-group">
+                                          <p></p>
+                                            <span class="nt">&lt;label for="search"><span class="na">Search for</span> <span class="nt">&lt;/label>
+                                                <p></p>
+                                                <span class="nt">&lt;input type="search" id="search" class="form-control mx-sm-3" aria-describedby="search-help">
+                                                    <p></p>
+                                                        <span class="nt">&lt;/div>
+                                                            <p></p>
+                                                                <span class="nt">&lt;/form>
+                                                                    <p></p>
+                                                                        <span class="nt">&lt;div id="search-help"><span class="na">Search records by customer id or name</span><span class="nt">&lt;/div>
+                                                                            <p></p>
+                                                                            <span class="nt">&lt;button type="submit" class="btn btn-primary"><span class="na">Go</span><span class="nt">&lt;/button>
+         </div>
+    </div>
+</div>
+</div>
+          </div>
+          <p></p>
+          <li><h4>Make tables accessible</h4></li>
+          Accessible tables need HTML markup that indicates header cells and data cells and defines their
+          relationship.
+          Header cells must be marked up with &lt;th&gt;, and data cells with &lt;td&gt; to make tables accessible. For more
+          complex tables, explicit associations may be needed using scope, id, and headers attributes.
+          Use <a href="https://www.w3.org/WAI/tutorials/tables/">tutorial (https://www.w3.org/WAI/tutorials/tables/)</a> that shows how to apply appropriate structural
+          markup to tables.<p></p>
+
+<li><h4>Ensure that all interactive elements are keyboard accessible</h4></li>
+Think about keyboard access, especially when developing interactive elements, such as menus,
+mouseover information, collapsable accordions, or media players. Use tabindex=&quot;0&quot; to add an element
+that does not normally receive focus, such as &lt;div&gt; or &lt;span&gt;, into the navigation order when it is being
+used for interaction. Use scripting to capture and respond to keyboard events.<p></p>
+
+<div class="card-header"><h5 class="card-title">Example: Keyboard accessible menu button</div>
+    <div class="card-group">
+            <div class="card">
+                    <div class="card-header"><h5 class="card-title"><i class="fas fa-desktop"></i> Rendered</h5></div>
+              <div class="card-body">
+                  
+                      <form class="form-inline">
+                            <div class="container">
+                                            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                                                <span class="menu__icon menu__icon--open">
+                                                    <i class="fas fa-bars"></i> Menu</span>
+                                                    <span class="menu__icon menu__icon--close">
+                                                        <i class="fas fa-times"></i> Menu</span>
+                                                    
+                                                </button>
+                                                <div class="navbar-collapse collapse" id="navbarText">
+                                                    <ul class="navbar-nav mx-auto">
+                                                        <li class="nav-item mx-auto nav-testme">
+                                                            <a class="nav-link">About</a>
+                                                        </li>
+                                                        <li class="nav-item mx-auto">
+                                                            <a class="nav-link">News</a>
+                                                        </li>
+                                                        <li class="nav-item mx-auto">
+                                                            <a class="nav-link">Tickets</a>
+                                                        </li>
+                                                        <li class="nav-item mx-auto">
+                                                                <a class="nav-link">Fun</a>
+                                                            </li>
+                                                    </ul>
+                                                </div>
+                                 
+                                        </div>
+
+                </div>
+        </div>
+            
+            <div class="card">
+                    <div class="card-header"><h5 class="card-title"><i class="fas fa-code"></i> Code Snippet</h5></div>
+              <div class="card-body">
+                    <div class="form-group row">
+                        
+                            <div class="col-sm-8">
+                                    <span class="nt">&lt;button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                                        <p></p>
+                                            <span class="nt">&lt;span class="menu__icon menu__icon--open">
+                                                
+                                                <span class="nt">&lt;i class="fas fa-bars"></i><span class="na"> Menu</span><span class="nt">&lt;/span>
+                                                <p></p>
+                                                <span class="nt">&lt;span class="menu__icon menu__icon--close">
+                                                    
+                                                    <span class="nt">&lt;i class="fas fa-times"></i> <span class="na"> Menu</span><span class="nt">&lt;/span>
+                                                <p></p>
+                                                    <span class="nt">&lt;/button>
+                                                        <p></p>
+                                                        <span class="nt">&lt;div class="navbar-collapse collapse" id="navbarText">
+                                                                <span class="nt">&lt;ul class="navbar-nav mx-auto">
+                                                                    <p></p>
+                                                                        <span class="nt">&lt;li class="nav-item mx-auto nav-testme">
+                                                                                <span class="nt">&lt;a class="nav-link"><span class="na">About</span><span class="nt">&lt;/a>
+                                                                                    <span class="nt">&lt;/li>
+                                                                                        <p></p>
+                                                                                        <span class="nt">&lt;li class="nav-item mx-auto">
+                                                                                                <span class="nt">&lt;a class="nav-link"><span class="na">News</span><span class="nt">&lt;/a>
+                                                                                                    <span class="nt">&lt;/li>
+                                                                                                        <p></p>
+                                                                                                        <span class="nt">&lt;li class="nav-item mx-auto">
+                                                                                                                <span class="nt">&lt;a class="nav-link"><span class="na">Tickets</span><span class="nt">&lt;/a>
+                                                                                                                    <span class="nt">&lt;/li>
+                                                                                                                        <p></p>
+                                                                                                                        <span class="nt">&lt;li class="nav-item mx-auto">
+                                                                                                                                <span class="nt">&lt;a class="nav-link"><span class="na">Fun</span><span class="nt">&lt;/a>
+                                                                                                                                    <span class="nt"><span class="nt">&lt;/li>
+                                                                                                                                        <p></p>
+                                                                                                                                        <span class="nt">&lt;/ul>
+                                                                                                                                            <p></p>
+                                                                                                                                            <span class="nt">&lt;/<span class="nt">&lt;div>
+                             
+           </div>
+      </div>
+  </div>
+  </div>
+            </div>
+        </div>
+    <p></p>
+    
 
                     </div>
                 </div>
             </div>
         </section>
 
+<section id="testing" class="bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 ml-sm-auto col-md-10 pt-4">
+                <h1>Testing for Accessibility:</h1> First Review <a href="https://www.w3.org/WAI/test-evaluate/preliminary/">(https://www.w3.org/WAI/test-evaluate/preliminary/)</a><p>
+                    A few simple steps to check for basic 508 compliance</p>
+                    <ul>
+                        <li><h4>Skip navigation</h4></li>
+                        <p>Skip to main content link placed at the beginning of the page before the navigation; useful for
+                            keyboard navigation.</p>
+                            <p></p>
+                            What to check for:
+                            <ul>
+                                <li>Check if the link appears first when you start tabbing through the page.</li>
+                            </p></ul>
+                            <p></p>
+                            <li><h4>Page title</h4></li>
+                            <p>Shown in browsers&#39; tabs, search engine results; used for bookmarks, read by screen readers
+                                In the web page markup  - &lt;title&gt; within &lt;head&gt;</p>
+                                <p></p>
+                                What to check for:
+                                <ul>
+                                    <li>Check if there is a title that adequately and briefly describes the content.</li>
+                                    <li>Best practice is for titles to be &quot;front-loaded&quot; with the important and unique info first.</li>
+                                </p></ul>
+                                <p></p>
+                                <li><h4>Image text alternatives (&quot;alt text&quot;) (pictures, illustrations, charts, etc.)</h4></li>
+                                <p>Convey the purpose of an image, read by screen readers. Can be tested with WAVE extension.</p>
+                                    <p></p>
+                                    What to check for:
+                                    <ul>
+                                        <li>If an image is required for interacting with or understanding the content, it needs
+                                            alternative text that convey the same meaning as the image.</li>
+                                        <li>If an image is for decoration, it should have null alt (alt=&quot;&quot;).</li>
+                                    </p></ul>
+                                    <p></p>
+                                    <li><h4>Headings</h4></li>
+                                    <p>Web pages have sections of information separated by visual headings marked &lt;h1&gt; to &lt;h6&gt;.
+                                        For keyboard navigation or screen reader heading levels should have a meaningful hierarchy, e.g.:</p>
+                                        <p></p>
+                                        <li>Heading Level 1 &lt;h1&gt;
+                                            <ul>
+                                              <li>Heading Level 2 &lt;h2&gt;
+                                                <ul>
+                                                  <li>Heading Level 3 &lt;h3&gt;</li>
+                                                  <li>Heading Level 3 &lt;h3&gt;</li>
+                                                </ul>
+                                              </li>
+                                              <li>Heading Level 2 &lt;h2&gt;
+                                                <ul>
+                                                  <li>Heading Level 3 &lt;h3&gt;
+                                                    <ul>
+                                                      <li>Heading Level 4 &lt;h4&gt;</li>
+                                                      <li>Heading Level 4 &lt;h4&gt;</li>
+                                                    </ul>
+                                                  </li>
+                                                </ul>
+                                              </li>
+                                              <li>Heading Level 2 &lt;h2&gt; </li>
+                                            </ul>
+                                          </li><p></p>
+                                          <p>Can be tested with WAVE extension.</p>
+                                          What to check for:
+                                            <ul>
+                                                <li>Check if there is at least one heading at the page.</li>
+                                                <li>All text that looks like a heading is marked up as a heading.</li>
+                                <li>Ideally the page starts with an &quot;h1&quot; — which is usually similar to the page title — and does
+not skip levels; however, these are not absolute requirements.</li>
+                                            </ul>
+        <p></p>
+        
+            <li><h4>Contrast ratio (&quot;color contrast&quot;)</h4></li>
+            <p>Some people cannot read text if there is not sufficient contrast between the text and background
+                Can be tested with WAVE extension or Color and Contrast Analyzer (CCA) tool.</p>
+                <p></p>
+                What to check for:
+                <ul>
+                    <li>Minimum contrast ratio is at least 4.5:1 for normal-size text.</li>
+                </p></ul>
+                <p></p> 
+                <li><h4>Resize text</h4></li>
+                <p>Some people need to enlarge web content in order to read it.
+                    Can be tested by changing browser settings – text size, text only zoom, page zoom.</p>
+                    <p></p>
+                    What to check for:
+                    <ul>
+                        <li>All text gets larger, doesn&#39;t disappear, cut off or overlap</li>
+                        <li>All interactive elements are visible and usable.</li>
+                    </p></ul>
+                    <p></p>
+
+                    <li><h4>Keyboard access and visual focus</h4></li>
+                    <p>Many people cannot use a mouse and rely on the keyboard for navigation and interactions.
+                        Keyboard focus should be visible and should follow a logical order through the page elements.</p>
+                        <p></p>
+                        <h5>How to check:</h5>
+                        <ul>
+                            <li>Click in the address bar, then put your mouse aside and do not use it.</li>
+                            <li>Press the &#39;Tab&#39; key to move through the elements on the page. You can press &#39;Shift-Tab&#39; to go
+                                backwards.</li>
+                                <li>To move within elements such as drop-down lists and menu bars, press the arrow keys.</li>
+                                <li>To select a specific item within a drop-down list:</li>
+                                <ul>
+                                    <li>Tab to the list box</li>
+<li>Use the arrow keys to move the focus to items</li>
+<li>When an item has focus, press the Enter key or Space bar to select that item</li></ul>
+                                </ul>
+                                <p></p>
+                                What to check for:
+                                <ul>
+                                    <li><h5>Tab to all:</h5>Check that you can tab to all the elements, including links, form fields, buttons,
+                                    and media player controls.</li>
+                                    <li><h5>Tab away:</h5> Check that you can tab away from all elements (no &quot;keyboard traps&quot;).</li>
+                                    <li><h5>Tab order:</h5> Check that the tab order follows top to bottom, left to right in sequence.</li>
+                                    <li><h5>Visual focus:</h5>Check that the focus is clearly visible.</li>
+                                    <li><h5>All functionality by keyboard:</h5> Check that you can do everything with the keyboard (no
+                                    mouse needed).</li>
+                                    <li><h5>Drop-down lists:</h5> Check if you can use the arrow keys to move through all the options a
+                                    drop-down list without triggering an action.</li>
+                                    <li><h5>Image links:</h5> Check that when images are links, they have clear visual focus and can be
+                                    activated by pressing the Enter key.</li>
+                                </p></ul>
+                                <p></p> 
+                                <li><h4>Forms, labels, and errors</h4></li>
+                                <p>Users need to be able to interact with forms using keyboard, voice input or screen readers.</p>
+                                    <p></p>
+                                    What to check for:
+                                    <ul>
+                                        <li>Check that all form controls are keyboard accessible including drop-down lists</li>
+<li>Check if buttons have a descriptive value, form inputs have text labels, related form
+elements are grouped with fieldset/legend. ARIA labelling is used when necessary.</li>
+<li>Form validation errors are efficient, intuitive, accessible, and easy to correct.</li>
+<li>If specific format, value, or length is required, info is provided within the element&#39;s label.</li>
+                                    </p></ul>
+                                    <p></p> 
+
+                                    <li><h4>Moving, Flashing, or Blinking Content</h4></li>
+                                    <p>Users need to be able to control moving content (including carousel)</p>
+                                        <p></p>
+                                        What to check for:
+                                        <ul>
+                                            <li>Check if there is a way for the user to pause, stop, or hide the movement or control the
+                                                    frequency of the update.</li>
+                            <p></p></ul>
+                            <li><h4>Multimedia (video, audio) alternatives</h4></li>
+                            <p>Information delivered in audio or video has to be provided in alternative formats.</p>
+                                <p></p>
+                                What to check for:
+                                <ul>
+                                    <li>Check if media player controls are labeled and keyboard accessible.</li>
+                                    <li>Check if video have captions (subtitles), transcripts and/or audio descriptions</li>
+                    <p></p></ul>
+                    <li><h4>Tools</h4></li>
+                    <p>Tools to evaluate web content for accessibility:</p>
+<ul>
+                    <li>Web Accessibility Evaluation (WAVE) tool developed by WebAIM.org <a href="http://wave.webaim.org/extension/">
+(http://wave.webaim.org/extension/)</a> - Chrome extension</li>
+<li>Accessibility testing (AXE) tool developed by Deque Systems <a href="https://www.deque.com/axe/">(https://www.deque.com/axe/)</a> -
+Chrome extension</li>
+<li>Accessible Name and Description Inspector (ANDI) developed by the Social Security
+Administration <a href="https://www.ssa.gov/accessibility/andi/help/install.html">(https://www.ssa.gov/accessibility/andi/help/install.html)</a></li>
+<li>Color and Contrast Analyzer (CCA) tool by The Paciello Group
+<a href="https://developer.paciellogroup.com/resources/contrastanalyser">(https://developer.paciellogroup.com/resources/contrastanalyser/)</a></li>
+<li>Chrome DevTools: Accessibility <a href="https://developers.google.com/web/tools/chrome-
+    devtools/accessibility/reference">(https://developers.google.com/web/tools/chrome-
+devtools/accessibility/reference)</a></li>
+<li>How to Do an Accessibility Review –
+<a href="https://developers.google.com/web/fundamentals/accessibility/how-to-review">(https://developers.google.com/web/fundamentals/accessibility/how-to-review)</a></li>
+<li>NonVisual Desktop Access (NVDA) screen reader developed by NV Access
+<a href="https://www.nvaccess.org/download/">(https://www.nvaccess.org/download/)</a> - a free screen reader for Windows</li></ul>
+                        <p></p>
+                        
+                    
 
     <!-- Bootstrap core JavaScript -->
     <script src="JS/bootstrap.bundle.min.js"></script>
