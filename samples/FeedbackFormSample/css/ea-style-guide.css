@@ -1,0 +1,67 @@
+/* Override Bootstrap colors            */
+/* Reference only. Doesn't do anything. */
+:root {
+  --primary: #0067F4;
+  --secondary: #5A6169;
+  --success: #17C671;
+  --info: #00B8D8;
+  --warning: #FFB400;
+  --danger: #C4183C;
+  --light: #E9ECEF;
+  --dark: #212529;
+}
+
+/* Header styles */
+h1 {
+	font-family: 'Roboto Slab', serif;
+	font-weight: 700; 
+	font-size: 2.25rem
+}
+
+h2 {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	font-size: 2rem;
+}
+
+h3 {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-size: 1.625rem;
+}
+
+h4 {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+	font-size: 1.25rem;
+}
+
+h5 {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 700;
+	font-size: 1.125rem;
+}
+
+h6 {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 700;
+	font-size: 1rem;
+}
+
+/* Smaller screens: xs & sm */
+@media screen and (max-width: 767px) {
+
+	h1 {
+		font-size: 1.75rem
+	}
+
+}
+
+/* Override Bootstrap .nav.pills */
+.nav-pills .nav-link {
+	border: 1px solid #007bff;
+}
+
+.nav-pills .nav-link.active {
+	border-style: none;
+}

@@ -1,0 +1,92 @@
+html {
+	font-size: 1em;
+}
+.bar-chart .bar-label {
+	font-size: 0.9rem;
+}
+h5 {
+	margin-top: 0.2rem;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	display: inline-block;
+}
+
+#hidden-mail-link {
+	display: none;
+}
+
+.inner-addon {
+  position: relative;
+}
+
+.inner-addon i {
+  position: absolute;
+  padding: 0.5rem;
+  pointer-events: none;
+}
+
+.inner-addon i.fa-times {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.left-addon i {
+  top: 1px;
+  left: 0px;
+}
+
+.right-addon i {
+  top: 1px;
+  right: 0px;
+}
+
+.left-addon input {
+  padding-left: 2rem;
+}
+
+.right-addon input {
+  padding-right: 1.75rem;
+}
+
+.sort-desc i.sort-desc,
+.sort-asc i.sort-asc {
+  display: inline;
+}
+
+.sort-desc i.sort-asc,
+.sort-asc i.sort-desc {
+  display: none;
+}
+
+.page-controls  {
+  text-align: right;
+}
+
+.push {
+    margin-left: auto;
+}
+
+.form-inline .form-control {
+	width: 100%;
+}
+
+.form-inline {
+	margin-bottom: 0px;
+}
+
+/* Only for bootstrap size xl */
+@media screen and (min-width: 1200px) {
+	.page-stats {
+		float: right;
+	}
+}
+
+/* DataTable */
+@media screen and (max-width: 767px) {
+	div.dt-buttons {
+		width: auto;
+		text-align: left;
+		margin-bottom: 0;
+	}
+}

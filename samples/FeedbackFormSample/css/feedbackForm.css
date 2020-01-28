@@ -1,0 +1,13 @@
+.modal-title-custom {
+    text-align: center;
+    width: 100%;
+    font-size: 1.4rem;
+}
+
+.btn-group {
+    width: 100%;
+}
+
+.btn-group .btn {
+    width: 80%;
+}
