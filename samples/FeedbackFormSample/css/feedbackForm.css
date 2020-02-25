@@ -11,3 +11,15 @@
 .btn-group .btn {
     width: 80%;
 }
+
+.btn-primary {
+    color: #ffffff;
+    background-color: #207AB5;
+    border-color: #207AB5;
+    }
+    
+    .btn-primary:hover {
+    color: #ffffff;
+    background-color: #3D9DDC;
+    border-color: #3D9DDC;
+    }
