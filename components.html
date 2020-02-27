@@ -18,9 +18,12 @@
     <link href="CSS/mdb.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="CSS/StyleGuide.css" rel="stylesheet">
+    <!-- Datepicker -->
+    <script src="Resources/DatePicker/gijgo.min.js" type="text/javascript"></script>
+    <link href="Resources/DatePicker/gijgo.min.css" rel="stylesheet" type="text/css" />
     <!-- Additional JS -->
-    <script type="text/javascript" src='JS/clipboard.js'></script>
-    <script type="text/javascript" src='JS/clipboardtwo.js'></script>
+    <script type="text/javascript" src="JS/clipboard.js"></script>
+    <script type="text/javascript" src="JS/clipboardtwo.js"></script>
     <script>
         window.onbeforeunload = function () {
             window.scrollTo(0, 0);
@@ -101,6 +104,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="#datatables">DataTables</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#datepickerpage">DatePicker</a>
                     </li>
                 </ul>
             </nav>
@@ -852,7 +858,7 @@ color: #0D47A1;
                                             <div class="bd-clipboard">
                                                     <span class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</span>
                                                 </div>
-                                            <figure class="highlight2">
+                                            <figure class="highlight">
 <pre><code class="language-html" data-lang="html"><span class="nt">// initialize chart data table/modal dialog
 var chartDataTable = modalDataTable();
 charDataTable.init('chart-table-modal',
@@ -880,8 +886,45 @@ true);
 </div>
 </div>
 </section>
+<section id="datepickerpage" class="bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 ml-sm-auto col-md-10 pt-4">
+                        <h1>DatePicker</h1>
+                        For DatePicker we use <a href="https://gijgo.com/" target="_blank">Gijgo</a>, a free for commercial use javascript plugin distributed under the MIT License.
+                        <p></p>
+                        Needed files can be found in the <a href="resources.html" target="_blank">Resources</a> section or at their site.
+                        <div class="container">
+                            <div class="row">
+                            <div class="col-6 mt-4">
+                                <input id="datepicker" width="234" />
+ <script>
+     $('#datepicker').datepicker({
+         uiLibrary: 'bootstrap4',
+         iconsLibrary: 'fontawesome'
+     });
+ </script>
+                              
+                            </div>
+                            <div class="col-6 mt-4">
+                                <p></p>
+                                <div class="bd-clipboard">
+                                    <span class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</span>
+                                </div>
+                                <figure class="highlight">
+                                    <pre><code class="language-html" data-lang="html"><span class="nt">&lt;input </span><span class="na">id=</span><span class="s">"datepicker" <span class="na">width=</span>"234"</span> /</span><span class="nt">&gt;</span></code></pre>
+                                    <pre><code class="language-html" data-lang="html"><span class="nt">&lt;script</span><span class="nt">&gt;</span></code></pre>
+                                    <pre><code class="language-html" data-lang="html"><span class="nt">&lt;script</span><span class="nt">&gt;</span></code></pre>
+                                </figure>
+                            </div>
+                        
+                    </div>
 
-        
+                    
+            </div>
+        </div>
+</section>
+
         
 
     <!-- Bootstrap core JavaScript -->
@@ -892,6 +935,8 @@ true);
     <!-- Custom JavaScript for this theme -->
     <script src="JS/scrolling-nav.js"></script>
     <script src="JS/mdb.min.js"></script>
+ 
+
 
 </body>
 
