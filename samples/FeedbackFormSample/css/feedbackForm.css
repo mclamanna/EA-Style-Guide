@@ -1,7 +1,14 @@
 .modal-title-custom {
     text-align: center;
     width: 100%;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+    color: #23527c;
+    font-weight: 500;
+    margin: 0;
+}
+
+.modal-content {
+    font-size: 1rem;
 }
 
 .btn-group {
@@ -23,3 +30,36 @@
     background-color: #3D9DDC;
     border-color: #3D9DDC;
     }
+
+.btn-outline-primary {
+    border-color: #207AB5;
+    color: #207AB5;
+}
+ 
+.btn-outline-primary:hover {
+    background-color: #207AB5;
+    border-color: #207AB5;
+}
+ 
+.btn-outline-primary:not(:disabled):not(.disabled).active {
+    color: #fff;
+    background-color: #207AB5;
+    border-color: #207AB5;
+}
+ 
+#reportName {
+    margin-top: 1.5rem;
+    margin-bottom: .5rem;
+}
+ 
+#reportName span {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.form-group {
+    margin-bottom: 0;
+}
+
+
+
