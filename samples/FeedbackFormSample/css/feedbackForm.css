@@ -11,6 +11,15 @@
     font-size: 1rem;
 }
 
+.modal-footer {
+    position: relative;
+    display: inline;
+}
+
+.btn-modal {
+    float: right;
+}
+
 .btn-group {
     width: 100%;
 }
