@@ -75,50 +75,109 @@
 		  </button>
 		</div>
 		<div class="modal-body">
-		  How can we help you *
+		  How can we help you <span style="color: red;">*</span>
+		  <form class="needs-validation" novalidate>
+			  
 		  <div class="container">
 			<div class="row" align="center">
+				<!--
+					<div class="custom-control custom-radio">
+							<input type="radio" class="custom-control-input" id="customControlValidation1" name="radio" required>
+							<label class="custom-control-label" for="customControlValidation1">Suggestion</label>
+						  </div>
+						  <div class="custom-control custom-radio ml-2">
+								<input type="radio" class="custom-control-input" id="customControlValidation2" name="radio" required>
+								<label class="custom-control-label" for="customControlValidation2">Bug Report</label>
+							  </div>
+						  <div class="custom-control custom-radio mb-3">
+							<input type="radio" class="custom-control-input" id="customControlValidation3" name="radio" required>
+							<label class="custom-control-label" for="customControlValidation3">Have a Question</label>
+							<div class="invalid-feedback">Please select one.</div>
+						  </div>
+						-->
+
+						  
+				
 				<div class="btn-group btn-group-toggle" data-toggle="buttons">
-					<label class="btn btn-outline-primary">
-					  <input type="radio" name="options" id="option1" checked>Suggestion
+					<label class="btn btn-outline-primary" for="Validationoption1"> 
+					  <input type="radio" name="suggestion" id="Validationoption1" required>Suggestion
 					</label>
-					<label class="btn btn-outline-primary">
-					  <input type="radio" name="options" id="option2">Bug Report
+					<label class="btn btn-outline-primary" for="Validationoption2">
+					  <input type="radio" name="bugreport" id="Validationoption2" required>Bug Report
 					</label>
-					<label class="btn btn-outline-primary">
-					  <input type="radio" name="options" id="option3">Have a Question
+					<label class="btn btn-outline-primary" for="Validationoption3">
+					  <input type="radio" name="question" id="Validationoption3" required>Have a Question
 					</label>
+				  </div> 
+				  <div class="invalid-feedback">
+					Please select one.
 				  </div>
 			</div>
 		  </div>
 		  
-			
 				
 		  <div id="reportName">Report Title: <span>Priority Mail Express Daily Failures</span></div>
-				
-				<form>
-					<div class="form-group">
-				<label for="message-text" class="col-form-label">Message *</label>
-			<textarea class="form-control" id="message-text" rows="3" placeholder="Type your message here ..."></textarea>
-									  </div>
-				</form>
-				
-			  
-		</div>
-		<div class="modal-footer">
-			
-				
-				<san class="text-muted">* These fields are required.</span>
-					
-					
-				
-		  <button type="button" class="btn btn-primary btn-modal">Submit</button>
-		 
+
+		  
+			<div class="form-group">
+				<label for="validationMessage">Message <span style="color: red;">*</span></label>
+				<textarea class="form-control" rows="3" id="validationMessage" required placeholder="Type your message here ..."></textarea>
+				<div class="invalid-feedback">
+				  Please provide a message.
+				</div>
+			  </div>
+	
+			<div class="mt-2">
+			  <span style="color: red;">*</span><span class="text-muted"> These fields are required.</span>
+		<button type="submit" class="btn btn-primary btn-modal">Submit</button></div>
+		  </form>
+		  
+		  <script>
+		  // Example starter JavaScript for disabling form submissions if there are invalid fields
+		  (function() {
+			'use strict';
+			window.addEventListener('load', function() {
+			  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+			  var forms = document.getElementsByClassName('needs-validation');
+			  // Loop over them and prevent submission
+			  var validation = Array.prototype.filter.call(forms, function(form) {
+				form.addEventListener('submit', function(event) {
+				  if (form.checkValidity() === false) {
+					event.preventDefault();
+					event.stopPropagation();
+				  }
+				  form.classList.add('was-validated');
+				}, false);
+			  });
+			}, false);
+		  })();
+		  </script>	
+		
 		</div>
 	  </div>
 	</div>
   </div>
-
+  <script>
+	// Example starter JavaScript for disabling form submissions if there are invalid fields
+	(function() {
+	  'use strict';
+	  window.addEventListener('load', function() {
+		// Fetch all the forms we want to apply custom Bootstrap validation styles to
+		var forms = document.getElementsByClassName('needs-validation');
+		// Loop over them and prevent submission
+		var validation = Array.prototype.filter.call(forms, function(form) {
+		  form.addEventListener('submit', function(event) {
+			if (form.checkValidity() === false) {
+			  event.preventDefault();
+			  event.stopPropagation();
+			}
+			form.classList.add('was-validated');
+		  }, false);
+		});
+	  }, false);
+	})();
+	</script>
+	
 <!---->
 
 
