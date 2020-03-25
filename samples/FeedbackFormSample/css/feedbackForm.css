@@ -11,6 +11,10 @@
     font-size: 1rem;
 }
 
+label {
+    margin-bottom: 0;
+}
+
 .modal-footer {
     position: relative;
     display: inline;
@@ -63,8 +67,8 @@
 }
  
 #reportName {
-    margin-top: 1.5rem;
-    margin-bottom: .5rem;
+    margin-top: 1rem;
+    margin-bottom: .75rem;
 }
  
 #reportName span {
