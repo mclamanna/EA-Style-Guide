@@ -12,8 +12,8 @@
   
   <!-- Custom styles for this template -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.6/js/gijgo.min.js" type="text/javascript"></script>
-    <link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.6/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+  <script src="DatePicker/gijgo.min.js" type="text/javascript"></script>
+    <link href="DatePicker/gijgo.min.css" rel="stylesheet" type="text/css" />
   
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
@@ -422,48 +422,40 @@
 <div class="container">
   <div class="row">
     <div class="col-3">
-        <input id="datepicker"/>
+        <input id="datepicker" width="234" />
         <script>
             $('#datepicker').datepicker({
-                uiLibrary: 'bootstrap4',
-                icons: {
-                    rightIcon: '<i class="fas fa-calendar-alt"></i>'
-                }
-            });
-        </script>
+            uiLibrary: 'bootstrap4',
+            iconsLibrary: 'fontawesome'
+                                });
+        </script>  
         </div>
         <div class="col-3">
-            <input id="datepicker1"/>
-            <script>
-                $('#datepicker1').datepicker({
-                    uiLibrary: 'bootstrap4',
-                    icons: {
-                        rightIcon: '<i class="fas fa-calendar-alt"></i>'
-                    }
-                });
-            </script>
+          <input id="datepicker2" width="234" />
+          <script>
+              $('#datepicker2').datepicker({
+              uiLibrary: 'bootstrap4',
+              iconsLibrary: 'fontawesome'
+                                  });
+          </script>  
             </div>
             <div class="col-3">
-                <input id="datepicker2"/>
-                <script>
-                    $('#datepicker2').datepicker({
-                        uiLibrary: 'bootstrap4',
-                        icons: {
-                            rightIcon: '<i class="fas fa-calendar-alt"></i>'
-                        }
-                    });
-                </script>
+              <input id="datepicker3" width="234" />
+              <script>
+                  $('#datepicker3').datepicker({
+                  uiLibrary: 'bootstrap4',
+                  iconsLibrary: 'fontawesome'
+                                      });
+              </script>  
                 </div>
                 <div class="col-3">
-                    <input id="datepicker3"/>
-                    <script>
-                        $('#datepicker3').datepicker({
-                            uiLibrary: 'bootstrap4',
-                            icons: {
-                                rightIcon: '<i class="fas fa-calendar-alt"></i>'
-                            }
-                        });
-                    </script>
+                  <input id="datepicker4" width="234" />
+                  <script>
+                      $('#datepicker4').datepicker({
+                      uiLibrary: 'bootstrap4',
+                      iconsLibrary: 'fontawesome'
+                                          });
+                  </script>  
                        <div class="btn-group buttontemp" role="group" aria-label="Basic example">
                           <button type="button" class="btn btn-secondary">Cancel</button>
                           <button type="button" class="btn btn-primary">Submit</button>
