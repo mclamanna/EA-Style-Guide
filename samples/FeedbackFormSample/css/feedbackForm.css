@@ -20,10 +20,6 @@ label {
     display: inline;
 }
  
-.radioFeedback {
-   
-}
-
 [data-toggle=buttons]>.btn input[type=radio] {
     position: absolute;
     clip: rect(0,0,0,0);
@@ -84,5 +80,7 @@ label {
     margin-bottom: 0;
 }
 
-
+.custom-control.custom-radio {
+    padding: 0;
+}
 

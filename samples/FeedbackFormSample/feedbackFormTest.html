@@ -17,7 +17,9 @@
 		<link rel="stylesheet" href="css/usps-data-vis.css"/>
 		<link rel="stylesheet" href="css/app.css"/>
 		<link href="css/feedbackForm.css" rel="stylesheet">
-
+		
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.js"></script>
 		<style>
 			div.metric-box,
 			div.usps-data-vis {
@@ -75,75 +77,49 @@
 		  </button>
 		</div>
 		<div class="modal-body">
-			<label for="validationMessage">How can we help you <span style="color: red;">*</span></label>
-		  <form class="needs-validation" novalidate>
-			  
-		  <div class="container">
-			  
-			<div class="row">
-						<div class="container">
-							<div class="row">                           
-								<div class="btn-group btn-group-toggle" data-toggle="buttons" id="validationMessage" required="">
-									<label class="btn btn-outline-primary" for="Validationoption1"> 
-									  <input type="radio" name="radio" value="suggestion" id="Validationoption1" required="">Suggestion
-									</label>
-									<label class="btn btn-outline-primary" for="Validationoption2">
-									  <input type="radio" name="radio" value="bugreport" id="Validationoption2" required="">Bug Report
-									</label>
-									<label class="btn btn-outline-primary" for="Validationoption3">
-									  <input type="radio" name="radio" value="question" id="Validationoption3" required="">Have a Question
-									</label>
-								</div> 
-								<input type="radio" class="custom-control-input" id="customControlValidation3" name="radio" style="display:none;" required="">
-								<div class="invalid-feedback">
-									Please select your topic.
-								</div>
-							</div>
-						</div>	  
-			</div>
-		  </div>
-	
-				
-		  <div id="reportName">Report Title: <span>Priority Mail Express Daily Failures</span></div>
+			<form id="test-form" action="post.php">
+  <input type="text" name="first_name" class="form-control" required /><br/>
+  
+  <div class="btn-group btn-group-justified" data-toggle="buttons" id="hole1score">
+    <label class="btn btn-primary btn-responsive">
+      <input type="radio" autocomplete="off" name="hole1score" value="1" >1
+    </label>
+    <label class="btn btn-primary btn-responsive">
+      <input type="radio" autocomplete="off" name="hole1score" value="2" >2
+    </label>
+    <label class="btn btn-primary btn-responsive">
+      <input type="radio" autocomplete="off" name="hole1score" value="3">3
+    </label>
+  </div>
 
-			  
-					<div class="form-group">
-						<label for="validationMessage">Message <span style="color: red;">*</span></label>
-							<textarea class="form-control" rows="3" id="validationMessage" required="" placeholder="Type your message here ..."></textarea>
-						<div class="invalid-feedback">Please type your message.</div>
-					</div>
-		
-					<div class="mt-2">
-						<span style="color: red;">*</span><span class="text-muted"> These fields are required.</span>
-						<button type="submit" class="btn btn-primary btn-modal">Submit</button>
-					</div>
-				</form>
+  <label for="hole1score" generated="true" class="error"></label><br/>
+  
+  <input type="submit" />
+</form>
+			
 		  
-		  <script>
-		  // Example starter JavaScript for disabling form submissions if there are invalid fields
-		  (function() {
-			'use strict';
-			window.addEventListener('load', function() {
-			  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-			  var forms = document.getElementsByClassName('needs-validation');
-			  // Loop over them and prevent submission
-			  var validation = Array.prototype.filter.call(forms, function(form) {
-				form.addEventListener('submit', function(event) {
-				  if (form.checkValidity() === false) {
-					event.preventDefault();
-					event.stopPropagation();
-				  }
-				  form.classList.add('was-validated');
-				}, false);
-			  });
-			}, false);
-		  })();
-		  </script>	
+		  
+			<script>
+			  $(function() { 
+
+  $("#test-form").validate({  
+    ignore: [],
+    rules: {
+      first_name: { 
+        required: true
+      },
+      hole1score: {
+        required: true
+      }
+    }
+  });
+});
+			</script>	
 		
 		</div>
 	  </div>
 	</div>
-  </div>
+</div>
 	
 
 
@@ -165,7 +141,7 @@
 				</div>
 			</div>
 	
-			<div class="row">
+			
 				<div class="col-sm-6 col-md-4 col-lg-3">
 					<div id="scheduled-delivery-date" class="usps-data-vis" data-usps-data-vis='{
 						"chartName":"Failed Volume by Scheduled Delivery Date",

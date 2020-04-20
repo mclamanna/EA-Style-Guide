@@ -23,7 +23,6 @@
 			div.usps-data-vis {
 				margin-bottom: 1rem;
 			}
-			
 		</style>
 	</head>
 	<body>
@@ -67,44 +66,66 @@
 <!-- Form Modal-->
 <div class="modal fade" id="feedbackForm" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
 	<div class="modal-dialog" role="document">
-	  <div class="modal-content">
-		<div class="modal-header bg-light">
-		  <h5 class="modal-title-custom" id="">Send us your feedback!</h5>
-		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
-		  </button>
-		</div>
-		<div class="modal-body">
-			<label for="validationMessage">How can we help you <span style="color: red;">*</span></label>
-		  <form class="needs-validation" novalidate>
-			  
-		  <div class="container">
-			  
-			<div class="row">
-						<div class="container">
-							<div class="row">                           
-								<div class="btn-group btn-group-toggle" data-toggle="buttons" id="validationMessage" required="">
-									<label class="btn btn-outline-primary" for="Validationoption1"> 
-									  <input type="radio" name="radio" value="suggestion" id="Validationoption1" required="">Suggestion
-									</label>
-									<label class="btn btn-outline-primary" for="Validationoption2">
-									  <input type="radio" name="radio" value="bugreport" id="Validationoption2" required="">Bug Report
-									</label>
-									<label class="btn btn-outline-primary" for="Validationoption3">
-									  <input type="radio" name="radio" value="question" id="Validationoption3" required="">Have a Question
-									</label>
-								</div> 
-								<input type="radio" class="custom-control-input" id="customControlValidation3" name="radio" style="display:none;" required="">
-								<div class="invalid-feedback">
-									Please select your topic.
+	    <div class="modal-content">
+			<div class="modal-header bg-light">
+			  <h5 class="modal-title-custom" id="">Send us your feedback!</h5>
+			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+			</div>
+			<div class="modal-body">
+				<form class="needs-validation" novalidate="">
+					<div class="form-group">
+						<label for="validationMessage">How can we help you <span style="color: red;">*</span></label>			  
+				<!--	<div class="row" align="center">				
+							<div class="col">
+								<div class="custom-control custom-radio">
+									<input type="radio" class="custom-control-input" id="customControlValidation1" name="radio" required="">
+									<label class="custom-control-label" for="customControlValidation1">Suggestion</label>
 								</div>
 							</div>
-						</div>	  
-			</div>
-		  </div>
-	
-				
-		  <div id="reportName">Report Title: <span>Priority Mail Express Daily Failures</span></div>
+							<div class="col">
+								<div class="custom-control custom-radio">
+									<input type="radio" class="custom-control-input" id="customControlValidation2" name="radio" required="">
+									<label class="custom-control-label" for="customControlValidation2">Bug Report</label>
+								</div>
+							</div>
+							<div class="col">
+								<div class="custom-control custom-radio">
+									<input type="radio" class="custom-control-input" id="customControlValidation3" name="radio" required="">
+									<label class="custom-control-label" for="customControlValidation3">Have a Question</label>										
+								</div>
+							</div>
+						</div>
+						<input type="radio" class="custom-control-input" id="customControlValidation3" name="radio" style="display:none;" required="">
+						<div class="invalid-feedback">
+							Please select your topic.
+						</div> -->
+					</div>
+
+					
+					
+					<div class="container">
+						<div class="row">							
+							<div class="btn-group btn-group-toggle" data-toggle="buttons" id="validationMessage" required="">
+								<label class="btn btn-outline-primary" for="Validationoption1"> 
+								  <input type="radio" name="radio" value="suggestion" id="Validationoption1" required="">Suggestion
+								</label>
+								<label class="btn btn-outline-primary" for="Validationoption2">
+								  <input type="radio" name="radio" value="bugreport" id="Validationoption2" required="">Bug Report
+								</label>
+								<label class="btn btn-outline-primary" for="Validationoption3">
+								  <input type="radio" name="radio" value="question" id="Validationoption3" required="">Have a Question
+								</label>
+							</div> 
+							<input type="radio" class="custom-control-input" id="customControlValidation3" name="radio" style="display:none;" required="">
+							<div class="invalid-feedback">
+								Please select your topic.
+							</div>
+						</div>
+					</div>
+					
+					<div id="reportName">Report Title: <span>Priority Mail Express Daily Failures</span></div>
 
 			  
 					<div class="form-group">
@@ -118,32 +139,34 @@
 						<button type="submit" class="btn btn-primary btn-modal">Submit</button>
 					</div>
 				</form>
-		  
-		  <script>
-		  // Example starter JavaScript for disabling form submissions if there are invalid fields
-		  (function() {
-			'use strict';
-			window.addEventListener('load', function() {
-			  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-			  var forms = document.getElementsByClassName('needs-validation');
-			  // Loop over them and prevent submission
-			  var validation = Array.prototype.filter.call(forms, function(form) {
-				form.addEventListener('submit', function(event) {
-				  if (form.checkValidity() === false) {
-					event.preventDefault();
-					event.stopPropagation();
-				  }
-				  form.classList.add('was-validated');
-				}, false);
-			  });
-			}, false);
-		  })();
-		  </script>	
-		
-		</div>
+				
+			  
+			  
+				<script>
+				  // Disabling form submissions if there are invalid fields
+					(function() {
+					'use strict';
+						window.addEventListener('load', function() {
+						  // Fetch all the forms to apply custom validation styles to
+							var forms = document.getElementsByClassName('needs-validation');
+						  // Loop over them and prevent submission
+							var validation = Array.prototype.filter.call(forms, function(form) {
+								form.addEventListener('submit', function(event) {
+									if (form.checkValidity() === false) {
+										event.preventDefault();
+										event.stopPropagation();
+									}
+								form.classList.add('was-validated');
+								}, false);
+							});
+						}, false);
+					})();
+				</script>	
+			
+			</div>
 	  </div>
 	</div>
-  </div>
+</div>
 	
 
 
@@ -165,7 +188,7 @@
 				</div>
 			</div>
 	
-			<div class="row">
+			
 				<div class="col-sm-6 col-md-4 col-lg-3">
 					<div id="scheduled-delivery-date" class="usps-data-vis" data-usps-data-vis='{
 						"chartName":"Failed Volume by Scheduled Delivery Date",
