@@ -80,43 +80,26 @@
 			  
 		  <div class="container">
 			  
-			<div class="row" align="center">
-				
-
-				
-				
-					<div class="custom-control custom-radio mr-4">
-							<input type="radio" class="custom-control-input" id="customControlValidation1" name="radio" required>
-							<label class="custom-control-label" for="customControlValidation1">Suggestion</label>
-						  </div>
-						  <div class="custom-control custom-radio mr-4">
-								<input type="radio" class="custom-control-input" id="customControlValidation2" name="radio" required>
-								<label class="custom-control-label" for="customControlValidation2">Bug Report</label>
-							  </div>
-						  <div class="custom-control custom-radio">
-							<input type="radio" class="custom-control-input" id="customControlValidation3" name="radio" required>
-							<label class="custom-control-label" for="customControlValidation3">Have a Question</label>
-							<div class="invalid-feedback">Please select one.</div>
-						  </div>
-						
-
-					<!--
-				
-				<div class="btn-group btn-group-toggle" data-toggle="buttons">
-					<label class="btn btn-outline-primary" for="Validationoption1"> 
-					  <input type="radio" name="suggestion" id="Validationoption1" required>Suggestion
-					</label>
-					<label class="btn btn-outline-primary" for="Validationoption2">
-					  <input type="radio" name="bugreport" id="Validationoption2" required>Bug Report
-					</label>
-					<label class="btn btn-outline-primary" for="Validationoption3">
-					  <input type="radio" name="question" id="Validationoption3" required>Have a Question
-					</label>
-				  </div> 
-				  <div class="invalid-feedback">
-					Please select one.
-				  </div>
-				-->
+			<div class="row">
+						<div class="container">
+							<div class="row">                           
+								<div class="btn-group btn-group-toggle" data-toggle="buttons" id="validationMessage" required="">
+									<label class="btn btn-outline-primary" for="Validationoption1"> 
+									  <input type="radio" name="radio" value="suggestion" id="Validationoption1" required="">Suggestion
+									</label>
+									<label class="btn btn-outline-primary" for="Validationoption2">
+									  <input type="radio" name="radio" value="bugreport" id="Validationoption2" required="">Bug Report
+									</label>
+									<label class="btn btn-outline-primary" for="Validationoption3">
+									  <input type="radio" name="radio" value="question" id="Validationoption3" required="">Have a Question
+									</label>
+								</div> 
+								<input type="radio" class="custom-control-input" id="customControlValidation3" name="radio" style="display:none;" required="">
+								<div class="invalid-feedback">
+									Please select your topic.
+								</div>
+							</div>
+						</div>	  
 			</div>
 		  </div>
 	
