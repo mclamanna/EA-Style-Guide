@@ -27,6 +27,14 @@
             window.scrollTo(0, 0);
         }
     </script>
+     <!-- Additional JS -->
+     <script src="JS/clipboard.js"></script>
+     <script src="JS/clipboardtwo.js"></script>
+     <script>
+         window.onbeforeunload = function () {
+             window.scrollTo(0, 0);
+         }
+     </script>
 </head>
 
 <body id="page-top" data-spy="scroll" data-target="#myScrollspy" data-offset="1">
@@ -110,24 +118,61 @@
                 <div class="row">
                         <div class="mb-4 col-sm-12 ml-sm-auto col-md-10 pt-4">
                     <h1>QLIK</h1>
-                    When building a QLIK dashboard we require a few items for branding consistency.
+                    When building a QLIK application we require a few items for branding consistency.
                     <p></p>
-                    <li>When using colors please choose from our approved <a href="design.html#color">508 compliance colors</a>.</li>
-                    <li>Please add dates of data being displayed and when data was last updated/refreshed to all dashboards, example below.</li>
+                    <ul>
+                    <li>Use the <strong>Corp. Desktop Theme</strong> on all dashboards, example below.</li>
+                </ul>
+                <p></p>
+                <div class="col-4 placeholder shadow">
+                    <a href="Images/QLIK2.png" target="_blank"><img class="img-fluid" src="Images/QLIK2.png"  alt="font image"></a>
+                </div>
+                    <ul>
+                    <li>When using colors please choose from our approved <a href="design.html#color">508 compliance colors</a>. We have hard coded our standard colors within the theme for easy selection,
+                        example below.</li></ul>
+                        <div class="col placeholder shadow">
+                            <a href="Images/QLIK3.png" target="_blank"><img class="img-fluid" src="Images/QLIK3.png"  alt="font image"></a>
+                        </div>
+                        <ul>
+                        <li>If using the vizlib library the below snippet of code can be included
+                    in the beginning of your load scripts, this will set standard colors into variables.</li></ul>
+<p></p>
+For example, set variables in a load script:
+<p></p>
+   
+                    <div class="bd-clipboard">
+                        <span class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</span>
+                    </div>
+                    <figure class="highlight">
+                        <pre><code class="language-html" data-lang="html"><span class="nt">set v_color_range_1 = '#30D074';</span></code></pre>
+                        <pre><code class="language-html" data-lang="html"><span class="nt">set v_color_range_2 = '#68B3E4';</span></code></pre>
+                        <pre><code class="language-html" data-lang="html"><span class="nt">set v_color_range_3 = '#F3CB2C';</span></code></pre>
+                        <pre><code class="language-html" data-lang="html"><span class="nt">set v_color_range_4 = '#FFA85C';</span></code></pre>
+                        <pre><code class="language-html" data-lang="html"><span class="nt">set v_color_range_5 = '#FF604E';</span></code></pre>
+                    </figure>
+                    
+                    
+                    Then when we need to color a particular element use those variables above in the expression like this:
+                    <p></p>
+                    <div class="bd-clipboard">
+                        <span class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</span>
+                    </div>
+                    <figure class="highlight">
+                        <pre><code class="language-html" data-lang="html"><span class="nt">=(if ( ( sum({<week_id={40}>}f1_earned) / sum({<week_id={40}>}f1_actual)) < 0.60, '$(v_color_range_5)',</span></code></pre>
+                        <pre><code class="language-html" data-lang="html"><span class="nt">if ( (sum({<week_id={40}>}f1_earned) / sum({<week_id={40}>}f1_actual)) < 0.70, '$(v_color_range_4)',</span></code></pre>
+                        <pre><code class="language-html" data-lang="html"><span class="nt">if ( (sum({<week_id={40}>}f1_earned) / sum({<week_id={40}>}f1_actual)) < 0.80, '$(v_color_range_3)',</span></code></pre>
+                        <pre><code class="language-html" data-lang="html"><span class="nt">if ( (sum({<week_id={40}>}f1_earned) / sum({<week_id={40}>}f1_actual)) < 0.90, '$(v_color_range_2)',</span></code></pre>
+                        <pre><code class="language-html" data-lang="html"><span class="nt">'$(v_color_range_1)')))))</span></code></pre>
+                    </figure>
+                    <ul>
+                    <li>Please show the latest update/reload of data using Date/Time/Time Zone on all visuals, example below.</li>
+                    <h6>Last Update 07/29/2020 10:00 AM EST</h6>
                     <li>Standardize basic data elements</li>
                     <ul><strong>Area</strong> = Needs to be upper case  ex: CAPITAL METRO, EASTERN</ul>
                     <ul><strong>District</strong> = Needs to be upper case  ex: ATLANTA</ul>
                     <ul><strong>MPOO</strong> = Needs to be concatenation of upper case District and upper case MPOO separated by a dash ex: ATLANTA-MPOO2</ul>
                     <ul><strong>ZIP</strong> = Needs to be 5 digit ZIP Code ex: 75075</ul>
                     <ul><strong>Route</strong> = Needs to be concatenation of 5 digit ZIP Code and upper case last 4 characters of route number separated by a dash ex: 00601-C002</ul>
-                    <li>Use the Corporate Reporting custom theme on all dashboards, example below.</li>
-                    <p></p>
-                    <div class="col-12 placeholder shadow">
-                        <center> <a href="Images/QLIK1.png" target="_blank"><img class="img-fluid" src="Images/QLIK1.png"  alt="font image"></a></center>
-                    </div>
-                    <div class="col-12 placeholder shadow">
-                        <center> <a href="Images/QLIK2.png" target="_blank"><img class="img-fluid" src="Images/QLIK2.png"  alt="font image"></a></center>
-                    </div>
                     </div>
                     </div>
                     </div>
