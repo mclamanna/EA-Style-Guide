@@ -1268,7 +1268,7 @@ h8 {
     width: 23.75rem;
     height: 2.5rem;
     background: #F8F9FA;
-    border: 2px solid #000000;
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1278,7 +1278,7 @@ h8 {
     width: 23.75rem;
     height: 2.5rem;
     background: #ffffff;
-
+    border: 2px solid #000000;
     display: flex;
     justify-content: center;
     align-items: center;
