@@ -1,0 +1,29 @@
+set v_Primary_Green_range_1 = '#30D074';
+set v_Primary_Green_Alt_Darkest_range_2 = '#1D7E46';
+set v_Primary_Green_Alt_Dark_range_3 = '#26A75D';
+set v_Primary_Green_Alt_Light_range_4 = '#5AD990';
+set v_Primary_Green_Alt_Lightest_range_5 = '#83E3AC';
+
+set v_Primary_Blue_range_1 = '#68B3E4';
+set v_Primary_Blue_Alt_Darkest_range_2 = '#207AB5';
+set v_Primary_Blue_Alt_Dark_range_3 = '#3D9DDC';
+set v_Primary_Blue_Alt_Light_range_4 = '#93C9EC';
+set v_Primary_Blue_Alt_Lightest_range_5 = '#BEDFF3';
+
+set v_Primary_Yellow_range_1 = '#F3CB2C';
+set v_Primary_Yellow_Alt_Darkest_range_2 = '#BF9B0B';
+set v_Primary_Yellow_Alt_Dark_range_3 = '#DFB50D';
+set v_Primary_Yellow_Alt_Light_range_4 = '#F6D75C';
+set v_Primary_Yellow_Alt_Lightest_range_5 = '#F8E38C';
+
+set v_Primary_Orange_range_1 = '#FFA85C';
+set v_Primary_Orange_Alt_Darkest_range_2 = '#F57200';
+set v_Primary_Orange_Alt_Dark_range_3 = '#FF8D29';
+set v_Primary_Orange_Alt_Light_range_4 = '#FFC38F';
+set v_Primary_Orange_Alt_Lightest_range_5 = '#FFDEC2';
+
+set v_Primary_Red_range_1 = '#FF604E';
+set v_Primary_Red_Alt_Darkest_range_2 = '#E71800';
+set v_Primary_Red_Alt_Dark_range_3 = '#FF321B';
+set v_Primary_Red_Alt_Light_range_4 = '#FF8E81';
+set v_Primary_Red_Alt_Lightest_range_5 = '#FFBCB4';

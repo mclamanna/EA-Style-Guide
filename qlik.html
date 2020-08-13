@@ -81,7 +81,7 @@
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
-                <font color="#ffffff">Last Update: 06/19/2020</font>
+                <font color="#ffffff">Last Update: 08/06/2020</font>
             </ul>
         </div>
     </nav>
@@ -150,6 +150,7 @@
                     <ul><strong>ZIP</strong> = Needs to be 5 digit ZIP Code ex: 75075</ul>
                     <ul><strong>Route</strong> = Needs to be concatenation of 5 digit ZIP Code and upper case last 4 characters of route number separated by a dash ex: 00601-C002</ul><p></p>
                     </ul>
+                
                     Standard placements of the Feedback button:
                     <p></p>
                     <ul>
@@ -158,22 +159,23 @@
                         <div class="mt-2">
                             <a href="Images/Feedback1.png" target="_blank"><img class="img-fluid" src="Images/Feedback1.png"  alt="font image"></a>
                         </div>
-                        <div class="mt-2">See: <a href="#">link to template</a></div>
+                        <div class="mt-2">See: <a href="https://qlikpostal-cat.usps.gov/sense/app/e4bfb65c-2af3-403a-92be-dc7806d9a8cc/sheet/3cba6803-e475-45ff-a976-b74ebced2cd0/state/analysis">link to template</a></div>
                         <p></p>
                         <li>next to the report title (with Corp. Reporting and Corp. Desktop themes) at the header area using “qGlass” extension:</li>
                         <p></p>
                         <div class="mt-2">
                             <a href="Images/Feedback2.png" target="_blank"><img class="img-fluid" src="Images/Feedback2.png"  alt="font image"></a>
                         </div>
-                        <div class="mt-2">See: <a href="#">link to template</a></div>
+                        <div class="mt-2">See: <a href="https://qlikpostal-cat.usps.gov/sense/app/cbeac75f-b1da-483e-b71a-16368c7b11d9/sheet/3cba6803-e475-45ff-a976-b74ebced2cd0/state/analysis">link to template</a></div>
                         <p></p>
                         <li>at the Vizlib Sheet Menu using “vzlGlass” extension:</li>
                         <p></p>
                         <div class="mt-2">
                             <a href="Images/Feedback3.png" target="_blank"><img class="img-fluid" src="Images/Feedback3.png"  alt="font image"></a>
                         </div>
-                        <div class="mt-2">See: <a href="#">link to template</a></div>
-                        </ul>
+                        <div class="mt-2">See: <a href="https://qlikpostal-cat.usps.gov/sense/app/e8a054ef-9002-40e3-be34-469e950f1efe/sheet/49161fb9-7376-44da-beb9-211d1d3d0808/state/analysis">link to template</a></div>
+                    </ul>
+                
                     </div>
                     </div>
                     </div>
@@ -187,7 +189,7 @@
                         When building a QLIK application we require a few items for branding consistency.
                         <p></p>
                         <ul>
-                        <li>Use the <strong>Corp. Desktop Theme</strong> on all dashboards, example below.</li>
+                        <li>Use either the <strong>Corp. Desktop Theme</strong> or the <strong>Corp. Mobile Theme</strong> on all dashboards, examples below.</li>
                     <p></p>
                     <div class="col-4 placeholder shadow">
                         <a href="Images/QLIK2.png" target="_blank"><img class="img-fluid" src="Images/QLIK2.png"  alt="font image"></a>
@@ -224,13 +226,14 @@
                             <span class="btn-clipboard" title="" data-original-title="Copy to clipboard">Copy</span>
                         </div>
                         <figure class="highlight">
-                            <pre><code class="language-html" data-lang="html"><span class="nt">=(if ( ( sum({<week_id={40}>}f1_earned) / sum({<week_id={40}>}f1_actual)) < 0.60, '$(v_color_range_5)',</span></code></pre>
-                            <pre><code class="language-html" data-lang="html"><span class="nt">if ( (sum({<week_id={40}>}f1_earned) / sum({<week_id={40}>}f1_actual)) < 0.70, '$(v_color_range_4)',</span></code></pre>
-                            <pre><code class="language-html" data-lang="html"><span class="nt">if ( (sum({<week_id={40}>}f1_earned) / sum({<week_id={40}>}f1_actual)) < 0.80, '$(v_color_range_3)',</span></code></pre>
-                            <pre><code class="language-html" data-lang="html"><span class="nt">if ( (sum({<week_id={40}>}f1_earned) / sum({<week_id={40}>}f1_actual)) < 0.90, '$(v_color_range_2)',</span></code></pre>
+                            <pre><code class="language-html" data-lang="html"><span class="nt">=(if ( ( sum(OnTimeVolume) / sum(TotalVolume) ) < 0.60, '$(v_green_range_5)',</span></code></pre>
+                            <pre><code class="language-html" data-lang="html"><span class="nt">if ( ( sum(OnTimeVolume) / sum(TotalVolume) ) < 0.70, '$(v_color_range_4)',</span></code></pre>
+                            <pre><code class="language-html" data-lang="html"><span class="nt">if ( ( sum(OnTimeVolume) / sum(TotalVolume) ) < 0.80, '$(v_color_range_3)',</span></code></pre>
+                            <pre><code class="language-html" data-lang="html"><span class="nt">if ( ( sum(OnTimeVolume) / sum(TotalVolume) ) < 0.90, '$(v_color_range_2)',</span></code></pre>
                             <pre><code class="language-html" data-lang="html"><span class="nt">'$(v_color_range_1)')))))</span></code></pre>
                         </figure>
-                        
+                        See: <a href="https://qlikpostal-cat.usps.gov/sense/app/abcaa1ba-991b-4a2e-9071-d17c97a6bfa1/sheet/9eb468f9-3c4d-40f5-8602-5a162e85fa84/state/analysis">Example color script</a>
+                        <p></p>
                             <li>To ensure 508 compliant foreground/background contrast while using our standard color palette with either Qlik or Vizlib objects, please refer to the <a href="design.html#textacces">Text Accessibility</a> section of the Style Guide.</li>
                         </ul>
                         </div>
